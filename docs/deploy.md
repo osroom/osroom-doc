@@ -56,3 +56,32 @@ pip install -r requirements.txt
  cp config_sample.py config.py
  cp db_config_sample.py db_config.py
   ```
+
+> 初始化第一个用户
+
+- 进入项目的Python虚拟环境
+- 进入根目录运行start.py add_user
+  &nbsp;&nbsp; 按如下操作和提示创建第一个用户
+```
+(venv_osroom) work@osroom:~/project/osroom$ python start.py add_user
+ * [User] add
+Input username:root
+Input email:xiaopingwoo@163.com
+Input password(Password at least 8 characters):
+[Warning]: 密码至少8个字符！ 至少包含数字，字母，特殊字符中的任意两种
+
+Input password(Password at least 8 characters):
+ * Create root role...
+Create root user role successfully
+ * Create root user...
+ * Create a root user role successfully
+ * Create the average user role...
+ * Create a generic user role successfully
+The basic information is as follows
+Username: root
+Email: h*****irr@***.com
+User role: Root
+Password: #D****qw123
+End
+
+```
