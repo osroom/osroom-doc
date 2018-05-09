@@ -114,4 +114,10 @@ sudo apt-get install -y mongodb-org
     root：只在admin数据库中可用。超级账号，超级权限
 ```
 
+> 使用osroom系统，请先创建三个数据库，库名自定义
 
+- 建议使用库名称为osr_web, osr_user, osr_sys
+
+- 注意mongodb的每个库都需要创建一个用户/密码(可以全部一样的用户名和密码)
+
+- 创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)
