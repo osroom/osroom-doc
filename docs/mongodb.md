@@ -1,40 +1,39 @@
-# MongoDB使用
-** 下面命令针对ubuntu16.04版本 **
-### apt-get安装Mongodb 3.4 或3.6版本
+## MongoDB使用
+### ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
 
-**下面版本源请选择其中一个版本**
+> 添加mongodb安装源(下面版本源请选择其中一个版本)
 
-> 添加3.4版本源
+#### 添加3.4版本源
 
-**1. 添加public key：**
+**添加public key：**
 ```shell
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
 ```
 
-**2. 添加包源：**
+**添加包源：**
 ```shell
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 ```
 
-> 添加3.6版本源
+####添加3.6版本源
 
-**1. 添加public key：**
+**添加public key：**
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 ```
 
-**2. 添加包源：**
+**添加包源：**
 ```
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 ```
 
 > 更新apt-get && 安装
-**3. 更新：**
+**更新：**
 ```
 sudo apt-get update
 ```
 
-**4. 安装：**
+**安装：**
 ```
 sudo apt-get install -y mongodb-org
 ```
