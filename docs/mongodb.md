@@ -1,13 +1,40 @@
-# MongoDB使用
-### 安装
-> Ubuntu 16.04 apt-get 命令安装mongodb 3.4
+## MongoDB使用
+### ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
+
+> 添加mongodb安装源(下面版本源请选择其中一个版本)
+
+#### 添加3.4版本源
+
+**添加public key：**
 ```shell
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
 ```
-* 下面命令针对ubuntu16.04版本，在其他ubuntu版本系统请查看MongoDB官网
+
+**添加包源：**
 ```shell
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+```
+
+#### 添加3.6版本源
+
+**添加public key：**
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+```
+
+**添加包源：**
+```
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+```
+
+> 更新apt-get && 安装
+**更新：**
+```
 sudo apt-get update
+```
+
+**安装：**
+```
 sudo apt-get install -y mongodb-org
 ```
 详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
@@ -87,4 +114,10 @@ sudo apt-get install -y mongodb-org
     root：只在admin数据库中可用。超级账号，超级权限
 ```
 
+> 使用osroom系统，请先创建三个数据库，库名自定义
 
+- 建议使用库名称为osr_web, osr_user, osr_sys
+
+- 注意mongodb的每个库都需要创建一个用户/密码(可以全部一样的用户名和密码)
+
+- 创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)
