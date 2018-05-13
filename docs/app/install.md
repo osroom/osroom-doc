@@ -1,4 +1,4 @@
-## OSROOM部署
+## OSROOM安装
 > 创建Python虚拟环境(建议)
 
 - 例如在在/home/work创建名为venv-osroom的虚拟环境
