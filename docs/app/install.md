@@ -1,19 +1,21 @@
 ## OSROOM安装
-> 创建Python虚拟环境(建议)
+#### 创建Python虚拟环境(建议)
 
-- 例如在在/home/work创建名为venv-osroom的虚拟环境
+> 例如在在/home/work创建名为venv-osroom的虚拟环境
+
 ```
 pip -m venv /home/work/venv-osroom
 ```
-&nbsp;&nbsp;没有安装好python-venv请先安装, Ubuntu安装命令如下:
+ - 没有安装好python-venv请先安装, Ubuntu安装命令如下:
 ```
 sudo apt-get install python-venv
 ```
 
 
-> OSROOM 依赖包安装
+#### OSROOM 依赖包安装
 
- - 进入虚拟环境
+> 进入虚拟环境
+
  ```shell
 # 进入虚拟环境
 source /home/work/venv-osroom/bin/activate
@@ -21,13 +23,14 @@ source /home/work/venv-osroom/bin/activate
 source /home/work/venv-osroom/bin/activate
 ```
 
-- 进入osroom项目根目录
+> 进入osroom项目根目录
+
 - 使用pip安装依赖包
 ```
 pip install -r requirements.txt
 ```
 
- &nbsp;&nbsp;如果出现类似以下错误信息
+ - 如果出现类似以下错误信息
  ```
  Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-erphi6km/xxx/setup.py';
  f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-record-nhbhzs1a/install-record.txt --single-version-externally-managed --compile --install-headers /home/work/project/venv_osroom/include
@@ -45,8 +48,8 @@ pip install -r requirements.txt
  sudo yum install python3.5-devel
   ```
  
- > 创建数据库
- 请查看Mongodb文档和Redis文档
+#### 创建数据库
+ - 请查看Mongodb文档和Redis文档
  
  > 初始化设置
  
@@ -86,11 +89,13 @@ End
 
 ```
 
-> 使用字段的web服务测试是否能够成功运行osroom（测试用, 实际部署产品, 不会使用该方式启动运行）
+#### 使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
 
-- 进入osroom项目目录
+> 进入osroom项目目录
+
 ```
-# 如果需要外部访问，--host 为0.0.0.0 , --port 指定已开放的端口
-python start.py runserver --host 0.0.0.0 --port 5000
+# 如果需要外部访问，--host 为0.0.0.0 , --port 指定已开放的端口,默认5000
+python start.py runserver --host 127.0.0.1 --port 5000
 ```
-- 打开浏览器访问 127.0.0.1:5000
+> 打开浏览器访问 127.0.0.1:5000
+
