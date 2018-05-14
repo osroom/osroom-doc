@@ -1,58 +1,69 @@
 ## MongoDB使用
-### ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
+### 安装:Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
 
 > 添加mongodb安装源(下面版本源请选择其中一个版本)
 
-#### 添加3.4版本源
+   - 添加3.4版本源
 
-**添加public key：**
-```shell
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
-```
+   添加public key：
+   ```shell
+   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
+   ```
 
-**添加包源：**
-```shell
-echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-```
+   添加包源：
+   ```shell
+   echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list
+   ```
 
-#### 添加3.6版本源
+   - 添加3.6版本源
 
-**添加public key：**
-```
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-```
+   添加public key：
+   ```
+   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+   ```
 
-**添加包源：**
-```
-echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-```
+   添加包源：
+   ```
+   echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+   ```
 
 > 更新apt-get && 安装
-**更新：**
-```
-sudo apt-get update
+   - 更新
+   ```
+   sudo apt-get update
+   ```
+
+   - 安装
+   ```
+   sudo apt-get install -y mongodb-org
+   ```
+   详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+
+### 使用:创建数据库
+> 数据库启动后，默认配置下在命令行输入mongo就可以进入数据库管理
+
+```shell
+(venv3) work@ubuntu16:~/project/osroom$ mongo
+MongoDB shell version v3.4.10
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
+> 
+
 ```
 
-**安装：**
-```
-sudo apt-get install -y mongodb-org
-```
-详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+> 创建数据库
 
-
-### 使用
->创建数据库
-
-* use test_db就能创建一个数据库test_db,之后需要创建一个collection, 否则会被自动删除
+- use test_db就能创建一个数据库test_db, 之后需要创建一个collection, 否则会被自动删除
 
 ```js
 > use test_db
 > db.createCollection("test_coll")
 ```
 
->创建用户
+> 创建用户
 
-* 根据以下步骤, 为每个库创建用户
+- 先给mongodb自带的collection admin 创建一个用户
 
 ```js
 > use admin
@@ -64,7 +75,14 @@ sudo apt-get install -y mongodb-org
               { role: "dbAdminAnyDatabase", db: "admin" }]
    }
  )
-        
+```
+
+```
+
+- 为自己创建的库新建用户
+
+
+ ```js
 > use test
 > db.createCollection("test_coll")
 > db.createUser(
@@ -76,7 +94,7 @@ sudo apt-get install -y mongodb-org
 
 ```
 
-> 更新用户
+- 更新一个库的用户方式如下
 ```
 > use test
 > db.updateUser(
@@ -88,8 +106,9 @@ sudo apt-get install -y mongodb-org
 )
 
 ```
-### role说明
-> Built-In Roles(内置角色)
+> 数据库个角色role说明
+
+- Built-In Roles(内置角色)
 ```
     1. 数据库用户角色：read、readWrite;
     2. 数据库管理角色：dbAdmin、dbOwner、userAdmin；
@@ -100,7 +119,9 @@ sudo apt-get install -y mongodb-org
     // 这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase）
     7. 内部角色：__system
 ```
-> 具体
+
+- 具体
+
 ```
     Read：允许用户读取指定数据库
     readWrite：允许用户读写指定数据库
