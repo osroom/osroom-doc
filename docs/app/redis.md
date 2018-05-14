@@ -1,10 +1,13 @@
-### 安装redis
-- apt-get 安装
+## 安装redis
+### Ubuntu apt-get 安装
 ```
 sudo apt-get install redis-server
 ```
 
-- 编辑/etc/redis.conf配置密码
+### 建议配置一个密码
+
+> 编辑/etc/redis.conf配置密码
+
 ```
   将
     #requirepass foobared
@@ -12,7 +15,7 @@ sudo apt-get install redis-server
     requirepass your-password
 ```
 
-- 重启redis
+### 重启redis
 ```
 sudo /etc/init.d/redis-server restart
 ```
