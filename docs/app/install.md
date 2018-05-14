@@ -1,5 +1,5 @@
 ## OSROOM安装
-#### 创建Python虚拟环境(建议)
+### 创建Python虚拟环境(建议)
 
 > 例如在在/home/work创建名为venv-osroom的虚拟环境
 
@@ -12,7 +12,7 @@ sudo apt-get install python-venv
 ```
 
 
-#### OSROOM 依赖包安装
+### OSROOM 依赖包安装
 
 > 进入虚拟环境
 
@@ -48,7 +48,7 @@ pip install -r requirements.txt
  sudo yum install python3.5-devel
   ```
  
-#### 创建数据库
+### 创建数据库
  - 请查看Mongodb文档和Redis文档
  
  > 初始化设置
@@ -89,7 +89,7 @@ End
 
 ```
 
-#### 使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
+### 使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
 
 > 进入osroom项目目录
 
