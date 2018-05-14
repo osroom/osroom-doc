@@ -48,18 +48,71 @@ pip install -r requirements.txt
  sudo yum install python3.5-devel
   ```
  
-### 创建数据库
- - 请查看Mongodb文档和Redis文档
+### 配置数据库
+ > 首先请查看Mongodb文档和Redis文档，安装好这两个数据库
  
  > 初始化设置
  
-  因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称
+ - 因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称
 ```
   # 进入到apps/configs
  cp config_sample.py config.py
  cp db_config_sample.py db_config.py
   ```
-
+ - 编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码
+ 
+ ```python
+ DB_CONFIG = {
+    "redis": {
+        "password": "<Your password>",
+        "host": [
+            "127.0.0.1"
+        ],
+        "port": [
+            "6379"
+        ]
+    },
+    "mongodb": {
+        "mongo_web": {
+            "password": "<Your password>",
+            "username": "work",
+            "config": {
+                "fsync": False,
+                "replica_set": None
+            },
+            "host": [
+                "127.0.0.1:27017"
+            ],
+            "dbname": "osr_web"
+        },
+        "mongo_user": {
+            "password": "<Your password>",
+            "username": "work",
+            "config": {
+                "fsync": False,
+                "replica_set": None
+            },
+            "host": [
+                "127.0.0.1:27017"
+            ],
+            "dbname": "osr_user"
+        },
+        "mongo_sys": {
+            "password": "<Your password>",
+            "username": "work",
+            "config": {
+                "fsync": False,
+                "replica_set": None
+            },
+            "host": [
+                "127.0.0.1:27017"
+            ],
+            "dbname": "osr_sys"
+        }
+    }
+}
+ ```
+ 
 > 初始化第一个用户
 
 - 进入项目的Python虚拟环境
