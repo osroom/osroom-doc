@@ -3,7 +3,7 @@
 
 > 添加mongodb安装源(下面版本源请选择其中一个版本)
 
-   - 添加3.4版本源
+- 添加3.4版本源
 
    添加public key：
    ```shell
@@ -15,7 +15,7 @@
    echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list
    ```
 
-   - 添加3.6版本源
+- 添加3.6版本源
 
    添加public key：
    ```
@@ -28,12 +28,13 @@
    ```
 
 > 更新apt-get && 安装
-   - 更新
+
+- 更新
    ```
    sudo apt-get update
    ```
 
-   - 安装
+- 安装
    ```
    sudo apt-get install -y mongodb-org
    ```
@@ -77,7 +78,6 @@ MongoDB server version: 3.4.10
  )
 ```
 
-```
 
 - 为自己创建的库新建用户
 
