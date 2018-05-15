@@ -1,7 +1,9 @@
-## MongoDB使用
-### 安装:Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
 
-> 添加mongodb安装源(下面版本源请选择其中一个版本)
+### 安装
+  -Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
+#### &nbsp;&nbsp;添加安装源
+
+- 下面版本源请选择其中一个版本
 
 - 添加3.4版本源
 
@@ -27,13 +29,13 @@
    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
    ```
 
-> 更新apt-get && 安装
+#### &nbsp;&nbsp;更新apt-get
 
 - 更新
    ```
    sudo apt-get update
    ```
-
+#### &nbsp;&nbsp;安装
 - 安装
    ```
    sudo apt-get install -y mongodb-org
@@ -41,19 +43,19 @@
    详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 
 
-### 使用:创建数据库
-> 数据库启动后，默认配置下在命令行输入mongo就可以进入数据库管理
+### 使用
+#### &nbsp;&nbsp;进入数据库
+- 数据库启动后，默认配置下在命令行输入mongo就可以进入数据库管理
 
 ```shell
 (venv3) work@ubuntu16:~/project/osroom$ mongo
 MongoDB shell version v3.4.10
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
-> 
 
 ```
 
-> 创建数据库
+#### &nbsp;&nbsp;创建数据库
 
 - use test_db就能创建一个数据库test_db, 之后需要创建一个collection, 否则会被自动删除
 
@@ -62,7 +64,7 @@ MongoDB server version: 3.4.10
 > db.createCollection("test_coll")
 ```
 
-> 创建用户
+#### &nbsp;&nbsp;创建用户
 
 - 先给mongodb自带的collection admin 创建一个用户
 
@@ -78,11 +80,9 @@ MongoDB server version: 3.4.10
  )
 ```
 
-
 - 为自己创建的库新建用户
 
-
- ```js
+```js
 > use test
 > db.createCollection("test_coll")
 > db.createUser(
@@ -91,7 +91,6 @@ MongoDB server version: 3.4.10
         pwd:'123456',
         roles:[{role:'readWrite', db:'test'}]
     })
-
 ```
 
 - 更新一个库的用户方式如下
@@ -104,9 +103,8 @@ MongoDB server version: 3.4.10
                 { role: "userAdminAnyDatabase", db: "admin" }]
     }
 )
-
 ```
-> 数据库个角色role说明
+#### &nbsp;&nbsp;数据库个角色role说明
 
 - Built-In Roles(内置角色)
 ```
@@ -135,9 +133,8 @@ MongoDB server version: 3.4.10
     root：只在admin数据库中可用。超级账号，超级权限
 ```
 
-> 使用osroom系统，请先创建三个数据库，库名自定义
-
-- 建议使用库名称为osr_web, osr_user, osr_sys
+#### &nbsp;&nbsp;OSROOM需要的库
+- 使用osroom系统，请先创建三个数据库，库名自定义(建议使用库名称为osr_web, osr_user, osr_sys)
 
 - 注意mongodb的每个库都需要创建一个用户/密码(可以全部一样的用户名和密码)
 

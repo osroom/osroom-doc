@@ -1,1 +1,23 @@
-site_name: My Docs
+site_name: OSROOM
+site_url: https://osroom.com
+repo_url: https://github.com/osroom/osroom
+site_author: Allen Woo
+pages:
+    - 文档: index.md
+    - 安装部署:
+        - 安装: app/install.md
+        - 部署: app/deploy.md
+        - Mongodb安装: app/mongodb.md
+        - Redis安装: app/redis.md
+    - Api文档:
+        - Api文档: api/api_doc.md
+        - Api验证方式: api/api_call.md
+
+theme:
+    name: readthedocs
+    custom_dir: 'simplex'
+
+plugins:
+    - search
+copyright: Allen Woo
+site_description: OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等

@@ -5,7 +5,7 @@
 
 **Api**:/api/account/data/availability
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -26,7 +26,7 @@ GET:
 
 **Api**:/api/account/self
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -46,7 +46,7 @@ GET:
 
 **Api**:/api/admin/role/permission
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:USER_MANAGE
 
@@ -65,7 +65,7 @@ GET:
 
 **Api**:/api/admin/role
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:USER_MANAGE
 
@@ -103,7 +103,7 @@ GET:
 
 **Api**:/api/account/password/reset
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:USER
 
@@ -125,7 +125,7 @@ PUT:
 
 **Api**:/api/account/password/retrieve
 
-**Methods**:['PUT', 'POST']
+**Methods**:PUT, POST
 
 **Permission**:unlimited
 
@@ -141,7 +141,7 @@ PUT:
         email_code:<str>, 邮件中收到的验证码
         email:<str>, 邮箱
         password:<str>, 新密码
-        password:<str>, 再次确认密码
+        password2:<str>, 再次确认密码
         :return:
 ```
 ***## Api文档说明
@@ -151,7 +151,7 @@ PUT:
 
 **Api**:/api/admin/user
 
-**Methods**:['GET', 'PUT', 'DELETE']
+**Methods**:GET, PUT, DELETE
 
 **Permission**:USER_MANAGE
 
@@ -190,7 +190,7 @@ GET:
 
 **Api**:/api/admin/user/del
 
-**Methods**:['DELETE']
+**Methods**:DELETE
 
 **Permission**:IMPORTANT_DATA_DEL
 
@@ -210,7 +210,7 @@ DELETE:
 
 **Api**:/api/account/upload/avatar
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:USER
 
@@ -239,7 +239,7 @@ PUT
 
 **Api**:/api/sign-up
 
-**Methods**:['POST']
+**Methods**:POST
 
 **Permission**:unlimited
 
@@ -269,7 +269,7 @@ POST:
 
 **Api**:/api/sign-in
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:unlimited
 
@@ -301,7 +301,7 @@ PUT:
 
 **Api**:/api/sign-in/third-party/<platform>/callback
 
-**Methods**:['GET', 'PUT', 'POST']
+**Methods**:GET, PUT, POST
 
 **Permission**:unlimited
 
@@ -322,7 +322,7 @@ PUT & POST & GET:
 
 **Api**:/api/sign-out
 
-**Methods**:['GET', 'PUT']
+**Methods**:GET, PUT
 
 **Permission**:unlimited
 
@@ -345,7 +345,7 @@ GET or PUT:
 
 **Api**:/api/account/profile/public
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -366,7 +366,7 @@ GET:
 
 **Api**:/api/account/basic
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:USER
 
@@ -389,7 +389,7 @@ GET:
 
 **Api**:/api/account/profile
 
-**Methods**:['GET', 'PUT']
+**Methods**:GET, PUT
 
 **Permission**:USER
 
@@ -417,7 +417,7 @@ GET:
 
 **Api**:/api/account/email
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:USER
 
@@ -441,7 +441,7 @@ PUT
 
 **Api**:/api/admin/message/send
 
-**Methods**:['POST']
+**Methods**:POST
 
 **Permission**:EDITOR
 
@@ -465,7 +465,7 @@ POST
 
 **Api**:/api/admin/message/on-site
 
-**Methods**:['GET', 'PUT', 'DELETE']
+**Methods**:GET, PUT, DELETE
 
 **Permission**:EDITOR
 
@@ -491,7 +491,7 @@ GET:
 
 **Api**:/api/admin/message/sms
 
-**Methods**:['GET', 'DELETE']
+**Methods**:GET, DELETE
 
 **Permission**:EDITOR
 
@@ -517,7 +517,7 @@ GET:
 
 **Api**:/api/user/message
 
-**Methods**:['GET', 'PUT', 'DELETE']
+**Methods**:GET, PUT, DELETE
 
 **Permission**:unlimited
 
@@ -548,7 +548,7 @@ GET:
 
 **Api**:/api/global
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -567,7 +567,7 @@ GET:
 
 **Api**:/api/global/media
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -608,7 +608,7 @@ GET:
 
 **Api**:/api/admin/audit/rule/key
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:WEB_SETTING
 
@@ -627,7 +627,7 @@ GET:
 
 **Api**:/api/admin/audit/rule
 
-**Methods**:['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+**Methods**:GET, POST, PUT, PATCH, DELETE
 
 **Permission**:WEB_SETTING
 
@@ -660,7 +660,7 @@ GET:
 
 **Api**:/api/admin/setting/sys/log
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:SYS_SETTING
 
@@ -682,7 +682,7 @@ GET:
 
 **Api**:/api/session/language-set
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:unlimited
 
@@ -702,7 +702,7 @@ PUT :
 
 **Api**:/api/admin/setting/sys/host
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:SYS_SETTING
 
@@ -729,7 +729,7 @@ GET:
 
 **Api**:/api/admin/setting/sys/host/cmd-execute
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:SYS_SETTING
 
@@ -750,7 +750,7 @@ PUT:
 
 **Api**:/api/admin/setting/sys/host/connection-test
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:SYS_SETTING
 
@@ -771,7 +771,7 @@ PUT:
 
 **Api**:/api/admin/setting/sys/config/version
 
-**Methods**:['GET', 'PUT']
+**Methods**:GET, PUT
 
 **Permission**:SYS_SETTING
 
@@ -795,7 +795,7 @@ GET:
 
 **Api**:/api/admin/setting/sys/config
 
-**Methods**:['GET', 'PUT']
+**Methods**:GET, PUT
 
 **Permission**:SYS_SETTING
 
@@ -822,7 +822,7 @@ GET:
 
 **Api**:/api/token/access-token
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -842,7 +842,7 @@ GET:
 
 **Api**:/api/admin/token/secret-token
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:ROOT
 
@@ -872,7 +872,7 @@ GET:
 
 **Api**:/api/admin/url/permission
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:ROOT
 
@@ -908,7 +908,7 @@ GET:
 
 **Api**:/api/upload/file
 
-**Methods**:['POST']
+**Methods**:POST
 
 **Permission**:USER
 
@@ -939,7 +939,7 @@ POST
 
 **Api**:/api/admin/upload/media-file
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:EDITOR
 
@@ -1022,7 +1022,7 @@ GET
 
 **Api**:/api/user/follow
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -1045,7 +1045,7 @@ GET:
 
 **Api**:/api/user/follow
 
-**Methods**:['POST', 'DELETE']
+**Methods**:POST, DELETE
 
 **Permission**:unlimited
 
@@ -1069,7 +1069,7 @@ POST:
 
 **Api**:/api/admin/comment/access
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:REPORT
 
@@ -1088,7 +1088,7 @@ GET:
 
 **Api**:/api/admin/post/access
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:REPORT
 
@@ -1107,7 +1107,7 @@ GET:
 
 **Api**:/api/admin/report/basic
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:REPORT
 
@@ -1127,7 +1127,7 @@ GET:
 
 **Api**:/api/content/category/info
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -1145,7 +1145,7 @@ GET:
 
 **Api**:/api/content/category
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:unlimited
 
@@ -1182,7 +1182,7 @@ GET:
 
 **Api**:/api/admin/content/category
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:EDITOR
 
@@ -1216,7 +1216,7 @@ Admin管理端category管理
 
 **Api**:/api/admin/plugin
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:SYS_SETTING
 
@@ -1246,7 +1246,7 @@ Admin管理端category管理
 
 **Api**:/api/admin/plugin/setting
 
-**Methods**:['GET', 'POST', 'PUT']
+**Methods**:GET, POST, PUT
 
 **Permission**:SYS_SETTING
 
@@ -1275,7 +1275,7 @@ Admin管理端category管理
 
 **Api**:/api/admin/plugin/setting/install-requirement
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:SYS_SETTING
 
@@ -1297,7 +1297,7 @@ Admin管理端category管理
 
 **Api**:/api/admin/comment
 
-**Methods**:['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+**Methods**:GET, POST, PUT, PATCH, DELETE
 
 **Permission**:AUDIT
 
@@ -1339,7 +1339,7 @@ GET:
 
 **Api**:/api/comment
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -1369,7 +1369,7 @@ GET:
 
 **Api**:/api/comment
 
-**Methods**:['POST', 'PUT', 'PATCH', 'DELETE']
+**Methods**:POST, PUT, PATCH, DELETE
 
 **Permission**:unlimited
 
@@ -1403,7 +1403,7 @@ POST:
 
 **Api**:/api/comment/like
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:unlimited
 
@@ -1424,7 +1424,7 @@ PUT:
 
 **Api**:/api/inform/content
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:unlimited
 
@@ -1447,7 +1447,7 @@ PUT:
 
 **Api**:/api/vercode/send
 
-**Methods**:['POST']
+**Methods**:POST
 
 **Permission**:unlimited
 
@@ -1478,7 +1478,7 @@ POST:
 
 **Api**:/api/vercode/image
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -1497,7 +1497,7 @@ GET:
 
 **Api**:/api/post
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -1534,7 +1534,7 @@ GET:
 
 **Api**:/api/post
 
-**Methods**:['PUT']
+**Methods**:PUT
 
 **Permission**:unlimited
 
@@ -1555,7 +1555,7 @@ PUT:
 
 **Api**:/api/user/post
 
-**Methods**:['POST', 'PUT', 'PATCH', 'DELETE']
+**Methods**:POST, PUT, PATCH, DELETE
 
 **Permission**:USER
 
@@ -1598,7 +1598,7 @@ POST:
 
 **Api**:/api/admin/post
 
-**Methods**:['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+**Methods**:GET, POST, PUT, PATCH, DELETE
 
 **Permission**:AUDIT
 
@@ -1647,7 +1647,7 @@ GET:
 
 **Api**:/api/search
 
-**Methods**:['GET']
+**Methods**:GET
 
 **Permission**:unlimited
 
@@ -1669,7 +1669,7 @@ GET:
 
 **Api**:/api/admin/static/file
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:SYS_SETTING
 
@@ -1700,7 +1700,7 @@ GET:
 
 **Api**:/api/admin/theme/page
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:SYS_SETTING
 
@@ -1724,7 +1724,7 @@ POST:
 
 **Api**:/api/admin/theme
 
-**Methods**:['GET', 'POST', 'PUT', 'DELETE']
+**Methods**:GET, POST, PUT, DELETE
 
 **Permission**:SYS_SETTING
 

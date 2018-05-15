@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+## 介绍
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+OSROOM是基于Python3 Flask开发的开源Web系统, 也是一个CMS(内容管理系统)
+可以用来建立企业官网, 个人博客网站, 提供Rest Api请求数据可以作为微信小程序的服务端
 
-## Commands
+#### &nbsp;&nbsp;运行平台
+可以运行于Linux系统, Windows未测试
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+#### &nbsp;&nbsp;版本
+目前最新版本: 1.0 Beta
 
-## Project layout
+#### &nbsp;&nbsp;Demo
+https://demo.osroom.com
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+#### &nbsp;&nbsp;Fork me on GitHub
+![https://github.com/osroom/osroom](https://github.com/osroom/osroom)

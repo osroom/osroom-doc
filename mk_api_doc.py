@@ -20,7 +20,7 @@ class MkDoc():
         if not os.path.exists(api_md_path):
             os.makedirs(api_md_path)
 
-        api_md_path = "{}/index.md".format(api_md_path)
+        api_md_path = "{}/api_doc.md".format(api_md_path)
         wf = open(api_md_path, "w")
         api_files =  glob.iglob(r'{}/modules/*/apis/*.py'.format(APPS_PATH))
         n = 1
@@ -119,6 +119,8 @@ class MkDoc():
                                 elif k == "routing":
                                     str_doc = "{}\n\n#### {}".format(str_doc, "-".join(v.split("/")[2:]).capitalize())
                                     str_doc = "{}\n\n**Api**:{}".format(str_doc, v)
+                                elif k == "methods":
+                                    str_doc = "{}\n\n**{}**:{}".format(str_doc, k.replace("_", " ").capitalize(), ", ".join(v))
                                 else:
                                     str_doc = "{}\n\n**{}**:{}".format(str_doc, k.replace("_"," ").capitalize(), v)
                             str_doc = "{}\n***".format(str_doc)
