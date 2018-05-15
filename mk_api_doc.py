@@ -108,16 +108,16 @@ class MkDoc():
                             doc["routing"] = routing
                             doc["methods"] = methods
                             doc["permission"] = permission
-                            doc["login"] = login
+                            doc["login_auth"] = login
                             #doc["func_name"] = func_name
                             doc["doc"] = temp_doc
                             doc["doc"] = doc["doc"].strip()
                             str_doc = ""
                             for k, v in doc.items():
                                 if k == "doc":
-                                    str_doc = "{}\n\n**Request and parameters:**\n\n    {}".format(str_doc,v)
+                                    str_doc = "{}\n\n**Request and parameters:**\n\n```\n{}\n```".format(str_doc,v)
                                 elif k == "routing":
-                                    str_doc = "{}\n\n#### {}".format(str_doc, "-".join(v.split("/")[2:]))
+                                    str_doc = "{}\n\n#### {}".format(str_doc, "-".join(v.split("/")[2:]).capitalize())
                                     str_doc = "{}\n\n**Api**:{}".format(str_doc, v)
                                 else:
                                     str_doc = "{}\n\n**{}**:{}".format(str_doc, k.replace("_"," ").capitalize(), v)
@@ -133,6 +133,7 @@ class MkDoc():
 
 
             if n%3 == 0 and docs:
+                wf.write("## Api文档说明\n")
                 wf.writelines(docs)
                 docs = []
             n += 1
