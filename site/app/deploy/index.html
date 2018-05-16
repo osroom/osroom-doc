@@ -76,11 +76,11 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../api/api_doc/">Api文档</a>
+    <a href="../../api/api_call/">Api请求验证</a>
 </li>
                             
 <li >
-    <a href="../../api/api_call/">Api验证方式</a>
+    <a href="../../api/api_doc/">Api说明文档</a>
 </li>
                         </ul>
                     </li>
@@ -132,7 +132,8 @@
 <h4 id="nginxuwsgi">&nbsp;&nbsp;Nginx+uwsgi</h4>
 <ul>
 <li>部署Python Web的方式有好多中, 这里只是举例其中一种方式, 使用<strong>Nginx</strong> + <strong>uwsgi</strong>部署.
-    查阅资料,认为uwsgi性能还不错</li>
+    查阅资料,认为uwsgi性能还不错
+<br/><br/><br/></li>
 </ul>
 <h3 id="uwsgi">uwsgi安装与配置</h3>
 <h4 id="_2">&nbsp;&nbsp;安装</h4>
@@ -142,6 +143,7 @@
 <pre><code>pip install uwsgi
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="_3">&nbsp;&nbsp;配置</h4>
 <ul>
 <li>新建一个文件uwsgi.ini (建议在osroom根目录下)，写入如下配置:</li>
@@ -176,7 +178,8 @@ pidfile = /tmp/osroom_uwsgi.pid
 
 </code></pre>
 
-<p>其他配置项可以参考uwsgi文档</p>
+<p>其他配置项可以参考uwsgi文档
+<br/><br/></p>
 <h4 id="_4">&nbsp;&nbsp;启动网站</h4>
 <ul>
 <li>注意：启动前确认osroom的数据库是否已配置正确</li>
@@ -186,15 +189,15 @@ pidfile = /tmp/osroom_uwsgi.pid
 uwsgi /home/work/project/osroom/uwsgi.ini
 </code></pre>
 
-<p>（附加）方法2：如果uwsgi安装在python虚拟环境中，又不想进入虚拟环境，可以这样启动</p>
+<p><br/><br/>
+（附加）方法2：如果uwsgi安装在python虚拟环境中，又不想进入虚拟环境，可以这样启动</p>
 <pre><code># venv_osroom是我的虚拟环境目录
 /home/work/project/venv_osroom/bin/uwsgi /home/work/project/osroom/uwsgi.ini
 </code></pre>
 
-<ul>
-<li>启动成功后:
-由于uwsgi.ini配置的端口是6001，所以不能通过其他端口访问网站，需要下面<strong>配置Nginx转发到6001端口</strong></li>
-</ul>
+<p><br/><br/>
+- 启动成功后:
+由于uwsgi.ini配置的端口是6001，所以不能通过其他端口访问网站，需要下面<strong>配置Nginx转发到6001端口</strong></p>
 <pre><code>...
 
 uwsgi socket 0 bound to TCP address 127.0.0.1:6001 fd 3
@@ -222,6 +225,7 @@ worker 4 buried after 1 seconds
 ...
 </code></pre>
 
+<p><br/><br/><br/></p>
 <h3 id="nginx">Nginx 安装与配置</h3>
 <h4 id="_5">&nbsp;&nbsp;安装</h4>
 <ul>
@@ -230,10 +234,12 @@ worker 4 buried after 1 seconds
 <pre><code class="shell">sudo apt-get install nginx
 </code></pre>
 
+<p><br/><br/></p>
 <ul>
 <li>也可以使用wget下载，再安装，请自行Google查找教程哈</li>
 </ul>
 <h4 id="_6">&nbsp;&nbsp;配置文件</h4>
+<p><br/><br/></p>
 <ul>
 <li>创建一个nginx配置文件osroom-naginx.conf，文件配置如下(这里只是示范，Nginx有许多配置项可以自己查找教程):</li>
 </ul>
@@ -266,6 +272,7 @@ server {
 
 </code></pre>
 
+<p><br/><br/></p>
 <ul>
 <li>如果需要配置ssl请加上监听443端口，配置好证书，然后80端口301重定向到443 https请求, 如下:
 (不需配置SSL证书的请直接跳过此步骤)</li>
@@ -315,6 +322,7 @@ server {
 }
 </code></pre>
 
+<p><br/><br/></p>
 <ul>
 <li>写好配置文件后编辑nginx主配置文件include 上一步写的配置文件</li>
 </ul>
@@ -330,10 +338,12 @@ http {
 
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="nginx_1">&nbsp;&nbsp;重启Nginx</h4>
 <pre><code>sudo /etc/init.d/nginx restart
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="_7">&nbsp;&nbsp;访问</h4>
 <ul>
 <li>这个时候就可以通过域名（域名有解析到服务器的情况下）或IP访问OSROOM了</li>

@@ -2,8 +2,7 @@
 #### &nbsp;&nbsp;Nginx+uwsgi
   - 部署Python Web的方式有好多中, 这里只是举例其中一种方式, 使用**Nginx** + **uwsgi**部署.
     查阅资料,认为uwsgi性能还不错
-
-
+<br/><br/><br/>
 ### uwsgi安装与配置
 #### &nbsp;&nbsp;安装
 
@@ -11,7 +10,7 @@
 ```
 pip install uwsgi
 ```
-
+<br/><br/>
 #### &nbsp;&nbsp;配置
 
 - 新建一个文件uwsgi.ini (建议在osroom根目录下)，写入如下配置:
@@ -46,7 +45,7 @@ pidfile = /tmp/osroom_uwsgi.pid
 
 ```
 其他配置项可以参考uwsgi文档
-
+<br/><br/>
 #### &nbsp;&nbsp;启动网站
 
 - 注意：启动前确认osroom的数据库是否已配置正确
@@ -56,12 +55,14 @@ pidfile = /tmp/osroom_uwsgi.pid
 # 如果uwsgi装在python虚拟环境，要先进入虚拟环境,再用如下命令启动
 uwsgi /home/work/project/osroom/uwsgi.ini
 ```
-
+<br/><br/>
 （附加）方法2：如果uwsgi安装在python虚拟环境中，又不想进入虚拟环境，可以这样启动
 ```
 # venv_osroom是我的虚拟环境目录
 /home/work/project/venv_osroom/bin/uwsgi /home/work/project/osroom/uwsgi.ini
 ```
+
+<br/><br/>
 - 启动成功后:
 由于uwsgi.ini配置的端口是6001，所以不能通过其他端口访问网站，需要下面**配置Nginx转发到6001端口**
 
@@ -92,17 +93,20 @@ worker 4 buried after 1 seconds
 
 ...
 ```
-
+<br/><br/><br/>
 ### Nginx 安装与配置
 #### &nbsp;&nbsp;安装
-
 - Ubuntu 14.04或Ubuntu 16.04使用apt-get直接安装如下：
+
 ```shell
 sudo apt-get install nginx
 ```
+<br/><br/>
+
 - 也可以使用wget下载，再安装，请自行Google查找教程哈
 
 #### &nbsp;&nbsp;配置文件
+<br/><br/>
 
 - 创建一个nginx配置文件osroom-naginx.conf，文件配置如下(这里只是示范，Nginx有许多配置项可以自己查找教程):
 
@@ -135,8 +139,11 @@ server {
 }
 
 ```
+<br/><br/>
+
 - 如果需要配置ssl请加上监听443端口，配置好证书，然后80端口301重定向到443 https请求, 如下:
 (不需配置SSL证书的请直接跳过此步骤)
+
 ```
 upstream osroom-web {
       # 转发到6001端口
@@ -182,8 +189,10 @@ server {
         return    301 https://$server_name$request_uri;
 }
 ```
+<br/><br/>
 
 - 写好配置文件后编辑nginx主配置文件include 上一步写的配置文件
+
 ```
 # Ubuntu apt-get安装后的Nginx配置文件在/etc/nginx/nginx.conf
 # 编辑/etc/nginx/nginx.conf找到在http {}里面最后添加osroom.conf 
@@ -196,11 +205,12 @@ http {
 }
 
 ```
-
+<br/><br/>
 #### &nbsp;&nbsp;重启Nginx
+
 ```
 sudo /etc/init.d/nginx restart
 ```
-
+<br/><br/>
 #### &nbsp;&nbsp;访问
 - 这个时候就可以通过域名（域名有解析到服务器的情况下）或IP访问OSROOM了

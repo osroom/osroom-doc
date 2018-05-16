@@ -76,11 +76,11 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../api/api_doc/">Api文档</a>
+    <a href="../../api/api_call/">Api请求验证</a>
 </li>
                             
 <li >
-    <a href="../../api/api_call/">Api验证方式</a>
+    <a href="../../api/api_doc/">Api说明文档</a>
 </li>
                         </ul>
                     </li>
@@ -128,40 +128,55 @@
                 <div class="col-md-9" role="main">
 
 <h3 id="_1">安装</h3>
-<p>-Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本</p>
+<ul>
+<li>Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本</li>
+</ul>
 <h4 id="_2">&nbsp;&nbsp;添加安装源</h4>
 <ul>
 <li>
 <p>下面版本源请选择其中一个版本</p>
 </li>
 <li>
-<p>添加3.4版本源</p>
+<p>添加3.4版本源
+   添加public key：</p>
 </li>
 </ul>
-<p>添加public key：
-   <code>shell
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6</code></p>
-<p>添加包源：
-   <code>shell
-   echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list</code></p>
+<pre><code class="shell">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
+</code></pre>
+
+<p>添加包源：</p>
+<pre><code class="shell">echo &quot;deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse&quot; | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list
+</code></pre>
+
+<p><br/></p>
 <ul>
 <li>添加3.6版本源</li>
 </ul>
-<p>添加public key：
-   <code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5</code></p>
-<p>添加包源：
-   <code>echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list</code></p>
+<p>添加public key：</p>
+<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+</code></pre>
+
+<p>添加包源：</p>
+<pre><code>echo &quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+</code></pre>
+
 <h4 id="apt-get">&nbsp;&nbsp;更新apt-get</h4>
 <ul>
-<li>更新
-   <code>sudo apt-get update</code></li>
+<li>更新</li>
 </ul>
+<pre><code>sudo apt-get update
+</code></pre>
+
+<p><br/><br/></p>
 <h4 id="_3">&nbsp;&nbsp;安装</h4>
 <ul>
-<li>安装
-   <code>sudo apt-get install -y mongodb-org</code>
-   详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</li>
+<li>安装</li>
 </ul>
+<pre><code>sudo apt-get install -y mongodb-org
+</code></pre>
+
+<p>详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</p>
+<p><br/><br/><br/></p>
 <h3 id="_4">使用</h3>
 <h4 id="_5">&nbsp;&nbsp;进入数据库</h4>
 <ul>
@@ -174,6 +189,7 @@ MongoDB server version: 3.4.10
 
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="_6">&nbsp;&nbsp;创建数据库</h4>
 <ul>
 <li>use test_db就能创建一个数据库test_db, 之后需要创建一个collection, 否则会被自动删除</li>
@@ -182,6 +198,7 @@ MongoDB server version: 3.4.10
 &gt; db.createCollection(&quot;test_coll&quot;)
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="_7">&nbsp;&nbsp;创建用户</h4>
 <ul>
 <li>先给mongodb自带的collection admin 创建一个用户</li>
@@ -197,6 +214,7 @@ MongoDB server version: 3.4.10
  )
 </code></pre>
 
+<p><br/><br/></p>
 <ul>
 <li>为自己创建的库新建用户</li>
 </ul>
@@ -210,6 +228,7 @@ MongoDB server version: 3.4.10
     })
 </code></pre>
 
+<p><br/><br/></p>
 <ul>
 <li>更新一个库的用户方式如下</li>
 </ul>
@@ -223,6 +242,7 @@ MongoDB server version: 3.4.10
 )
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="role">&nbsp;&nbsp;数据库个角色role说明</h4>
 <ul>
 <li>Built-In Roles(内置角色)</li>
@@ -237,6 +257,7 @@ MongoDB server version: 3.4.10
     7. 内部角色：__system
 </code></pre>
 
+<p><br/><br/></p>
 <ul>
 <li>具体</li>
 </ul>
@@ -252,17 +273,18 @@ MongoDB server version: 3.4.10
     root：只在admin数据库中可用。超级账号，超级权限
 </code></pre>
 
+<p><br/><br/></p>
 <h4 id="osroom">&nbsp;&nbsp;OSROOM需要的库</h4>
 <ul>
-<li>
-<p>使用osroom系统，请先创建三个数据库，库名自定义(建议使用库名称为osr_web, osr_user, osr_sys)</p>
-</li>
-<li>
-<p>注意mongodb的每个库都需要创建一个用户/密码(可以全部一样的用户名和密码)</p>
-</li>
-<li>
-<p>创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)</p>
-</li>
+<li>使用osroom系统，请先创建三个数据库，库名自定义(建议使用库名称为osr_web, osr_user, osr_sys)</li>
+</ul>
+<p><br/><br/></p>
+<ul>
+<li>注意mongodb的每个库都需要创建一个用户/密码(可以全部一样的用户名和密码)</li>
+</ul>
+<p><br/><br/></p>
+<ul>
+<li>创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)</li>
 </ul></div>
         </div>
 

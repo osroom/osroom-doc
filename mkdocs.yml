@@ -10,8 +10,9 @@ pages:
         - Mongodb安装: app/mongodb.md
         - Redis安装: app/redis.md
     - Api文档:
-        - Api文档: api/api_doc.md
-        - Api验证方式: api/api_call.md
+        - Api请求验证: api/api_call.md
+        - Api说明文档: api/api_doc.md
+
 
 theme:
     name: readthedocs
