@@ -1,6 +1,6 @@
 site_name: OSROOM
 site_url: https://osroom.com
-repo_url: https://github.com/osroom/osroom
+repo_url: https://github.com/osroom/osroom-doc
 site_author: Allen Woo
 pages:
     - 文档: index.md
@@ -12,7 +12,11 @@ pages:
     - Api文档:
         - Api请求验证: api/api_call.md
         - Api说明文档: api/api_doc.md
+    - 插件|主题:
+        - 插件开发: plugin/index.md
+        - 主题开发: theme/index.md
 
+site_dir: 'site/v1'
 
 theme:
     name: readthedocs
