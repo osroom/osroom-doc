@@ -21,6 +21,17 @@
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
           {%- block site_nav %}
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/doc/v1.0">v1.0</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
             {%- if nav|length>1 %}
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
