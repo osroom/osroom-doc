@@ -13,7 +13,9 @@
 - 例如在在/home/work创建名为venv-osroom的虚拟环境
 
 ```
-pip -m venv /home/work/venv-osroom
+python -m venv /home/work/venv-osroom
+或
+python3 -m venv /home/work/venv-osroom
 ```
 <br/><br/>
 
