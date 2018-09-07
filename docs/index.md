@@ -16,7 +16,7 @@ OSROOM是基于Python3 Flask开发的开源Web系统, 也是一个CMS(内容管�
 目前最新版本: 1.0 Beta
 <br/><br/>
 #### &nbsp;&nbsp;Demo
-[https://demo.osroom.com](https://demo.osroom.com)
+[https://demo.osroom.com](https://demo.osroom.com) (该站已经停止服务)
 <br/><br/>
 #### &nbsp;&nbsp;Fork me on GitHub
 [https://github.com/osroom/osroom](https://github.com/osroom/osroom)
