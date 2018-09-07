@@ -1,4 +1,5 @@
-## osroom-doc
-> osroom文档库
+## OSROOM文档
+> 各版本地址
 
-https://osroom.com
+[文档: v1.0](https://github.com/osroom/osroom-doc/osr/v1.0/)
+
