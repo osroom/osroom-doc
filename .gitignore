@@ -6,7 +6,6 @@
 log/
 logs/
 venv/
-site/
 .idea
 .git
 
