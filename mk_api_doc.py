@@ -16,7 +16,7 @@ class MkDoc():
         '''
         Create the API documentation
         '''
-        api_md_path = "{}/docs/api".format(current_path)
+        api_md_path = "{}/doc_md/api".format(current_path)
         if not os.path.exists(api_md_path):
             os.makedirs(api_md_path)
 
