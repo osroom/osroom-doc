@@ -190,7 +190,9 @@
 <ul>
 <li>例如在在/home/work创建名为venv-osroom的虚拟环境</li>
 </ul>
-<pre><code>pip -m venv /home/work/venv-osroom
+<pre><code>python -m venv /home/work/venv-osroom
+或
+python3 -m venv /home/work/venv-osroom
 </code></pre>
 
 <p><br/><br/></p>
@@ -217,17 +219,19 @@
 <pre><code>pip install -r requirements.txt
 </code></pre>
 
-<p><br/><br/>
-- 如果出现类似以下错误信息
- <code>Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;
+<p><br/><br/></p>
+<ul>
+<li>如果出现类似以下错误信息</li>
+</ul>
+<p><code>Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;
  __file__='/tmp/pip-install-erphi6km/xxx/setup.py';
  f=getattr(tokenize, 'open', open)(__file__);
  code=f.read().replace('\r\n', '\n');f.close();
  exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-record-nhbhzs1a/install-record.txt
   --single-version-externally-managed --compile
   --install-headers /home/work/project/venv_osroom/include
- site/python3.5/xxxx" failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/</code>
- &nbsp;&nbsp;那么请尝试安装python-dev
+ site/python3.5/xxxx" failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/</code></p>
+<p>&nbsp;&nbsp;那么请尝试安装python-dev
  &nbsp;&nbsp; Ubuntu系统:
  <code># 不一定需要版本号
  sudo apt-get install python3.5-dev</code>
