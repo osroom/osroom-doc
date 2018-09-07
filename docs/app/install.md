@@ -13,7 +13,9 @@
 - 例如在在/home/work创建名为venv-osroom的虚拟环境
 
 ```
-pip -m venv /home/work/venv-osroom
+python -m venv /home/work/venv-osroom
+或
+python3 -m venv /home/work/venv-osroom
 ```
 <br/><br/>
 
@@ -33,11 +35,15 @@ sudo apt-get install python-venv
 -进入osroom项目根目录
 <br/><br/>
 - 使用pip安装依赖包
+
 ```
 pip install -r requirements.txt
 ```
+
 <br/><br/>
+
 - 如果出现类似以下错误信息
+
  ```
  Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;
  __file__='/tmp/pip-install-erphi6km/xxx/setup.py';
@@ -48,6 +54,7 @@ pip install -r requirements.txt
   --install-headers /home/work/project/venv_osroom/include
  site/python3.5/xxxx" failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/
  ```
+ 
  &nbsp;&nbsp;那么请尝试安装python-dev
  &nbsp;&nbsp; Ubuntu系统:
  ```
