@@ -58,7 +58,7 @@
       {%- block extrahead %} {% endblock %}
     </head>
 
-    <body>{% if page and page.is_homepage %} class="homepage"{% endif %}>
+    <body {% if page and page.is_homepage %} class="homepage"{% endif %}>
 
         {% include "nav.html" %}
 
