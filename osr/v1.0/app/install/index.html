@@ -59,26 +59,26 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">文档</a>
+                        <a href="">文档</a>
                     </li>
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li class="active">
-    <a href="./">安装</a>
+    <a href="app/install/">安装</a>
 </li>
                             
 <li >
-    <a href="../deploy/">部署</a>
+    <a href="app/deploy/">部署</a>
 </li>
                             
 <li >
-    <a href="../mongodb/">Mongodb安装</a>
+    <a href="app/mongodb/">Mongodb安装</a>
 </li>
                             
 <li >
-    <a href="../redis/">Redis安装</a>
+    <a href="app/redis/">Redis安装</a>
 </li>
                         </ul>
                     </li>
@@ -87,11 +87,11 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../api/api_call/">Api请求验证</a>
+    <a href="api/api_call/">Api请求验证</a>
 </li>
                             
 <li >
-    <a href="../../api/api_doc/">Api说明文档</a>
+    <a href="api/api_doc/">Api说明文档</a>
 </li>
                         </ul>
                     </li>
@@ -100,11 +100,11 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../plugin/">插件开发</a>
+    <a href="plugin/">插件开发</a>
 </li>
                             
 <li >
-    <a href="../../theme/">主题开发</a>
+    <a href="theme/">主题开发</a>
 </li>
                         </ul>
                     </li>
@@ -117,12 +117,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../..">
+                        <a rel="next" href="">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../deploy/">
+                        <a rel="prev" href="app/deploy/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -144,11 +144,9 @@
         <li class="main "><a href="#pyhton">Pyhton依赖包安装</a></li>
             <li><a href="#python">&nbsp;&nbsp;创建Python虚拟环境(建议)</a></li>
             <li><a href="#_3">&nbsp;&nbsp;安装依赖包</a></li>
-        <li class="main "><a href="#_4">配置数据库</a></li>
-            <li><a href="#_5">&nbsp;&nbsp;安装</a></li>
-            <li><a href="#_6">&nbsp;&nbsp;初始化配置</a></li>
-        <li class="main "><a href="#_7">初始化第一个用户</a></li>
-        <li class="main "><a href="#_8">访问测试</a></li>
+            <li><a href="#_4">&nbsp;&nbsp;安装需求包异常情况:</a></li>
+        <li class="main "><a href="#_5">初始化第一个用户</a></li>
+        <li class="main "><a href="#_6">访问测试</a></li>
             <li><a href="#osroom">&nbsp;&nbsp;启动OSROOM</a></li>
     </ul>
 </div></div>
@@ -194,53 +192,74 @@ python3 -m venv /home/work/venv-osroom
     . /home/work/venv-osroom/bin/activate
 </code></pre>
 
+<p><br/><br/></p>
+<p>-进入osroom项目根目录</p>
 <p><br/><br/>
--进入osroom项目根目录
-<br/><br/>
 - 使用pip安装依赖包</p>
 <pre><code>pip install -r requirements.txt
 </code></pre>
 
 <p><br/><br/></p>
+<h4 id="_4">&nbsp;&nbsp;安装需求包异常情况:</h4>
 <ul>
-<li>如果出现类似以下错误信息</li>
+<li>情况1:错误信息</li>
 </ul>
-<p><code>Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;
- __file__='/tmp/pip-install-erphi6km/xxx/setup.py';
- f=getattr(tokenize, 'open', open)(__file__);
+<p>```shell
+ Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;</p>
+<p><strong>file</strong>='/tmp/pip-install-erphi6km/xxx/setup.py';</p>
+<p>f=getattr(tokenize, 'open', open)(<strong>file</strong>);
  code=f.read().replace('\r\n', '\n');f.close();
- exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-record-nhbhzs1a/install-record.txt
+ exec(compile(code, <strong>file</strong>, 'exec'))" install --record /tmp/pip-record-nhbhzs1a/install-record.txt
   --single-version-externally-managed --compile
   --install-headers /home/work/project/venv_osroom/include
- site/python3.5/xxxx" failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/</code></p>
+ site/python3.5/xxxx" failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/</p>
+<p>```</p>
 <p>&nbsp;&nbsp;那么请尝试安装python-dev
- &nbsp;&nbsp; Ubuntu系统:
- <code># 不一定需要版本号
- sudo apt-get install python3.5-dev</code>
-  &nbsp;&nbsp; 其他使用yum安装工具的Linux发行部系统:</p>
-<pre><code>  # 不一定需要版本号
+ &nbsp;&nbsp; Ubuntu系统:</p>
+<p><code>shell
+ # 不一定需要版本号
+ sudo apt-get install python3.5-dev</code></p>
+<p>&nbsp;&nbsp; 其他使用yum安装工具的Linux发行部系统:</p>
+<pre><code class="shell">  # 不一定需要版本号
  sudo yum install python3.5-devel
 </code></pre>
 
-<p><br/><br/><br/></p>
-<h3 id="_4">配置数据库</h3>
-<h4 id="_5">&nbsp;&nbsp;安装</h4>
+<p><br/><br/></p>
 <ul>
-<li>请看<a href="../mongodb">Mongodb安装文档</a>与<a href="../redis">Redis安装文档</a>
-<br/><br/></li>
+<li>情况2:错误信息</li>
 </ul>
-<h4 id="_6">&nbsp;&nbsp;初始化配置</h4>
-<p><br/><br/>
+<pre><code class="shell"> Command &quot;python setup.py egg_info&quot; failed with error code 1 in ...
+
+ ```
+
+ &amp;nbsp;&amp;nbsp;那么请尝试安装 setuptools
+
+ &amp;nbsp;&amp;nbsp; Ubuntu系统:
+
+ ```shell
+
+ pip install --upgrade setuptools
+
+ ```
+
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+### 配置数据库
+#### &amp;nbsp;&amp;nbsp;安装
+- 请看[Mongodb安装文档](./mongodb)与[Redis安装文档](./redis)
+&lt;br/&gt;&lt;br/&gt;
+#### &amp;nbsp;&amp;nbsp;初始化配置
+&lt;br/&gt;&lt;br/&gt;
 因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称
-<br/></p>
-<pre><code> # 进入到apps/configs
+&lt;br/&gt;
+</code></pre>
+
+<p># 进入到apps/configs
  cp config_sample.py config.py
  cp db_config_sample.py db_config.py
-&lt;br/&gt;&lt;br/&gt;  ```
+<br/><br/>  ```
  - 编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码
-&lt;br/&gt;
-```python
- DB_CONFIG = {
+<br/></p>
+<pre><code class="python"> DB_CONFIG = {
     &quot;redis&quot;: {
         &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
         &quot;host&quot;: [
@@ -292,7 +311,7 @@ python3 -m venv /home/work/venv-osroom
 </code></pre>
 
 <p><br/><br/><br/></p>
-<h3 id="_7">初始化第一个用户</h3>
+<h3 id="_5">初始化第一个用户</h3>
 <ul>
 <li>进入项目的Python虚拟环境
 <br/><br/></li>
@@ -323,7 +342,7 @@ End
 </code></pre>
 
 <p><br/><br/><br/></p>
-<h3 id="_8">访问测试</h3>
+<h3 id="_6">访问测试</h3>
 <p>使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
 <br/><br/></p>
 <h4 id="osroom">&nbsp;&nbsp;启动OSROOM</h4>
@@ -346,8 +365,7 @@ python start.py runserver --host 127.0.0.1 --port 5000
         </footer>
         <script>var base_url = '../..';</script>
         <script src="../../js/base.js"></script>
-        <script src="../../search/require.js"></script>
-        <script src="../../search/search.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">

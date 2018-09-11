@@ -1,72 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
      <loc>https://osroom.com/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
      <loc>https://osroom.com/app/install/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>https://osroom.com/app/deploy/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>https://osroom.com/app/mongodb/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>https://osroom.com/app/redis/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>https://osroom.com/api/api_call/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>https://osroom.com/api/api_doc/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>https://osroom.com/plugin/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>https://osroom.com/theme/</loc>
-     <lastmod>2018-09-08</lastmod>
+     <lastmod>2018-09-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
 </urlset>
