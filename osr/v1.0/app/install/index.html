@@ -247,7 +247,6 @@ python3 -m venv /home/work/venv-osroom
 </code></pre>
 
 <p>&nbsp;&nbsp;那么请尝试安装 setuptools</p>
-<p>&nbsp;&nbsp; Ubuntu系统:</p>
 <pre><code> pip install --upgrade setuptools
 
 </code></pre>
@@ -256,7 +255,7 @@ python3 -m venv /home/work/venv-osroom
 <h3 id="_5">配置数据库</h3>
 <h4 id="_6">&nbsp;&nbsp;安装</h4>
 <ul>
-<li>请看<a href="./mongodb">Mongodb安装文档</a>与<a href="./redis">Redis安装文档</a></li>
+<li>请看<a href="./mongodb/">Mongodb安装文档</a>与<a href="./redis/">Redis安装文档</a></li>
 </ul>
 <p><br/><br/></p>
 <h4 id="_7">&nbsp;&nbsp;初始化配置</h4>
@@ -266,11 +265,15 @@ python3 -m venv /home/work/venv-osroom
 <pre><code> # 进入到apps/configs
  cp config_sample.py config.py
  cp db_config_sample.py db_config.py
-&lt;br/&gt;&lt;br/&gt;  ```
- - 编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码
-&lt;br/&gt;
-```python
- DB_CONFIG = {
+
+</code></pre>
+
+<p><br/><br/></p>
+<ul>
+<li>编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码</li>
+</ul>
+<p><br/></p>
+<pre><code class="python"> DB_CONFIG = {
     &quot;redis&quot;: {
         &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
         &quot;host&quot;: [

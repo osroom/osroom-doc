@@ -92,8 +92,6 @@ pip install -r requirements.txt
 
  &nbsp;&nbsp;那么请尝试安装 setuptools
 
- &nbsp;&nbsp; Ubuntu系统:
-
 ```
  pip install --upgrade setuptools
 
@@ -104,7 +102,7 @@ pip install -r requirements.txt
 ### 配置数据库
 #### &nbsp;&nbsp;安装
 
-- 请看[Mongodb安装文档](./mongodb)与[Redis安装文档](./redis)
+- 请看[Mongodb安装文档](./mongodb/)与[Redis安装文档](./redis/)
 
 <br/><br/>
 
@@ -120,9 +118,15 @@ pip install -r requirements.txt
  # 进入到apps/configs
  cp config_sample.py config.py
  cp db_config_sample.py db_config.py
-<br/><br/>  ```
+
+```
+
+<br/><br/>
+
  - 编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码
+
 <br/>
+
 ```python
  DB_CONFIG = {
     "redis": {
