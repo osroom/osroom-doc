@@ -35,9 +35,8 @@ sudo apt-get install python-venv
 ```
 <br/><br/>
 
--进入osroom项目根目录
+- 进入osroom项目根目录
 
-<br/><br/>
 - 使用pip安装依赖包
 
 ```
@@ -46,11 +45,11 @@ pip install -r requirements.txt
 
 <br/><br/>
 
-#### &nbsp;&nbsp;安装需求包异常情况:
+#### &nbsp;&nbsp;安装需求包异常情况
 
-- 情况1:错误信息
+- 情况1:类似以下错误信息
 
- ```shell
+```
  Command "/xxx/venv-osroom/bin/python3 -u -c "import setuptools, tokenize;
 
  __file__='/tmp/pip-install-erphi6km/xxx/setup.py';
@@ -62,51 +61,61 @@ pip install -r requirements.txt
   --install-headers /home/work/project/venv_osroom/include
  site/python3.5/xxxx" failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/
 
- ```
+```
  
  &nbsp;&nbsp;那么请尝试安装python-dev
+
  &nbsp;&nbsp; Ubuntu系统:
 
- ```shell
+```
  # 不一定需要版本号
+
  sudo apt-get install python3.5-dev
- ```
+
+```
 
   &nbsp;&nbsp; 其他使用yum安装工具的Linux发行部系统:
 
-```shell
+```
   # 不一定需要版本号
  sudo yum install python3.5-devel
 ```
 
 <br/><br/>
 
-- 情况2:错误信息
+- 情况2:类似错误信息
 
-```shell
+```
  Command "python setup.py egg_info" failed with error code 1 in ...
 
- ```
+```
 
  &nbsp;&nbsp;那么请尝试安装 setuptools
 
  &nbsp;&nbsp; Ubuntu系统:
 
- ```shell
-
+```
  pip install --upgrade setuptools
 
- ```
+```
 
 <br/><br/><br/>
+
 ### 配置数据库
 #### &nbsp;&nbsp;安装
+
 - 请看[Mongodb安装文档](./mongodb)与[Redis安装文档](./redis)
+
 <br/><br/>
+
 #### &nbsp;&nbsp;初始化配置
+
 <br/><br/>
+
 因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称
+
 <br/>
+
 ```
  # 进入到apps/configs
  cp config_sample.py config.py
