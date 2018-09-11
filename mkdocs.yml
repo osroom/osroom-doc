@@ -5,16 +5,16 @@ site_author: Allen Woo
 pages:
     - 文档: index.md
     - 安装部署:
-        - 安装: ./app/install.md
-        - 部署: ./app/deploy.md
-        - Mongodb安装: ./app/mongodb.md
-        - Redis安装: ./app/redis.md
+        - 安装: /osroom-doc/osr/v1.0/app/install/
+        - 部署: /osroom-doc/osr/v1.0/app/deploy/
+        - Mongodb安装: /osroom-doc/osr/v1.0/app/mongodb/
+        - Redis安装: /osroom-doc/osr/v1.0/app/redis/
     - Api文档:
-        - Api请求验证: ./api/api_call.md
-        - Api说明文档: ./api/api_doc.md
+        - Api请求验证: /osroom-doc/osr/v1.0/api/api_call/
+        - Api说明文档: /osroom-doc/osr/v1.0/api/api_doc/
     - 插件|主题:
-        - 插件开发: ./plugin/index.md
-        - 主题开发: ./theme/index.md
+        - 插件开发: /osroom-doc/osr/v1.0/plugin/index/
+        - 主题开发: /osroom-doc/osr/v1.0/theme/index/
 
 site_dir: 'osr/v1.0'
 
