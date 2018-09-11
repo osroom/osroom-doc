@@ -1,4 +1,4 @@
-### 安装
+### 安装mongodb
 - Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
 
 #### &nbsp;&nbsp;添加安装源

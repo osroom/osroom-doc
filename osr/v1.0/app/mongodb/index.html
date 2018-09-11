@@ -128,25 +128,25 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
 
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">安装</a></li>
-            <li><a href="#_2">&nbsp;&nbsp;添加安装源</a></li>
+        <li class="main active"><a href="#mongodb">安装mongodb</a></li>
+            <li><a href="#_1">&nbsp;&nbsp;添加安装源</a></li>
             <li><a href="#apt-get">&nbsp;&nbsp;更新apt-get</a></li>
-            <li><a href="#_3">&nbsp;&nbsp;安装</a></li>
-        <li class="main "><a href="#_4">使用</a></li>
-            <li><a href="#_5">&nbsp;&nbsp;进入数据库</a></li>
-            <li><a href="#_6">&nbsp;&nbsp;创建数据库</a></li>
-            <li><a href="#_7">&nbsp;&nbsp;创建用户</a></li>
+            <li><a href="#_2">&nbsp;&nbsp;安装</a></li>
+        <li class="main "><a href="#_3">使用</a></li>
+            <li><a href="#_4">&nbsp;&nbsp;进入数据库</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;创建数据库</a></li>
+            <li><a href="#_6">&nbsp;&nbsp;创建用户</a></li>
             <li><a href="#role">&nbsp;&nbsp;数据库个角色role说明</a></li>
             <li><a href="#osroom">&nbsp;&nbsp;OSROOM需要的库</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">安装</h3>
+<h3 id="mongodb">安装mongodb</h3>
 <ul>
 <li>Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本</li>
 </ul>
-<h4 id="_2">&nbsp;&nbsp;添加安装源</h4>
+<h4 id="_1">&nbsp;&nbsp;添加安装源</h4>
 <ul>
 <li>
 <p>下面版本源请选择其中一个版本</p>
@@ -183,7 +183,7 @@
 </code></pre>
 
 <p><br/><br/></p>
-<h4 id="_3">&nbsp;&nbsp;安装</h4>
+<h4 id="_2">&nbsp;&nbsp;安装</h4>
 <ul>
 <li>安装</li>
 </ul>
@@ -192,8 +192,8 @@
 
 <p>详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</p>
 <p><br/><br/><br/></p>
-<h3 id="_4">使用</h3>
-<h4 id="_5">&nbsp;&nbsp;进入数据库</h4>
+<h3 id="_3">使用</h3>
+<h4 id="_4">&nbsp;&nbsp;进入数据库</h4>
 <ul>
 <li>数据库启动后，默认配置下在命令行输入mongo就可以进入数据库管理</li>
 </ul>
@@ -205,7 +205,7 @@ MongoDB server version: 3.4.10
 </code></pre>
 
 <p><br/><br/></p>
-<h4 id="_6">&nbsp;&nbsp;创建数据库</h4>
+<h4 id="_5">&nbsp;&nbsp;创建数据库</h4>
 <ul>
 <li>use test_db就能创建一个数据库test_db, 之后需要创建一个collection, 否则会被自动删除</li>
 </ul>
@@ -214,7 +214,7 @@ MongoDB server version: 3.4.10
 </code></pre>
 
 <p><br/><br/></p>
-<h4 id="_7">&nbsp;&nbsp;创建用户</h4>
+<h4 id="_6">&nbsp;&nbsp;创建用户</h4>
 <ul>
 <li>先给mongodb自带的collection admin 创建一个用户</li>
 </ul>
