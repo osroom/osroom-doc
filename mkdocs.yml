@@ -2,7 +2,7 @@ site_name: OSROOM DOC
 site_url: https://osroom.com
 repo_url: https://github.com/osroom/osroom-doc
 site_author: Allen Woo
-pages:
+nav:
     - 文档: index.md
     - 安装部署:
         - 安装: /osroom-doc/osr/v1.0/app/install/
@@ -25,11 +25,14 @@ extra:
     version: 1.0
     search:
       language: 'jp'
+
 theme:
     name: readthedocs
     custom_dir: 'simplex'
 
 plugins:
-    - search
+    - search:
+        lang: 'en'
+
 copyright: Allen Woo
 site_description: OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等
