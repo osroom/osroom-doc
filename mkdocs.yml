@@ -13,8 +13,8 @@ pages:
         - Api请求验证: /osroom-doc/osr/v1.0/api/api_call/
         - Api说明文档: /osroom-doc/osr/v1.0/api/api_doc/
     - 插件|主题:
-        - 插件开发: /osroom-doc/osr/v1.0/plugin/index/
-        - 主题开发: /osroom-doc/osr/v1.0/theme/index/
+        - 插件开发: /osroom-doc/osr/v1.0/plugin/
+        - 主题开发: /osroom-doc/osr/v1.0/theme/
 
     - 系统开发:
         - 代码目录结构: /osroom-doc/osr/v1.0/development/structure/

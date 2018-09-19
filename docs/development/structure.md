@@ -1,5 +1,6 @@
 ### 代码结构
-#### &nbsp;&nbsp;一级 osroom/
+
+### &nbsp;&nbsp;osroom/
 
 ```
 .
@@ -15,7 +16,7 @@
 
 ```
 
-#### &nbsp;&nbsp;二级 osroom/apps/
+### &nbsp;&nbsp;osroom/apps/
 
 ```
 .
@@ -37,7 +38,7 @@
 
 ```
 
-##### &nbsp;&nbsp;三级 osroom/apps/configs
+#### &nbsp;&nbsp;osroom/apps/configs
 
 ```
 .

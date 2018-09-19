@@ -100,11 +100,11 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="/osroom-doc/osr/v1.0/plugin/index/">插件开发</a>
+    <a href="/osroom-doc/osr/v1.0/plugin/">插件开发</a>
 </li>
                             
 <li >
-    <a href="/osroom-doc/osr/v1.0/theme/index/">主题开发</a>
+    <a href="/osroom-doc/osr/v1.0/theme/">主题开发</a>
 </li>
                         </ul>
                     </li>
@@ -138,14 +138,15 @@
 
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#_1">代码结构</a></li>
-            <li><a href="#osroom">&nbsp;&nbsp;一级 osroom/</a></li>
-            <li><a href="#osroomapps">&nbsp;&nbsp;二级 osroom/apps/</a></li>
+        <li class="main "><a href="#osroom">&nbsp;&nbsp;osroom/</a></li>
+        <li class="main "><a href="#osroomapps">&nbsp;&nbsp;osroom/apps/</a></li>
+            <li><a href="#osroomappsconfigs">&nbsp;&nbsp;osroom/apps/configs</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h3 id="_1">代码结构</h3>
-<h4 id="osroom">&nbsp;&nbsp;一级 osroom/</h4>
+<h3 id="osroom">&nbsp;&nbsp;osroom/</h3>
 <pre><code>.
 ├── apps # 应用程序主目录
 ├── LICENSE　# 版权说明
@@ -159,7 +160,7 @@
 
 </code></pre>
 
-<h4 id="osroomapps">&nbsp;&nbsp;二级 osroom/apps/</h4>
+<h3 id="osroomapps">&nbsp;&nbsp;osroom/apps/</h3>
 <pre><code>.
 ├── admin_pages # 管理端静态文件(html,js,css...)
 ├── app.py # 系统初始化程序
@@ -179,7 +180,7 @@
 
 </code></pre>
 
-<h5 id="osroomappsconfigs">&nbsp;&nbsp;三级 osroom/apps/configs</h5>
+<h4 id="osroomappsconfigs">&nbsp;&nbsp;osroom/apps/configs</h4>
 <pre><code>.
 ├── config.py # 配置文件,此文件内容可以在系统管理的控制(未上传到代码库)
 ├── config_sample.py　# 配置文件config.py的样例
