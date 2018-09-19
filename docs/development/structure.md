@@ -1,5 +1,5 @@
 ### 代码结构
-#### &nbsp;&nbsp;一级目录
+#### &nbsp;&nbsp;一级 osroom/
 
 ```
 .
@@ -15,7 +15,7 @@
 
 ```
 
-#### &nbsp;&nbsp;二级目录　apps/
+#### &nbsp;&nbsp;二级 osroom/apps/
 
 ```
 .
@@ -37,9 +37,9 @@
 
 ```
 
-```
+##### &nbsp;&nbsp;三级 osroom/apps/configs
 
-#### &nbsp;&nbsp;三级目录　apps/configs
+```
 .
 ├── config.py # 配置文件,此文件内容可以在系统管理的控制(未上传到代码库)
 ├── config_sample.py　# 配置文件config.py的样例
