@@ -1,6 +1,6 @@
 ### 代码结构
 
-### &nbsp;&nbsp;osroom/
+### osroom/
 
 ```
 .
@@ -16,7 +16,7 @@
 
 ```
 
-### &nbsp;&nbsp;osroom/apps/
+### osroom/apps/
 
 ```
 .
