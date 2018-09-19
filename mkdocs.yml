@@ -16,6 +16,9 @@ pages:
         - 插件开发: /osroom-doc/osr/v1.0/plugin/index/
         - 主题开发: /osroom-doc/osr/v1.0/theme/index/
 
+    - 系统开发:
+        - 代码目录结构: /osroom-doc/osr/v1.0/development/structure/
+
 site_dir: 'osr/v1.0'
 
 extra:

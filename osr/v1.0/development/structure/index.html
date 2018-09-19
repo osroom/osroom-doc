@@ -7,27 +7,27 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="baidu-site-verification" content="Pu2rIOditQ" />
-        <meta name="description" content="OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等">
+        
         <meta name="author" content="Allen Woo">
-        <link rel="canonical" href="https://osroom.com/plugin/">
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>OSROOM DOC</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
+        <link rel="canonical" href="https://osroom.com/development/structure/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Structure - OSROOM DOC</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script> 
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
     </head>
 
-    <body  class="homepage">
+    <body >
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -126,7 +126,7 @@
                     </a>
                 </li>
                     <li>
-                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/plugin/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/development/structure.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -137,12 +137,61 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
 
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">编写中...</a></li>
+        <li class="main active"><a href="#_1">代码结构</a></li>
+            <li><a href="#_2">&nbsp;&nbsp;一级目录</a></li>
+            <li><a href="#apps">&nbsp;&nbsp;二级目录　apps/</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">编写中...</h3></div>
+<h3 id="_1">代码结构</h3>
+<h4 id="_2">&nbsp;&nbsp;一级目录</h4>
+<pre><code>.
+├── apps # 应用程序主目录
+├── LICENSE　# 版权说明
+├── logs　# 日志目录
+├── osr-tool.py　# 离线工具脚本
+├── README.md
+├── requirements.txt　# python需求包文件
+├── start.py # 系统启动目录
+├── test
+└── tools　# 离线工具脚本
+
+</code></pre>
+
+<h4 id="apps">&nbsp;&nbsp;二级目录　apps/</h4>
+<pre><code>.
+├── admin_pages # 管理端静态文件(html,js,css...)
+├── app.py # 系统初始化程序
+├── configs # 系统配置文件目录
+├── core　# 核心程序目录
+├── init_core_module.py # 初始化核心模块脚本
+├── __init__.py
+├── modules　# 功能模块主目录
+├── plugins　# 插件模块主目录(安装的插件会在此目录)
+├── routing　# 路由控制模块目录
+├── static   # 其他系统必须静态文件目录
+├── sys_startup_info.py　# 系统启动时打印信息脚本
+├── themes　# 主题主目录(安装的主题会在此目录)
+├── transations　# 各语言翻译目录
+└── utils　# 通用程序
+
+
+</code></pre>
+
+<pre><code>
+#### &amp;nbsp;&amp;nbsp;三级目录　apps/configs
+.
+├── config.py # 配置文件,此文件内容可以在系统管理的控制(未上传到代码库)
+├── config_sample.py　# 配置文件config.py的样例
+├── db_config.py # 数据库配置文件(未上传到代码库)
+├── db_config_sample.py　# 配置文件db_config.py的样例
+├── __init__.py
+├── mdb_collection.py
+├── __pycache__
+└── sys_config.py # 一些固定敏感的配置
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
@@ -150,9 +199,9 @@
                 <p>Allen Woo</p>
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script>var base_url = '..';</script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -232,8 +281,3 @@
     </script>
 
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2018-09-19 04:25:33
--->
