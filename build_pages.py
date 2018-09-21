@@ -4,6 +4,7 @@ import json
 import platform
 from os import system
 
+import shutil
 import yaml
 
 __author__ = "Allen Woo"
@@ -32,7 +33,8 @@ print("Support Chinese search")
 py_v = platform.python_version().split(".")
 py_v = ".".join(py_v[0:2])
 
-
+mkdocs_lun_path = "/home/work/project/venv_doc/lib/python{}/site-packages/mkdocs/contrib/search/lunr-language".format(py_v)
+shutil.copy('./lunr.cn.js', mkdocs_lun_path)
 # build
 system("mkdocs build")
 
