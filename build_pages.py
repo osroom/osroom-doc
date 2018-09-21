@@ -5,6 +5,8 @@ import platform
 from os import system
 
 import shutil
+
+import jieba
 import yaml
 
 __author__ = "Allen Woo"
@@ -41,7 +43,11 @@ system("mkdocs build")
 # 修改成能匹配的中文
 rf = open("./{}/search/search_index.json".format(site_dir))
 doc = rf.read()
+doc = json.loads(doc)
+for d in doc["docs"]:
+    d["title"] = " ".join([token.strip() for token in jieba.cut_for_search(d['title'].replace('\n', ''), True)])
+    d["text"] = " ".join([token.strip() for token in jieba.cut_for_search(d['text'].replace('\n', ''), True)])
 with codecs.open("./{}/search/search_index.json".format(site_dir),"w","utf-8") as wf:
-    wf.write(json.dumps(json.loads(doc),ensure_ascii=False))
+    wf.write(json.dumps(doc,ensure_ascii=False))
 
 

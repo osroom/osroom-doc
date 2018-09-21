@@ -29,6 +29,7 @@ theme:
 plugins:
     - search:
         lang: 'en'
+        separator: '[\s\-\.]+'
 
 copyright: Allen Woo
 site_description: OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等
