@@ -2,9 +2,11 @@
 #### &nbsp;&nbsp;操作系统
 
 - OSROOM支持Linux中部署, Windows未测试过
-<br/><br/>
+<br/>
 - 建议使用Ubuntu >= 14.04版本;
+<br/>
 - 测试过操作系统有Ubuntu 14.04, 16.04; Centos 6.5;
+<br/>
 - 其他Linux系统还未测试
 <br/><br/>
 #### &nbsp;&nbsp;Pyhotn要求
