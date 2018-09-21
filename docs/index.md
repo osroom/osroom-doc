@@ -29,6 +29,6 @@ OSROOM是基于Python3 Flask开发的开源Web系统, 也是一个CMS(内容管�
 
 [进入Github评论](https://github.com/osroom/osroom/issues/new?labels=comment&title=Bug&body=说点什么吧！请使用文明用语)
 
-![管理端](../imgs/demo/images.png)
+![管理端](./imgs/demo/images.png)
 
-![默认主题](../imgs/demo/demo.png)
+![默认主题](./imgs/demo/demo.png)
