@@ -38,4 +38,10 @@ shutil.copy('./lunr.js', mkdocs_lun_path)
 # build
 system("mkdocs build")
 
+# 修改成能匹配的中文
+rf = open("./{}/search/search_index.json".format(site_dir))
+doc = rf.read()
+with codecs.open("./{}/search/search_index.json".format(site_dir),"w","utf-8") as wf:
+    wf.write(json.dumps(json.loads(doc),ensure_ascii=False))
+
 
