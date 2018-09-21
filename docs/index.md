@@ -20,11 +20,11 @@ OSROOM是基于Python3 Flask开发的开源Web系统, 也是一个CMS(内容管�
 <br/><br/>
 #### &nbsp;&nbsp;Fork me on GitHub
 [https://github.com/osroom/osroom](https://github.com/osroom/osroom)
-
-#### osroom文档评论与反馈
-[Github 点击评论](https://github.com/osroom/osroom-doc/issues/new?labels=comment&title=Comment&body=说点什么吧！请使用文明用语)
-
-#### osroom Bug反馈与评论
+<br/><br/>
+#### OSROOM文档评论与反馈
+[进入Github评论](https://github.com/osroom/osroom-doc/issues/new?labels=comment&title=Comment&body=说点什么吧！请使用文明用语)
+<br/><br/>
+#### SROOM Bug反馈与评论
 [Github issues bug](https://github.com/osroom/osroom/issues/new?labels=bug&title=Bug&body=**问题描述**%0A%0A描述一下问题%0A%0A**产生环境**%0A%0A-%20操作系统及版本：%0A-%20浏览器及版本：%0A-%20演示地址：%0A%0A**复现步奏**%0A%0A1. ...%0A%0A2. ...)
 
-[Github 点击评论](https://github.com/osroom/osroom/issues/new?labels=comment&title=Bug&body=说点什么吧！请使用文明用语)
+[进入Github评论](https://github.com/osroom/osroom/issues/new?labels=comment&title=Bug&body=说点什么吧！请使用文明用语)
