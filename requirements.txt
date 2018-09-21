@@ -3,8 +3,8 @@ Jinja2==2.10
 livereload==2.5.2
 Markdown==2.6.11
 MarkupSafe==1.0
-mkdocs==0.17.3
+mkdocs==1.0.4
 pkg-resources==0.0.0
 PyYAML==3.12
 six==1.11.0
-tornado==4.5.3
+tornado==5.1.1
