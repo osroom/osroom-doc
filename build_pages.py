@@ -1,6 +1,7 @@
 # -*-coding:utf-8-*-
 import codecs
 import json
+import platform
 from os import system
 
 import yaml
@@ -26,12 +27,13 @@ for v in config["nav"]:
 with codecs.open("./mkdocs.yml","w","utf-8") as wf:
     yaml.dump(config,wf,default_flow_style=False, allow_unicode=True)
 
-# build
-system("mkdocs build")
 print("Support Chinese search")
 # 修改成能匹配的中文
-rf = open("./{}/search/search_index.json".format(site_dir))
-doc = rf.read()
-with codecs.open("./{}/search/search_index.json".format(site_dir),"w","utf-8") as wf:
-    wf.write(json.dumps(json.loads(doc),ensure_ascii=False))
+py_v = platform.python_version().split(".")
+py_v = ".".join(py_v[0:2])
+
+
+# build
+system("mkdocs build")
+
 
