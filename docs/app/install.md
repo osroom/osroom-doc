@@ -3,7 +3,9 @@
 
 - OSROOM支持Linux中部署, Windows未测试过
 <br/><br/>
-- 建议使用Ubuntu 16.04或14.04,其他Linux系统还未测试
+- 建议使用Ubuntu >= 14.04版本;
+- 测试过操作系统有Ubuntu 14.04, 16.04; Centos 6.5;
+- 其他Linux系统还未测试
 <br/><br/>
 #### &nbsp;&nbsp;Pyhotn要求
 - Python 3.4以上版本, 比如Python 3.4, Python 3.5
@@ -102,7 +104,7 @@ pip install -r requirements.txt
 ### 配置数据库
 #### &nbsp;&nbsp;安装
 
-- 请看[Mongodb安装文档](./mongodb/)与[Redis安装文档](./redis/)
+- 请看[Mongodb安装文档](/osroom-doc/osr/v1.0/app/install/mongodb/)与[Redis安装文档](/osroom-doc/osr/v1.0/app/install/redis/)
 
 <br/><br/>
 
