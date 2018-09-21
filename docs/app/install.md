@@ -106,7 +106,7 @@ pip install -r requirements.txt
 ### 配置数据库
 #### &nbsp;&nbsp;安装
 
-- 请看[Mongodb安装文档](/osroom-doc/osr/v1.0/app/install/mongodb/)与[Redis安装文档](/osroom-doc/osr/v1.0/app/install/redis/)
+- 请看[Mongodb安装文档](/osroom-doc/osr/v1.0/install/mongodb/)与[Redis安装文档](/osroom-doc/osr/v1.0/install/redis/)
 
 <br/><br/>
 
