@@ -9,9 +9,9 @@
         <meta name="baidu-site-verification" content="Pu2rIOditQ" />
         
         <meta name="author" content="Allen Woo">
-        <link rel="canonical" href="https://osroom.com/app/install/">
+        <link rel="canonical" href="https://osroom.com/development/structure/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Install - OSROOM DOC</title>
+        <title>Structure - OSROOM DOC</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -126,7 +126,7 @@
                     </a>
                 </li>
                     <li>
-                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/app/install.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/development/structure.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -137,242 +137,61 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
 
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">环境要求</a></li>
-            <li><a href="#_2">&nbsp;&nbsp;操作系统</a></li>
-            <li><a href="#pyhotn">&nbsp;&nbsp;Pyhotn要求</a></li>
-        <li class="main "><a href="#pyhton">Pyhton依赖包安装</a></li>
-            <li><a href="#python">&nbsp;&nbsp;创建Python虚拟环境(建议)</a></li>
-            <li><a href="#_3">&nbsp;&nbsp;安装依赖包</a></li>
-            <li><a href="#_4">&nbsp;&nbsp;安装需求包异常情况</a></li>
-        <li class="main "><a href="#_5">配置数据库</a></li>
-            <li><a href="#_6">&nbsp;&nbsp;安装</a></li>
-            <li><a href="#_7">&nbsp;&nbsp;初始化配置</a></li>
-        <li class="main "><a href="#_8">初始化第一个用户</a></li>
-        <li class="main "><a href="#_9">访问测试</a></li>
-            <li><a href="#osroom">&nbsp;&nbsp;启动OSROOM</a></li>
+        <li class="main active"><a href="#_1">代码结构</a></li>
+        <li class="main "><a href="#osroom">osroom/</a></li>
+        <li class="main "><a href="#osroomapps">osroom/apps/</a></li>
+            <li><a href="#osroomappsconfigs">&nbsp;&nbsp;osroom/apps/configs</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">环境要求</h3>
-<h4 id="_2">&nbsp;&nbsp;操作系统</h4>
-<ul>
-<li>OSROOM支持Linux中部署, Windows未测试过
-<br/></li>
-<li>建议使用Ubuntu &gt;= 14.04版本;
-<br/></li>
-<li>测试过操作系统有Ubuntu 14.04, 16.04; Centos 6.5;
-<br/></li>
-<li>其他Linux系统还未测试
-<br/><br/></li>
-</ul>
-<h4 id="pyhotn">&nbsp;&nbsp;Pyhotn要求</h4>
-<ul>
-<li>Python 3.4以上版本, 比如Python 3.4, Python 3.5
-<br/><br/><br/></li>
-</ul>
-<h3 id="pyhton">Pyhton依赖包安装</h3>
-<h4 id="python">&nbsp;&nbsp;创建Python虚拟环境(建议)</h4>
-<ul>
-<li>例如在在/home/work创建名为venv-osroom的虚拟环境</li>
-</ul>
-<pre><code>python -m venv /home/work/venv-osroom
-或
-python3 -m venv /home/work/venv-osroom
-</code></pre>
-
-<p><br/><br/></p>
-<ul>
-<li>没有安装好python-venv请先安装, Ubuntu安装命令如下:</li>
-</ul>
-<pre><code>sudo apt-get install python-venv
-</code></pre>
-
-<p><br/><br/></p>
-<h4 id="_3">&nbsp;&nbsp;安装依赖包</h4>
-<ul>
-<li>进入虚拟环境</li>
-</ul>
-<pre><code class="shell">    source /home/work/venv-osroom/bin/activate
-    # 或
-    . /home/work/venv-osroom/bin/activate
-</code></pre>
-
-<p><br/><br/></p>
-<ul>
-<li>
-<p>进入osroom项目根目录</p>
-</li>
-<li>
-<p>使用pip安装依赖包</p>
-</li>
-</ul>
-<pre><code>pip install -r requirements.txt
-</code></pre>
-
-<p><br/><br/></p>
-<h4 id="_4">&nbsp;&nbsp;安装需求包异常情况</h4>
-<ul>
-<li>情况1:类似以下错误信息</li>
-</ul>
-<pre><code> Command &quot;/xxx/venv-osroom/bin/python3 -u -c &quot;import setuptools, tokenize;
-
- __file__='/tmp/pip-install-erphi6km/xxx/setup.py';
-
- f=getattr(tokenize, 'open', open)(__file__);
- code=f.read().replace('\r\n', '\n');f.close();
- exec(compile(code, __file__, 'exec'))&quot; install --record /tmp/pip-record-nhbhzs1a/install-record.txt
-  --single-version-externally-managed --compile
-  --install-headers /home/work/project/venv_osroom/include
- site/python3.5/xxxx&quot; failed with error code 1 in /tmp/pip-install-erphi6km/xxxx/
+<h3 id="_1">代码结构</h3>
+<h3 id="osroom">osroom/</h3>
+<pre><code>.
+├── apps # 应用程序主目录
+├── LICENSE　# 版权说明
+├── logs　# 日志目录
+├── osr-tool.py　# 离线工具脚本
+├── README.md
+├── requirements.txt　# python需求包文件
+├── start.py # 系统启动目录
+├── test
+└── tools　# 离线工具脚本
 
 </code></pre>
 
-<p>&nbsp;&nbsp;那么请尝试安装python-dev</p>
-<p>&nbsp;&nbsp; Ubuntu系统:</p>
-<pre><code> # 不一定需要版本号
+<h3 id="osroomapps">osroom/apps/</h3>
+<pre><code>.
+├── admin_pages # 管理端静态文件(html,js,css...)
+├── app.py # 系统初始化程序
+├── configs # 系统配置文件目录
+├── core　# 核心程序目录
+├── init_core_module.py # 初始化核心模块脚本
+├── __init__.py
+├── modules　# 功能模块主目录
+├── plugins　# 插件模块主目录(安装的插件会在此目录)
+├── routing　# 路由控制模块目录
+├── static   # 其他系统必须静态文件目录
+├── sys_startup_info.py　# 系统启动时打印信息脚本
+├── themes　# 主题主目录(安装的主题会在此目录)
+├── transations　# 各语言翻译目录
+└── utils　# 通用程序
 
- sudo apt-get install python3.5-dev
-
-</code></pre>
-
-<p>&nbsp;&nbsp; 其他使用yum安装工具的Linux发行部系统:</p>
-<pre><code>  # 不一定需要版本号
- sudo yum install python3.5-devel
-</code></pre>
-
-<p><br/><br/></p>
-<ul>
-<li>情况2:类似错误信息</li>
-</ul>
-<pre><code> Command &quot;python setup.py egg_info&quot; failed with error code 1 in ...
-
-</code></pre>
-
-<p>&nbsp;&nbsp;那么请尝试安装 setuptools</p>
-<pre><code> pip install --upgrade setuptools
 
 </code></pre>
 
-<p><br/><br/><br/></p>
-<h3 id="_5">配置数据库</h3>
-<h4 id="_6">&nbsp;&nbsp;安装</h4>
-<ul>
-<li>请看<a href="/osroom-doc/osr/v1.0/install/mongodb/">Mongodb安装文档</a>与<a href="/osroom-doc/osr/v1.0/install/redis/">Redis安装文档</a></li>
-</ul>
-<p><br/><br/></p>
-<h4 id="_7">&nbsp;&nbsp;初始化配置</h4>
-<p><br/><br/></p>
-<p>因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称</p>
-<p><br/></p>
-<pre><code> # 进入到apps/configs
- cp config_sample.py config.py
- cp db_config_sample.py db_config.py
+<h4 id="osroomappsconfigs">&nbsp;&nbsp;osroom/apps/configs</h4>
+<pre><code>.
+├── config.py # 配置文件,此文件内容可以在系统管理的控制(未上传到代码库)
+├── config_sample.py　# 配置文件config.py的样例
+├── db_config.py # 数据库配置文件(未上传到代码库)
+├── db_config_sample.py　# 配置文件db_config.py的样例
+├── __init__.py
+├── mdb_collection.py
+├── __pycache__
+└── sys_config.py # 一些固定敏感的配置
 
-</code></pre>
-
-<p><br/><br/></p>
-<ul>
-<li>编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码</li>
-</ul>
-<p><br/></p>
-<pre><code class="python"> DB_CONFIG = {
-    &quot;redis&quot;: {
-        &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
-        &quot;host&quot;: [
-            &quot;127.0.0.1&quot;
-        ],
-        &quot;port&quot;: [
-            &quot;6379&quot;
-        ]
-    },
-    &quot;mongodb&quot;: {
-        &quot;mongo_web&quot;: {
-            &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
-            &quot;username&quot;: &quot;work&quot;,
-            &quot;config&quot;: {
-                &quot;fsync&quot;: False,
-                &quot;replica_set&quot;: None
-            },
-            &quot;host&quot;: [
-                &quot;127.0.0.1:27017&quot;
-            ],
-            &quot;dbname&quot;: &quot;osr_web&quot;
-        },
-        &quot;mongo_user&quot;: {
-            &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
-            &quot;username&quot;: &quot;work&quot;,
-            &quot;config&quot;: {
-                &quot;fsync&quot;: False,
-                &quot;replica_set&quot;: None
-            },
-            &quot;host&quot;: [
-                &quot;127.0.0.1:27017&quot;
-            ],
-            &quot;dbname&quot;: &quot;osr_user&quot;
-        },
-        &quot;mongo_sys&quot;: {
-            &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
-            &quot;username&quot;: &quot;work&quot;,
-            &quot;config&quot;: {
-                &quot;fsync&quot;: False,
-                &quot;replica_set&quot;: None
-            },
-            &quot;host&quot;: [
-                &quot;127.0.0.1:27017&quot;
-            ],
-            &quot;dbname&quot;: &quot;osr_sys&quot;
-        }
-    }
-}
-</code></pre>
-
-<p><br/><br/><br/></p>
-<h3 id="_8">初始化第一个用户</h3>
-<ul>
-<li>进入项目的Python虚拟环境
-<br/><br/></li>
-<li>进入根目录运行start.py add_user
-  &nbsp;&nbsp; 按如下操作和提示创建第一个用户</li>
-</ul>
-<pre><code>(venv_osroom) work@osroom:~/project/osroom$ python start.py add_user
- * [User] add
-Input username:root
-Input email:xiaopingwoo@163.com
-Input password(Password at least 8 characters):
-[Warning]: 密码至少8个字符！ 至少包含数字，字母，特殊字符中的任意两种
-
-Input password(Password at least 8 characters):
- * Create root role...
-Create root user role successfully
- * Create root user...
- * Create a root user role successfully
- * Create the average user role...
- * Create a generic user role successfully
-The basic information is as follows
-Username: root
-Email: h*****irr@***.com
-User role: Root
-Password: #D****qw123
-End
-
-</code></pre>
-
-<p><br/><br/><br/></p>
-<h3 id="_9">访问测试</h3>
-<p>使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
-<br/><br/></p>
-<h4 id="osroom">&nbsp;&nbsp;启动OSROOM</h4>
-<ul>
-<li>进入osroom项目目录
-<br/></li>
-</ul>
-<pre><code># 如果需要外部访问，--host 为0.0.0.0 , --port 指定已开放的端口,默认5000
-python start.py runserver --host 127.0.0.1 --port 5000
-</code></pre>
-
-<p><br/><br/>
-- 打开浏览器访问 127.0.0.1:5000</p></div>
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

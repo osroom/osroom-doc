@@ -1,0 +1,34 @@
+site_name: OSROOM DOC
+site_url: https://osroom.com
+repo_url: https://github.com/osroom/osroom-doc
+site_author: Allen Woo
+nav:
+    - 文档: index.md
+    - 安装部署:
+        - 安装: app/install/
+        - 部署: app/deploy/
+        - Mongodb安装: app/mongodb/
+        - Redis安装: app/redis/
+    - Api文档:
+        - Api请求验证: api/api_call/
+        - Api说明文档: api/api_doc/
+    - 插件|主题:
+        - 插件开发: plugin/
+        - 主题开发: theme/
+
+    - 系统开发:
+        - 代码目录结构: development/structure/
+
+site_dir: 'osr/v1.0'
+extra:
+    version: 1.0
+theme:
+    name: readthedocs
+    custom_dir: 'simplex'
+
+plugins:
+    - search:
+        lang: 'en'
+
+copyright: Allen Woo
+site_description: OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等
