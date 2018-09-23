@@ -34,8 +34,7 @@ function loadScripts(urls, callback) {
 }
 
 function onJSONLoaded () {
-  data = JSON.parse(this.responseText)
-  console.log(data)
+  data = JSON.parse(this.responseText);
   var scriptsToLoad = ['lunr.js'];
   if (data.config && data.config.lang && data.config.lang.length) {
     lang = data.config.lang;
@@ -104,10 +103,9 @@ function search (query) {
     console.error('Assets for search still loading');
     return;
   }
+
   var resultDocuments = [];
-  console.log(query)
   var results = index.search(query);
-  console.log(results)
   for (var i=0; i < results.length; i++){
     var result = results[i];
     doc = documents[result.ref];

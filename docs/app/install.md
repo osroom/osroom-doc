@@ -5,12 +5,12 @@
 <br/>
 - 建议使用Ubuntu >= 14.04版本;
 <br/>
-- 测试过操作系统有Ubuntu 14.04, 16.04; Centos 6.5;
+- 测试过操作系统有Ubuntu 14.04, 16.04, 18.04; Centos 6.5;
 <br/>
 - 其他Linux系统还未测试
 <br/><br/>
 #### &nbsp;&nbsp;Pyhotn要求
-- Python 3.4以上版本, 比如Python 3.4, Python 3.5
+- Python 3.4以上版本, 比如Python 3.4, Python 3.5, Python 3.6
 <br/><br/><br/>
 ### Pyhton依赖包安装
 #### &nbsp;&nbsp;创建Python虚拟环境(建议)
@@ -23,9 +23,9 @@ python3 -m venv /home/work/venv-osroom
 ```
 <br/><br/>
 
-- 没有安装好python-venv请先安装, Ubuntu安装命令如下:
+- 没有安装好python-venv请先安装, Ubuntu安装命令如下(注意py版本号):
 ```
-sudo apt-get install python-venv
+sudo apt-get install python3.6-venv
 ```
 <br/><br/>
 #### &nbsp;&nbsp;安装依赖包

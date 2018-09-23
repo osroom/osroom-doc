@@ -35,19 +35,13 @@ print("Support Chinese search")
 py_v = platform.python_version().split(".")
 py_v = ".".join(py_v[0:2])
 
-mkdocs_lun_path = "/home/work/project/venv_doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/search".format(py_v)
+mkdocs_lun_path = "/home/work/project/venv-doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/search".format(py_v)
 shutil.copy('./lunr.js', mkdocs_lun_path)
+
+mkdocs_lun_path = "/home/work/project/venv-doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/".format(py_v)
+shutil.copy('./search_index.py', mkdocs_lun_path)
+
 # build
 system("mkdocs build")
-
-# 修改成能匹配的中文
-rf = open("./{}/search/search_index.json".format(site_dir))
-doc = rf.read()
-doc = json.loads(doc)
-for d in doc["docs"]:
-    d["title"] = " ".join([token.strip() for token in jieba.cut_for_search(d['title'].replace('\n', ''), True)])
-    d["text"] = " ".join([token.strip() for token in jieba.cut_for_search(d['text'].replace('\n', ''), True)])
-with codecs.open("./{}/search/search_index.json".format(site_dir),"w","utf-8") as wf:
-    wf.write(json.dumps(doc,ensure_ascii=False))
 
 
