@@ -16,6 +16,10 @@ Python 版本>=3.4
 <br/><br/>
 #### &nbsp;&nbsp;版本
 目前最新版本: 1.0 Beta
+<br/>
+更新日志:
+2018-10-06 修复默认主题闪现vue代码问题
+
 <br/><br/>
 #### &nbsp;&nbsp;Demo
 [https://demo.osroom.com](https://demo.osroom.com) (该站已经停止服务)
