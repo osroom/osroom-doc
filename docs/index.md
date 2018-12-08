@@ -6,7 +6,7 @@ OSROOM是基于Python3 Flask开发的开源Web系统, 也是一个CMS(内容管�
 #### &nbsp;&nbsp;运行平台
 可以运行于Linux系统, Windows未测试
 测试过操作系统有Ubuntu 14.04, 16.04, 18.04; Centos 6.5;
-Python 版本>=3.4
+Python 版本>=3.4 (推荐>=3.6)
 <br/><br/>
 #### 支持
 - 插件开发与安装
@@ -22,7 +22,7 @@ Python 版本>=3.4
 
 <br/><br/>
 #### &nbsp;&nbsp;Demo
-[https://demo.osroom.com](https://demo.osroom.com) (该站已经停止服务)
+[https://demo.osroom.com](https://demo.osroom.com)
 <br/><br/>
 #### &nbsp;&nbsp;Fork me on GitHub
 [https://github.com/osroom/osroom](https://github.com/osroom/osroom)
