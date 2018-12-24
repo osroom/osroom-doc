@@ -258,15 +258,14 @@ python3 -m venv /home/work/venv-osroom
 <h3 id="_5">配置数据库</h3>
 <h4 id="_6">&nbsp;&nbsp;安装</h4>
 <ul>
-<li>请看<a href="/osroom-doc/osr/v1.0/install/mongodb/">Mongodb安装文档</a>与<a href="/osroom-doc/osr/v1.0/install/redis/">Redis安装文档</a></li>
+<li>请看<a href="/osroom-doc/osr/v1.0/app/mongodb/">Mongodb安装文档</a>与<a href="/osroom-doc/osr/v1.0/app/redis/">Redis安装文档</a></li>
 </ul>
 <p><br/><br/></p>
 <h4 id="_7">&nbsp;&nbsp;初始化配置</h4>
 <p><br/><br/></p>
-<p>因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称</p>
+<p>因为osroom源代码只把数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称</p>
 <p><br/></p>
 <pre><code> # 进入到apps/configs
- cp config_sample.py config.py
  cp db_config_sample.py db_config.py
 
 </code></pre>
@@ -338,7 +337,7 @@ python3 -m venv /home/work/venv-osroom
 <pre><code>(venv_osroom) work@osroom:~/project/osroom$ python start.py add_user
  * [User] add
 Input username:root
-Input email:xiaopingwoo@163.com
+Input email:hehecdirr@163.com
 Input password(Password at least 8 characters):
 [Warning]: 密码至少8个字符！ 至少包含数字，字母，特殊字符中的任意两种
 
