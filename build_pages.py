@@ -35,10 +35,10 @@ print("Support Chinese search")
 py_v = platform.python_version().split(".")
 py_v = ".".join(py_v[0:2])
 
-mkdocs_lun_path = "/home/work/project/venv-doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/search".format(py_v)
+mkdocs_lun_path = "/home/work/project/venv_doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/search".format(py_v)
 shutil.copy('./lunr.js', mkdocs_lun_path)
 
-mkdocs_lun_path = "/home/work/project/venv-doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/".format(py_v)
+mkdocs_lun_path = "/home/work/project/venv_doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/".format(py_v)
 shutil.copy('./search_index.py', mkdocs_lun_path)
 
 # build
