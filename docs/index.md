@@ -1,28 +1,17 @@
-## 介绍
-
-OSROOM是基于Python3 Flask开发的开源Web系统, 也是一个CMS(内容管理系统)
-可以用来建立企业官网, 个人博客网站, 提供Rest Api请求数据可以作为微信小程序的服务端
-<br/><br/>
-#### &nbsp;&nbsp;运行平台
-可以运行于Linux系统, Windows未测试
-测试过操作系统有Ubuntu 14.04, 16.04, 18.04; Centos 6.5;
-Python 版本>=3.4
-<br/><br/>
-#### 支持
-- 插件开发与安装
-- 主题开发与安装
-- 默认主题支持Markdown编辑器与富文本编辑器
-- 易扩展
-<br/><br/>
 #### &nbsp;&nbsp;版本
 目前最新版本: 1.0 Beta
 <br/>
-更新日志:
+部分更新日志:
 2018-10-06 修复默认主题闪现vue代码问题
+2018-12
+&nbsp;&nbsp;将固定的权重位设置, 变为可在管理端自由添加权重位
+&nbsp;&nbsp;添加自动初始化部分数据
+2018-12-23 修复BUG, 偶尔获取page url只有第一位字符问题
+2018-12-24 去除config_sample.py文件
 
 <br/><br/>
 #### &nbsp;&nbsp;Demo
-[https://demo.osroom.com](https://demo.osroom.com) (该站已经停止服务)
+[https://demo.osroom.com](https://demo.osroom.com)
 <br/><br/>
 #### &nbsp;&nbsp;Fork me on GitHub
 [https://github.com/osroom/osroom](https://github.com/osroom/osroom)

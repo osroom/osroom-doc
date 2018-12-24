@@ -106,7 +106,7 @@ pip install -r requirements.txt
 ### 配置数据库
 #### &nbsp;&nbsp;安装
 
-- 请看[Mongodb安装文档](/osroom-doc/osr/v1.0/install/mongodb/)与[Redis安装文档](/osroom-doc/osr/v1.0/install/redis/)
+- 请看[Mongodb安装文档](/osroom-doc/osr/v1.0/app/mongodb/)与[Redis安装文档](/osroom-doc/osr/v1.0/app/redis/)
 
 <br/><br/>
 
@@ -114,13 +114,12 @@ pip install -r requirements.txt
 
 <br/><br/>
 
-因为osroom源代码只把配置文件config.py 和 数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称
+因为osroom源代码只把数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称
 
 <br/>
 
 ```
  # 进入到apps/configs
- cp config_sample.py config.py
  cp db_config_sample.py db_config.py
 
 ```
@@ -193,7 +192,7 @@ pip install -r requirements.txt
 (venv_osroom) work@osroom:~/project/osroom$ python start.py add_user
  * [User] add
 Input username:root
-Input email:xiaopingwoo@163.com
+Input email:hehecdirr@163.com
 Input password(Password at least 8 characters):
 [Warning]: 密码至少8个字符！ 至少包含数字，字母，特殊字符中的任意两种
 
