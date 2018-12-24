@@ -1,12 +1,10 @@
 # -*-coding:utf-8-*-
 import codecs
-import json
 import platform
 from os import system
-
 import shutil
 
-import jieba
+import sys
 import yaml
 
 __author__ = "Allen Woo"
@@ -32,16 +30,15 @@ with codecs.open("./mkdocs.yml","w","utf-8") as wf:
 
 print("Support Chinese search")
 # 修改成能匹配的中文
-py_v = platform.python_version().split(".")
+py_v = platform.python_version_tuple()
 py_v = ".".join(py_v[0:2])
 
-mkdocs_lun_path = "/home/work/project/venv_doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/search".format(py_v)
+venv_path = "{}/lib/python{}/site-packages/mkdocs/contrib/search/templates".format(sys.prefix, py_v)
+mkdocs_lun_path = "{}/search".format(venv_path)
 shutil.copy('./lunr.js', mkdocs_lun_path)
 
-mkdocs_lun_path = "/home/work/project/venv_doc/lib/python{}/site-packages/mkdocs/contrib/search/templates/".format(py_v)
+mkdocs_lun_path = venv_path
 shutil.copy('./search_index.py', mkdocs_lun_path)
 
 # build
 system("mkdocs build")
-
-
