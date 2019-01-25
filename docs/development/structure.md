@@ -1,3 +1,7 @@
+### 结构图解
+
+![OSROOM](http://osshare.oss-cn-shenzhen.aliyuncs.com/Introduction/osroom-structure.png)
+
 ### 代码结构
 
 ### osroom/
