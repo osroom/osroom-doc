@@ -212,7 +212,7 @@ GET:
 
 **Permission**:unlimited
 
-**Login auth**:Yes
+**Login auth**:
 
 **Request and parameters:**
 
@@ -872,6 +872,26 @@ GET:
 ```
 ***
 
+#### Content-user-post-category
+
+**Api**:/api/content/user/post/category
+
+**Methods**:GET
+
+**Permission**:unlimited
+
+**Login auth**:
+
+**Request and parameters:**
+
+```
+GET:
+    action: < str >, 'get_category'
+    type: < str >, 'post'
+    user_id:<str>
+```
+***
+
 #### Content-category
 
 **Api**:/api/content/category
@@ -1002,6 +1022,38 @@ GET:
 ```
 ***
 
+#### Global-theme-data-display
+
+**Api**:/api/global/theme-data/display
+
+**Methods**:GET
+
+**Permission**:unlimited
+
+**Login auth**:
+
+**Request and parameters:**
+
+```
+GET:
+        1.获取主题展示用的多媒体数据
+        conditions:<array:dict>, Such as:[{'type':<str>, 'names':<array>, 'name_regex':''}]
+            说明:
+                type-可以是"text", "image", "video", "audio"
+                names-数组,指定要获取数据的name
+                name_regex-字符串,获取匹配此正则的media,如果为空值，则不使用正则匹配(空置包括null, None,False, "")
+                注意:name 与name_regex不能同时使用,当name_regex非空时，查询自动忽略names
+            使用示例：前提在管理端多媒体中存在的内容
+            如:首页轮播图片和获取”关于我们“页面的文字内容
+            [
+                {"type":"image", "names":["home-carousel-1", "home_carousel-2"]},
+                {"type":"text", "names":["about-me"]},
+                {"type":"image", "name_regex":"test-[0-9]+"}
+            ]
+        :return:
+```
+***
+
 #### Admin-static-file
 
 **Api**:/api/admin/static/file
@@ -1029,6 +1081,88 @@ GET:
         file_path:<str>,静态文件所在目录
         filename:<str>,文件名
         content:<str>, 内容
+```
+***
+
+#### Admin-theme-display-setting
+
+**Api**:/api/admin/theme/display-setting
+
+**Methods**:GET, POST, PUT, DELETE
+
+**Permission**:unlimited
+
+**Login auth**:Yes
+
+**Request and parameters:**
+
+```
+GET
+        1.获取多个display信息
+        file_type:<str>, 文件类型,可选"image", "video", "audio", "other"
+        category_id:<str>, 分类id, 获取默认分类使用"default"作为category_id, 不传入此参数则表示获取全部
+        keyword:<str>,搜索用
+        page:<int>, 第几页, 默认1
+        pre:<int>, 每页几条数据, 默认12
+        sort:<array>,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{"time":-1}]
+            按时间升序 [{"time", 1}]
+            默认时按时间降序, 也可以用其他字段排序
+        2.获取1个信息
+        id:<str>,id
+    POST
+        添加媒体
+        name:<str>, 名字
+        link:<str>, 链接, 用于展示的时候跳转链接
+        link_name:<str>,链接名字
+        link_open_new_tab:<str>,链接是否打开新标签
+        title:<str>, 展示的标题
+        name:<str>, 展示时需要显示的文字
+        text:<str>
+        text_html:<str>, text的html格式(富文本)
+        type:<str>, 文件类型,可选"image", "video", "audio", "text","other"
+        category_id:<str>, 分类id
+        **如果需要上传文件,还需要一下参数:
+        batch:<int>, 0 or 1, default:0, 为1表示批量上传.
+        return_url_key: <str>, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:<str>, 自定义返回数据的状态的key, 默认'state'
+        return_success:<str or int>, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:<str or int>, 自定义返回数据错误的状态的值, 默认'error'
+         **注意: 如果后台获取有文件上传，则表示只上传文件
+        上传文件返回数据格式默认如下:
+        {'urls':[<url>, ...,<url>],
+         'state':<'success' or 'error'>,
+         'msg_type':<'s' or e'>,
+         'msg':''
+         }
+    PUT
+        编辑display信息
+        id:<str>,要编辑的display_setting id
+        category_id:<str>,要编辑的文件的分类id, 如果不修改分类可以不提交
+        name:<str>
+        link:<str>, 链接
+        link_name:<str>,链接名字
+        link_open_new_tab:<str>,链接是否打开新标签
+        title:<str>
+        text:<str>
+        text_html:<str>, text的html格式(富文本)
+        **如果只更新文件(如图片),还需要一下参数:
+        batch:<int>, 0 or 1, default:0, 为1表示批量上传.
+        return_url_key: <str>, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:<str>, 自定义返回数据的状态的key, 默认'state'
+        return_success:<str or int>, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:<str or int>, 自定义返回数据错误的状态的值, 默认'error'
+        **注意: 如果后台获取有文件上传，则表示只上传文件
+        上传文件返回数据格式默认如下:
+        {'urls':[<url>, ...,<url>],
+         'state':<'success' or 'error'>,
+         'msg_type':<'s' or e'>,
+         'msg':''
+         }
+    DELETE
+        删除display文件
+        ids:<array>,要删除的文件的id
+        :return:
 ```
 ***## Api文档说明
 
@@ -1131,7 +1265,8 @@ POST:
         ids:<array>,不再关注的用户的user id
     :return:
 ```
-***
+***## Api文档说明
+
 
 #### Admin-plugin-setting
 
@@ -1181,8 +1316,7 @@ POST:
         plugin_name:<str>, 插件名
     :return:
 ```
-***## Api文档说明
-
+***
 
 #### Admin-plugin
 
@@ -1326,7 +1460,8 @@ POST
         save_temporary_url：<0 or 1>,默认为1, 如果
         :return:
 ```
-***
+***## Api文档说明
+
 
 #### Admin-setting-sys-config-version
 
@@ -1377,8 +1512,7 @@ GET:
         info:<str>, 说明
     :return:
 ```
-***## Api文档说明
-
+***
 
 #### Admin-setting-sys-log
 
@@ -1400,7 +1534,8 @@ GET:
         page:<int>
         :return:
 ```
-***
+***## Api文档说明
+
 
 #### Admin-setting-sys-host
 
@@ -1468,8 +1603,7 @@ PUT:
         host_ip:<str>
     :return:
 ```
-***## Api文档说明
-
+***
 
 #### Session-language-set
 
@@ -1489,7 +1623,8 @@ PUT :
         language:<str>, 如en_US, zh_CN
     :return:
 ```
-***
+***## Api文档说明
+
 
 #### Search
 
@@ -1511,8 +1646,7 @@ GET:
         page:<int>,第几页，默认第1页
         pre:<int>, 每页多少条
 ```
-***## Api文档说明
-
+***
 
 #### Admin-post
 
@@ -1560,7 +1694,8 @@ GET:
         pending_delete:<int>, 1: 标记is_delete为3, 对于post属于的用户永久删除, 0:从数据库删除数据
         :return:
 ```
-***
+***## Api文档说明
+
 
 #### User-post
 
@@ -1603,8 +1738,34 @@ POST:
         ids:<array>, posts id
         recycle:<int>,1 or 0,　1：则移入回收站, 0: 则直接标记为永久删除, 管理员才可见
 ```
-***## Api文档说明
+***
 
+#### Post-tags
+
+**Api**:/api/post/tags
+
+**Methods**:GET
+
+**Permission**:unlimited
+
+**Login auth**:
+
+**Request and parameters:**
+
+```
+GET:
+        获取文章tag
+        last_days:<int>, 获取最近几天时间的文章的tag
+        sort:<array>,文章排序规则,优先获取排在前面的文章的标签, 1表示升序, -1表示降序.如:
+            先后按赞(like)数降序, 评论数降序,pv降序, 发布时间降序
+            [{"like": -1}, {"comment_num": -1}, {"pv": -1}]
+            默认时按tag_cnt, like, comment_num 多个降序
+            可选字段有like, pv, comment_num, tag_cnt
+        user_id:<str>, 获取单个用户的文章tag, 默认是全部用户的文章tag
+        limit:<int>, 获取多少个tag
+    :return:
+```
+***
 
 #### Post
 
@@ -1640,6 +1801,7 @@ GET:
         unwanted_fields:<array>, 不能和fields参数同时使用,不需要返回的文章字段,如["user_id"]
         user_id:<str>, 如需获取指定用户的post时需要此参数
         category_id:<str>, 获取指定文集的post时需要此参数
+        tag:<str>, 获取存在此tag的posts时需要此参数
 ```
 ***
 
@@ -1661,7 +1823,8 @@ PUT:
         action:<str>, 可以是like(点赞文章)
         id:<str>, post id
 ```
-***
+***## Api文档说明
+
 
 #### Admin-post-access
 
@@ -1680,8 +1843,7 @@ GET:
         获取post数据统计
         days:<int>
 ```
-***## Api文档说明
-
+***
 
 #### Admin-report-basic
 
