@@ -1,6 +1,6 @@
 ### 结构图解
 
-![OSROOM](http://osshare.oss-cn-shenzhen.aliyuncs.com/Introduction/osroom-structure.png)
+![OSROOM](../imgs/dev/structure.png)
 
 ### 代码结构
 

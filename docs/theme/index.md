@@ -1,7 +1,7 @@
 
-## 1.主题结构(可参考osr-style)
+## 主题结构(可参考osr-style)
 
-### 目录结构
+### &nbsp;&nbsp;目录结构
 
 ```
 
@@ -30,7 +30,7 @@
 
 ```
 
-### 结构解释
+### &nbsp;&nbsp;结构解释
 
 - theme-name
 
@@ -40,7 +40,7 @@
 
 - static下主页用于存放css, js ,img等静态文件
 
-### 路由解释
+### &nbsp;&nbsp;路由解释
 pages目录下的所有html文件的 "路由" 都和目录结构层次一样.
 
 路由上无需带上".html"后缀. 比如可以访问/contcat/weixin
@@ -49,7 +49,7 @@ pages目录下的所有html文件的 "路由" 都和目录结构层次一样.
 
 比如：访问路由为/about-us和/about-us/index都会响应同一个about-us/index.html文件
 
-### conf.yaml 使用说明(格式)
+### &nbsp;&nbsp;conf.yaml 使用说明(格式)
 
 ```python
 
@@ -65,7 +65,7 @@ license: BSD-2
 
 ```
 
-### init_setting.json 初始化配置文件
+### &nbsp;&nbsp;init_setting.json 初始化配置文件
 
 #### 此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]
 
@@ -92,14 +92,14 @@ license: BSD-2
 
 ## 全局变量
 
-### 全局变量 g
+### &nbsp;&nbsp;全局变量 g
 
 - 在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见模板引擎Jinjia2)
 
 - 注意: 如果你未使用主题, 只使用OSROOM的Rest Api功能的那就得通过调用Api来获取全局数据了.
     API: /api/global , 获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.
 
-### 全局遍历current_user
+### &nbsp;&nbsp;全局遍历current_user
 
 - 在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见模板引擎Jinjia2
 
@@ -174,7 +174,7 @@ current_user.user_info
 
 - 使用模板引擎可以将数据渲染在html中
 
-### 示范1: 获取全局变量g
+### &nbsp;&nbsp;示范1: 获取全局变量g
 
 ```html
 
@@ -199,7 +199,7 @@ alert(current_lang);
 ```
 
 
-### 示范2: 获取cureent_user
+### &nbsp;&nbsp;示范2: 获取cureent_user
 
 
 ```html
@@ -234,7 +234,7 @@ alert(current_lang);
 
 ```
 
-### 更多的Jinjia2的语法
+### &nbsp;&nbsp;更多的Jinjia2的语法
 
 - 了解了OSROOM提供的相关信息后就可以开发自己的主题了, 当然你要先去学习下Jinjia2使用.
 
@@ -247,7 +247,7 @@ alert(current_lang);
 - 最后我们要通过Api获取和提交其他数据,比如登录, 注册, 发表等, 具体有哪些Api请看Api文档
 
 
-### 主题设置数据
+### &nbsp;&nbsp;主题设置数据
 
 #### 这里要强调的是一个多媒体数据获取API:
 
@@ -320,7 +320,7 @@ GET:
 
 ## 多语言翻译
 
-### 标记文本
+### &nbsp;&nbsp;标记文本
 
 > 在html中标记要翻译的文本, 示范:
 
@@ -334,7 +334,7 @@ GET:
 
 ```
 
-### 提取文本
+### &nbsp;&nbsp;提取文本
 
 > 提取文本使用osroom下的翻译提取脚本具体请看transations_tool提取
 
