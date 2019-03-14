@@ -1,8 +1,7 @@
-## 主题开发
 
-### 1.主题结构(可参考osr-style)
+## 1.主题结构(可参考osr-style)
 
-#### 目录结构
+### 目录结构
 
 ```
 
@@ -31,7 +30,8 @@
 
 ```
 
-#### 结构解释
+### 结构解释
+
 - theme-name
 
 - theme-name目录下的pages和static两个目录名称不可自定义
@@ -40,7 +40,7 @@
 
 - static下主页用于存放css, js ,img等静态文件
 
-#### 路由解释
+### 路由解释
 pages目录下的所有html文件的 "路由" 都和目录结构层次一样.
 
 路由上无需带上".html"后缀. 比如可以访问/contcat/weixin
@@ -49,7 +49,7 @@ pages目录下的所有html文件的 "路由" 都和目录结构层次一样.
 
 比如：访问路由为/about-us和/about-us/index都会响应同一个about-us/index.html文件
 
-#### conf.yaml 使用说明(格式)
+### conf.yaml 使用说明(格式)
 
 ```python
 
@@ -65,9 +65,9 @@ license: BSD-2
 
 ```
 
-#### init_setting.json 初始化配置文件
+### init_setting.json 初始化配置文件
 
-- 此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]
+#### 此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]
 
 
 ```
@@ -90,21 +90,21 @@ license: BSD-2
 
 ```
 
-### 全局变量
+## 全局变量
 
-#### 全局变量 g
+### 全局变量 g
 
 - 在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见模板引擎Jinjia2)
 
 - 注意: 如果你未使用主题, 只使用OSROOM的Rest Api功能的那就得通过调用Api来获取全局数据了.
     API: /api/global , 获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.
 
-#### 全局遍历current_user
+### 全局遍历current_user
 
 - 在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见模板引擎Jinjia2
 
 
-> current_user 提供的方法有
+#### current_user 提供的方法有
 
 ```python
 
@@ -146,7 +146,7 @@ current_user.get_role_name()
 
 ```
 
-> current_user提供的用户信息有(获取以下信息前请判断用户是否登录)
+#### current_user提供的用户信息有(获取以下信息前请判断用户是否登录)
 
 
 ```python
@@ -170,11 +170,11 @@ current_user.user_info
 ```
 
 
-### 模板引擎Jinjia2使用
+## 模板引擎Jinjia2使用
 
 - 使用模板引擎可以将数据渲染在html中
 
-#### 示范1: 获取全局变量g
+### 示范1: 获取全局变量g
 
 ```html
 
@@ -182,22 +182,24 @@ current_user.user_info
 <img class="osr-logo" src="{{g.site_global.site_config.LOGO_IMG_URL}}" alt="Logo">
 
 <!--想知道g会包含哪些数据可以将它在html页面中全部显示出来,如下-->
-{{g}}
+{{ g }}
 
 <!--想知道网站的全局数据site_global,如下-->
-{{g.site_global}}
+{{ g.site_global }}
 
 <!--这样也可以,如下-->
 <script>
+
 var current_lang = '{{g.site_global.language.current}}';
 alert(current_lang);
+
 </script>
 
 
 ```
 
 
-#### 示范2: 获取cureent_user
+### 示范2: 获取cureent_user
 
 
 ```html
@@ -208,25 +210,31 @@ alert(current_lang);
     <a>
         <img class="osr-img-circle-b" src="{{current_user.avatar_url}}" alt="User Avatar"/>
     </a>
+
 {% else %}
     <a href="/sign-in">
-        {{_("登录")}}
+        登录
     </a>
+
 {% endif %}
 
 
 <!--又比如. 选择使用网站名还是Logo-->
 <a href="/">
 {% if g.site_global.site_config.MB_LOGO_DISPLAY == "logo" %}
+
     <img src="{{g.site_global.site_config.LOGO_IMG_URL}}" alt="Logo"/>
+
 {% else %}
+
     <strong>{{g.site_global.site_config.APP_NAME}}</strong>
+
 {% endif %}
 </a>
 
 ```
 
-#### 更多的Jinjia2的语法
+### 更多的Jinjia2的语法
 
 - 了解了OSROOM提供的相关信息后就可以开发自己的主题了, 当然你要先去学习下Jinjia2使用.
 
@@ -235,25 +243,23 @@ alert(current_lang);
 [docs.jinkan.org/docs/jinja2](http://docs.jinkan.org/docs/jinja2/)
 
 
-### 其他数据的获取
+## 其他数据的获取
 - 最后我们要通过Api获取和提交其他数据,比如登录, 注册, 发表等, 具体有哪些Api请看Api文档
 
 
-#### 主题设置数据
+### 主题设置数据
 
-- 这里要强调的是一个多媒体数据获取API:
+#### 这里要强调的是一个多媒体数据获取API:
 
 ```
 /api/global/theme-data/display
 ```
 
-
-
 - 主题的很多设置可以在Admin管理的主题展示设置中设置
 
 - 比如图片设置页面中: 127.0.0.1/osr-admin/theme-setting/display/image
 
-- 例子:
+#### 例子:
 
 在管理的主题展示设置中上传3张图片, 比如名称改为home-carousel-1, home-carousel-1, home-rec1-1
 那么我可以使用api 获取这两张图片信息, 展示在html页面中
@@ -312,5 +318,44 @@ GET:
 
 ```
 
+## 多语言翻译
 
-### End 后续再补充
+### 标记文本
+
+> 在html中标记要翻译的文本, 示范:
+
+- 使用{{_()}}标记
+
+```html
+
+<div>
+{{_('这里是需要翻译的文本')}}
+</div>
+
+```
+
+### 提取文本
+
+> 提取文本使用osroom下的翻译提取脚本具体请看transations_tool提取
+
+#### 工具文档
+```shell
+
+# 获取提取工具帮助文档(osroom根目录下)
+python tools/transations/transations_tool.py -h
+
+```
+
+#### 步骤:每个步骤操作请看transations_tool.py -h 文档
+
+- 1.初始化语言目录(注意: 第一次提取前使用)
+
+- 2.update: 更新内容（提取最新的文本）
+
+- 3.翻译.po文本, 在语言目录(初始化后会自动建立)下, 比如osroom/apps/transations/theme/en_US/LC_MESSAGES/messages.po
+
+- 4.发布翻译
+
+#### 如果无需翻译, 就无需使用此工具
+
+## End 后续再补充
