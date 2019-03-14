@@ -238,7 +238,6 @@ alert(current_lang);
 
 - 了解了OSROOM提供的相关信息后就可以开发自己的主题了, 当然你要先去学习下Jinjia2使用.
 
-[http://jinja.pocoo.org/](http://jinja.pocoo.org/)
 
 [docs.jinkan.org/docs/jinja2](http://docs.jinkan.org/docs/jinja2/)
 
