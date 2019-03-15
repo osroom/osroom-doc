@@ -145,9 +145,9 @@
             <li><a href="#mianpy">&nbsp;&nbsp;mian.py</a></li>
             <li><a href="#_4">&nbsp;&nbsp;实例参考</a></li>
         <li class="main "><a href="#hook">hook</a></li>
-            <li><a href="#file_storage">&nbsp;&nbsp;file_storage</a></li>
+            <li><a href="#file_storage">&nbsp;&nbsp;file_storage文件存储</a></li>
             <li><a href="#send_msg">&nbsp;&nbsp;短信发送send_msg</a></li>
-            <li><a href="#send_email">&nbsp;&nbsp;send_email</a></li>
+            <li><a href="#send_email">&nbsp;&nbsp;邮件send_email</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -267,7 +267,7 @@ def main(**kwargs):
 <a href="https://github.com/osroom-plugins/aliyun_oss_plugin">https://github.com/osroom-plugins/aliyun_oss_plugin</a></p>
 <h3 id="hook">hook</h3>
 <p>目前osroom提供以下hook</p>
-<h4 id="file_storage">&nbsp;&nbsp;file_storage</h4>
+<h4 id="file_storage">&nbsp;&nbsp;file_storage文件存储</h4>
 <pre><code>功能: 主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.
 
 hookname: file_storage
@@ -338,7 +338,7 @@ hookname: send_msg
 
 </code></pre>
 
-<h4 id="send_email">&nbsp;&nbsp;send_email</h4>
+<h4 id="send_email">&nbsp;&nbsp;邮件send_email</h4>
 <p>功能: 邮件发送
 hookname：send_email</p>
 <p>1.邮件发送
@@ -353,6 +353,7 @@ hookname：send_email</p>
     bool值, 成功：True， 失败False</p>
 <pre><code>
 #### &amp;nbsp;&amp;nbsp;内容安全检测
+
 
 </code></pre>
 
@@ -400,6 +401,7 @@ hookname: content_inspection_audio</li>
 <pre><code>
 #### &amp;nbsp;&amp;nbsp;ip geo
 
+
 </code></pre>
 
 <p>功能:　根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中
@@ -437,6 +439,7 @@ hookname: ip_geo</p>
 <pre><code>
 
 #### &amp;nbsp;&amp;nbsp;第三方登录
+
 
 </code></pre>
 
@@ -562,5 +565,5 @@ hookname: twitter_login</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-03-15 04:06:15
+Build Date UTC : 2019-03-15 04:09:52
 -->

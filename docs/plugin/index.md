@@ -74,9 +74,12 @@ CONFIG = {
 
 ```
 
-####　&nbsp;&nbsp;mian.py
+
+#### &nbsp;&nbsp;mian.py
+
 
 > main.py示范, 包括import_plugin_config, get_plugin_config的使用
+
 
 ```python
 
@@ -127,7 +130,8 @@ def main(**kwargs):
 
 目前osroom提供以下hook
 
-#### &nbsp;&nbsp;file_storage
+#### &nbsp;&nbsp;file_storage文件存储
+
 
 ```
 功能: 主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.
@@ -187,6 +191,7 @@ hookname: file_storage
 
 #### &nbsp;&nbsp;短信发送send_msg
 
+
 ```
 
 功能: 发送短信
@@ -203,7 +208,8 @@ hookname: send_msg
 
 ```
 
-#### &nbsp;&nbsp;send_email
+#### &nbsp;&nbsp;邮件send_email
+
 
 功能: 邮件发送
 hookname：send_email
@@ -223,6 +229,7 @@ hookname：send_email
 ```
 
 #### &nbsp;&nbsp;内容安全检测
+
 
 ```
 功能: 用于检测内容安全, 比如鉴定文本, 图片等文件敏感信息.
@@ -274,6 +281,7 @@ hookname: content_inspection_audio
 
 #### &nbsp;&nbsp;ip geo
 
+
 ```
 功能:　根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中
 hookname: ip_geo
@@ -314,6 +322,7 @@ hookname: ip_geo
 
 
 #### &nbsp;&nbsp;第三方登录
+
 
 ```
 功能:　通过第三方平台验证登录, 如wechat,qq
