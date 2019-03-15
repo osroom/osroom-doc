@@ -148,16 +148,27 @@
             <li><a href="#file_storage">&nbsp;&nbsp;file_storage文件存储</a></li>
             <li><a href="#send_msg">&nbsp;&nbsp;短信发送send_msg</a></li>
             <li><a href="#send_email">&nbsp;&nbsp;邮件send_email</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;内容安全检测</a></li>
+            <li><a href="#ip-geo">&nbsp;&nbsp;ip geo</a></li>
+            <li><a href="#_6">&nbsp;&nbsp;第三方登录</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h3 id="_1">插件开发</h3>
 <h4 id="_2">&nbsp;&nbsp;原理</h4>
-<p>osroom系统提供部分功能的hook, 供插件开发使用.
-如比如osroom文件上传功能的hookname为"file_upload". 当程序执行文件上传时,
-会检查是否存在hookname为"file_upload", 并且已经激活的插件. 如果存在, 且已
-激活, 则调用此插件完成文件上传, 插件需要按规定返回规定格式的结果.</p>
+<blockquote>
+<p>hook</p>
+</blockquote>
+<ul>
+<li>osroom系统提供部分功能的hook, 供插件开发使用.</li>
+</ul>
+<pre><code>比如osroom文件上传功能的hookname为&quot;file_storage&quot;.
+当程序执行文件上传时,会检查是否存在hookname为&quot;file_storage&quot;, 并且已经激活的插件.
+如果存在, 且已激活, 则调用此插件完成文件上传, 插件需要按规定返回规定格式的结果.
+
+</code></pre>
+
 <h4 id="_3">&nbsp;&nbsp;目录结构</h4>
 <pre><code>
 - plugin_test # 为你的插件名称, 可自定义
@@ -268,8 +279,10 @@ def main(**kwargs):
 <h3 id="hook">hook</h3>
 <p>目前osroom提供以下hook</p>
 <h4 id="file_storage">&nbsp;&nbsp;file_storage文件存储</h4>
-<pre><code>功能: 主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.
-
+<blockquote>
+<p>主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.</p>
+</blockquote>
+<pre><code>
 hookname: file_storage
 
 1.上传
@@ -323,10 +336,10 @@ hookname: file_storage
 </code></pre>
 
 <h4 id="send_msg">&nbsp;&nbsp;短信发送send_msg</h4>
-<pre><code>
-功能: 发送短信
-
-hookname: send_msg
+<blockquote>
+<p>发送短信</p>
+</blockquote>
+<pre><code>hookname: send_msg
 
 1.短信发送
 插件接受参数:
@@ -339,140 +352,155 @@ hookname: send_msg
 </code></pre>
 
 <h4 id="send_email">&nbsp;&nbsp;邮件send_email</h4>
-<p>功能: 邮件发送
-hookname：send_email</p>
-<p>1.邮件发送
-插件接受参数:
-    recipients:<list>收件人, 数组类型如:["xxxxx.xx@osroom.com"]
-    send_independently:<bool> 如果为Ture,给每个收件人独立发送, 不一次性发送给多个，导致收件人邮件中可以看到此邮件发送给了多少人,
-    subject：<str> 邮件标题
-    html：<str> html格式邮件
-    text：<str> text格式邮件
-    attach : <str> 附件文件路径</p>
-<p>需要返回的结果格式：
-    bool值, 成功：True， 失败False</p>
+<blockquote>
+<p>邮件发送</p>
+</blockquote>
 <pre><code>
-#### &amp;nbsp;&amp;nbsp;内容安全检测
+hookname：send_email
 
+1.邮件发送
+插件接受参数:
+    recipients:&lt;list&gt;收件人, 数组类型如:[&quot;xxxxx.xx@osroom.com&quot;]
+    send_independently:&lt;bool&gt; 如果为Ture,给每个收件人独立发送, 不一次性发送给多个，导致收件人邮件中可以看到此邮件发送给了多少人,
+    subject：&lt;str&gt; 邮件标题
+    html：&lt;str&gt; html格式邮件
+    text：&lt;str&gt; text格式邮件
+    attach : &lt;str&gt; 附件文件路径
+
+需要返回的结果格式：
+    bool值, 成功：True， 失败False
 
 </code></pre>
 
-<p>功能: 用于检测内容安全, 比如鉴定文本, 图片等文件敏感信息.</p>
-<ol>
-<li>文本安全鉴定
+<h4 id="_5">&nbsp;&nbsp;内容安全检测</h4>
+<blockquote>
+<p>用于检测内容安全, 比如鉴定文本, 图片等文件敏感信息.</p>
+</blockquote>
+<pre><code>
+1. 文本安全鉴定
 hookname: content_inspection_text
 插件接受参数:
-    content:<str>, 需要检查的文本</li>
-</ol>
-<p>需要返回的结果格式:
-    dict: {"lable":"&lt;鉴定结果的类型&gt;", "score":<int or float>}
-    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
-    {"suggestion”:"review",  "lable":"&lt;鉴定结果的类型&gt;"， score":0}</p>
-<ol>
-<li>图片安全鉴定
-hookname: content_inspection_image</li>
-</ol>
-<p>插件接受参数:
-    url:<str>, 可获取的图片url</p>
-<p>需要返回的结果格式:
-    dict: {"lable":"&lt;鉴定结果的类型&gt;", "score":<int or float>}
-    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
-    {"suggestion”:"review",  "lable":"&lt;鉴定结果的类型&gt;"， score":0}</p>
-<ol>
-<li>视频安全鉴定
-hookname: content_inspection_video</li>
-</ol>
-<p>插件接受参数:
-    url:<str>, 可获取的视频url</p>
-<p>需要返回的结果格式:
-    dict: {"lable":"&lt;鉴定结果的类型&gt;", "score":<int or float>}
-    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
-    {"suggestion”:"review",  "lable":"&lt;鉴定结果的类型&gt;"， score":0}</p>
-<ol>
-<li>音频安全鉴定
-hookname: content_inspection_audio</li>
-</ol>
-<p>插件接受参数:
-    url:<str>, 可获取的音频url</p>
-<p>需要返回的结果格式:
-    dict: {"lable":"&lt;鉴定结果的类型&gt;", "score":<int or float>}
-    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
-    {"suggestion”:"review",  "lable":"&lt;鉴定结果的类型&gt;"， score":0}</p>
-<pre><code>
-#### &amp;nbsp;&amp;nbsp;ip geo
+    content:&lt;str&gt;, 需要检查的文本
 
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+2. 图片安全鉴定
+hookname: content_inspection_image
+
+插件接受参数:
+    url:&lt;str&gt;, 可获取的图片url
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+2. 视频安全鉴定
+hookname: content_inspection_video
+
+插件接受参数:
+    url:&lt;str&gt;, 可获取的视频url
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+2. 音频安全鉴定
+hookname: content_inspection_audio
+
+插件接受参数:
+    url:&lt;str&gt;, 可获取的音频url
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
 
 </code></pre>
 
-<p>功能:　根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中
-hookname: ip_geo</p>
-<p>插件接受参数:
-    ip: ip地址</p>
-<p>需要返回的结果格式：
+<h4 id="ip-geo">&nbsp;&nbsp;ip geo</h4>
+<blockquote>
+<p>根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中</p>
+</blockquote>
+<pre><code>hookname: ip_geo
+
+插件接受参数:
+    ip: ip地址
+
+需要返回的结果格式：
     dict
     {
-        "continent":{
-            "code":"<code>",
-            "name":"&lt;名称&gt;",
-            "names":"&lt;其他语言名称&gt;"
+        &quot;continent&quot;:{
+            &quot;code&quot;:&quot;&lt;code&gt;&quot;,
+            &quot;name&quot;:&quot;&lt;名称&gt;&quot;,
+            &quot;names&quot;:&quot;&lt;其他语言名称&gt;&quot;
         },
-        "country":{
-            "iso_code":"<iso code>",
-            "name":"&lt;名称&gt;",
-            "names":"&lt;其他语言名称&gt;"
+        &quot;country&quot;:{
+            &quot;iso_code&quot;:&quot;&lt;iso code&gt;&quot;,
+            &quot;name&quot;:&quot;&lt;名称&gt;&quot;,
+            &quot;names&quot;:&quot;&lt;其他语言名称&gt;&quot;
         },
-        "subdivisions":{
-            "iso_code":"<iso code>",
-            "name":"&lt;名称&gt;",
-            "names":"&lt;其他语言名称&gt;"
+        &quot;subdivisions&quot;:{
+            &quot;iso_code&quot;:&quot;&lt;iso code&gt;&quot;,
+            &quot;name&quot;:&quot;&lt;名称&gt;&quot;,
+            &quot;names&quot;:&quot;&lt;其他语言名称&gt;&quot;
         },
-        "coordinates":{
-            "lat":"<location latitude>",
-            "lon":"<location longitude>",
-            "accuracy_radius":"<accuracy radius>",
-            "time_zone":"<time zone>"
+        &quot;coordinates&quot;:{
+            &quot;lat&quot;:&quot;&lt;location latitude&gt;&quot;,
+            &quot;lon&quot;:&quot;&lt;location longitude&gt;&quot;,
+            &quot;accuracy_radius&quot;:&quot;&lt;accuracy radius&gt;&quot;,
+            &quot;time_zone&quot;:&quot;&lt;time zone&gt;&quot;
         },
-        "post":{
-            "code":"&lt; code&gt;"
+        &quot;post&quot;:{
+            &quot;code&quot;:&quot;&lt; code&gt;&quot;
         }
-    }</p>
-<pre><code>
-
-#### &amp;nbsp;&amp;nbsp;第三方登录
-
+    }
 
 </code></pre>
 
-<p>功能:　通过第三方平台验证登录, 如wechat,qq
-hookname: wechat_login
+<h4 id="_6">&nbsp;&nbsp;第三方登录</h4>
+<blockquote>
+<p>通过第三方平台验证登录, 如wechat,qq</p>
+</blockquote>
+<pre><code>hookname: wechat_login
 hookname: qq_login
 hookname: github_login
 hookname: sina_weibo_login
 hookname: alipay_login
 hookname: facebook_login
-hookname: twitter_login</p>
-<p>插件接受参数:
-    request_argget_all：<obj>, 一个获取第三方平台登录验证后,回调osroom系统url时传过来的数据.</p>
-<p>登录回调地址：
-    http://youdomain/open-api/sign-in/third-party/<platform>/callback
-    比如:微信登录可以这样回调:/open-api/sign-in/third-party/wechat/callback</p>
-<p>第三方平台回调地址后, 系统会根据地址执行相关的登录插件
-    如:/open-api/sign-in/third-party/wechat/callback 则执行wechat登录插件</p>
-<p>request_argget_all使用:
+hookname: twitter_login
+
+插件接受参数:
+    request_argget_all：&lt;obj&gt;, 一个获取第三方平台登录验证后,回调osroom系统url时传过来的数据.
+
+登录回调地址：
+    http://youdomain/open-api/sign-in/third-party/&lt;platform&gt;/callback
+    比如:微信登录可以这样回调:/open-api/sign-in/third-party/wechat/callback
+
+第三方平台回调地址后, 系统会根据地址执行相关的登录插件
+    如:/open-api/sign-in/third-party/wechat/callback 则执行wechat登录插件
+
+request_argget_all使用:
     在插件中可以使用osroom传入的request_argget_all对象获取登录回调地址参数
-     使用方式: request_argget.all("unionid"), 获取用户唯一标识</p>
-<p>插件需要返回结果格式:
+     使用方式: request_argget.all(&quot;unionid&quot;), 获取用户唯一标识
+
+插件需要返回结果格式:
 {
-    "unionid":&lt;用户唯一标示&gt;  # 必须返回
-    "nickname": &lt;用户昵称&gt;,
-    "gender" :&lt;性别&gt;,        # 只能是 "secret", "m", "f"中的一个，分别代表保密, 男, 女
-    "email" :<email>,
-    "avatar_url":&lt;头像地址&gt;,
-    "province" :&lt;地址区&gt;,
-    "city": &lt;地址城市&gt;,
-    "country":&lt;地址国家&gt;
-}</p>
-<p>```</p></div>
+    &quot;unionid&quot;:&lt;用户唯一标示&gt;  # 必须返回
+    &quot;nickname&quot;: &lt;用户昵称&gt;,
+    &quot;gender&quot; :&lt;性别&gt;,        # 只能是 &quot;secret&quot;, &quot;m&quot;, &quot;f&quot;中的一个，分别代表保密, 男, 女
+    &quot;email&quot; :&lt;email&gt;,
+    &quot;avatar_url&quot;:&lt;头像地址&gt;,
+    &quot;province&quot; :&lt;地址区&gt;,
+    &quot;city&quot;: &lt;地址城市&gt;,
+    &quot;country&quot;:&lt;地址国家&gt;
+}
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
@@ -565,5 +593,5 @@ hookname: twitter_login</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-03-15 04:09:52
+Build Date UTC : 2019-03-15 04:17:35
 -->

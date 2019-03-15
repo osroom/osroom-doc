@@ -2,10 +2,16 @@
 
 #### &nbsp;&nbsp;原理
 
-osroom系统提供部分功能的hook, 供插件开发使用.
-如比如osroom文件上传功能的hookname为"file_upload". 当程序执行文件上传时,
-会检查是否存在hookname为"file_upload", 并且已经激活的插件. 如果存在, 且已
-激活, 则调用此插件完成文件上传, 插件需要按规定返回规定格式的结果.
+> hook
+
+- osroom系统提供部分功能的hook, 供插件开发使用.
+
+```
+比如osroom文件上传功能的hookname为"file_storage".
+当程序执行文件上传时,会检查是否存在hookname为"file_storage", 并且已经激活的插件.
+如果存在, 且已激活, 则调用此插件完成文件上传, 插件需要按规定返回规定格式的结果.
+
+```
 
 
 #### &nbsp;&nbsp;目录结构
@@ -132,9 +138,9 @@ def main(**kwargs):
 
 #### &nbsp;&nbsp;file_storage文件存储
 
+> 主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.
 
 ```
-功能: 主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.
 
 hookname: file_storage
 
@@ -191,11 +197,9 @@ hookname: file_storage
 
 #### &nbsp;&nbsp;短信发送send_msg
 
+> 发送短信
 
 ```
-
-功能: 发送短信
-
 hookname: send_msg
 
 1.短信发送
@@ -210,8 +214,11 @@ hookname: send_msg
 
 #### &nbsp;&nbsp;邮件send_email
 
+> 邮件发送
 
-功能: 邮件发送
+
+```
+
 hookname：send_email
 
 1.邮件发送
@@ -230,9 +237,9 @@ hookname：send_email
 
 #### &nbsp;&nbsp;内容安全检测
 
+> 用于检测内容安全, 比如鉴定文本, 图片等文件敏感信息.
 
 ```
-功能: 用于检测内容安全, 比如鉴定文本, 图片等文件敏感信息.
 
 1. 文本安全鉴定
 hookname: content_inspection_text
@@ -279,11 +286,12 @@ hookname: content_inspection_audio
 
 ```
 
+
 #### &nbsp;&nbsp;ip geo
 
+> 根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中
 
 ```
-功能:　根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中
 hookname: ip_geo
 
 插件接受参数:
@@ -320,12 +328,11 @@ hookname: ip_geo
 
 ```
 
-
 #### &nbsp;&nbsp;第三方登录
 
+> 通过第三方平台验证登录, 如wechat,qq
 
 ```
-功能:　通过第三方平台验证登录, 如wechat,qq
 hookname: wechat_login
 hookname: qq_login
 hookname: github_login
