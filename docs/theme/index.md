@@ -1,7 +1,7 @@
 
-## 主题结构(可参考osr-style)
+### 主题结构(可参考osr-style)
 
-### &nbsp;&nbsp;目录结构
+#### &nbsp;&nbsp;目录结构
 
 ```
 
@@ -30,9 +30,9 @@
 
 ```
 
-### &nbsp;&nbsp;结构解释
+#### &nbsp;&nbsp;结构解释
 
-- theme-name
+- theme-name主题主目录, 名称可自定义
 
 - theme-name目录下的pages和static两个目录名称不可自定义
 
@@ -40,34 +40,34 @@
 
 - static下主页用于存放css, js ,img等静态文件
 
-### &nbsp;&nbsp;路由解释
-pages目录下的所有html文件的 "路由" 都和目录结构层次一样.
+#### &nbsp;&nbsp;路由
 
-路由上无需带上".html"后缀. 比如可以访问/contcat/weixin
+pages目录下的所有html文件的 "路由" 都和目录结构层次一样, 路由从pages下的第一级目录开始.
 
-如果路由只写到一个目录层(未写到具体文件名), 则会响应此目录下的index.html文件.如果该目录下无index.html文件, 则响应404
+路由上无需带上".html"后缀. 比如需要访问theme-name/pages/contcat/weixin.html, 路由则是/contcat/weixin.
+
+如果路由只写到目录层(未写到具体文件名), 则会响应此目录下的index.html文件.如果该目录下无index.html文件, 则响应404
 
 比如：访问路由为/about-us和/about-us/index都会响应同一个about-us/index.html文件
 
-### &nbsp;&nbsp;conf.yaml 使用说明(格式)
+#### &nbsp;&nbsp;conf.yaml 使用说明(格式)
 
-```python
+```yaml
 
 # 主题名必须和主题主目录一致
 theme_name: Your theme's name
 author: Allen Woo
 theme_uri: yoursite.com
 introduce: 这里是主题的简单介绍
-# cover_path是主题的封面图片
 cover_path: static/sys_imgs/cover.png
 version: v0.1
 license: BSD-2
 
 ```
 
-### &nbsp;&nbsp;init_setting.json 初始化配置文件
+#### &nbsp;&nbsp;init_setting.json 初始化配置文件
 
-#### 此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]
+> 此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]
 
 
 ```
@@ -90,21 +90,18 @@ license: BSD-2
 
 ```
 
-## 全局变量
+### 全局变量
 
-### &nbsp;&nbsp;全局变量 g
+#### &nbsp;&nbsp;全局变量 g
 
-- 在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见模板引擎Jinjia2)
+- 在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见[模板引擎Jinjia2]("#jinjia2"))
 
-- 注意: 如果你未使用主题, 只使用OSROOM的Rest Api功能的那就得通过调用Api来获取全局数据了.
-    API: /api/global , 获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.
+#### &nbsp;&nbsp;全局遍历current_user
 
-### &nbsp;&nbsp;全局遍历current_user
-
-- 在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见模板引擎Jinjia2
+- 在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见[模板引擎Jinjia2]("#jinjia2")
 
 
-#### current_user 提供的方法有
+> current_user 提供的方法有
 
 ```python
 
@@ -146,7 +143,7 @@ current_user.get_role_name()
 
 ```
 
-#### current_user提供的用户信息有(获取以下信息前请判断用户是否登录)
+> current_user提供的用户信息有(获取以下信息前请判断用户是否登录)
 
 
 ```python
@@ -169,12 +166,22 @@ current_user.user_info
 
 ```
 
+#### &nbsp;&nbsp;　注意
 
-## 模板引擎Jinjia2使用
+- 以上全局变量只适合在OSROOM主题上使用, 未经过OSROOM系统的html等, 可以调用API: /api/global来获取全局数据了.
+
+```
+
+API: /api/global
+获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.
+
+```
+
+### 模板引擎Jinjia2使用
 
 - 使用模板引擎可以将数据渲染在html中
 
-### &nbsp;&nbsp;示范1: 获取全局变量g
+#### &nbsp;&nbsp;示范1: 获取全局变量g
 
 ```html
 
@@ -199,7 +206,7 @@ alert(current_lang);
 ```
 
 
-### &nbsp;&nbsp;示范2: 获取cureent_user
+#### &nbsp;&nbsp;示范2: 获取cureent_user
 
 
 ```html
@@ -234,7 +241,7 @@ alert(current_lang);
 
 ```
 
-### &nbsp;&nbsp;更多的Jinjia2的语法
+#### &nbsp;&nbsp;更多的Jinjia2的语法
 
 - 了解了OSROOM提供的相关信息后就可以开发自己的主题了, 当然你要先去学习下Jinjia2使用.
 
@@ -242,13 +249,14 @@ alert(current_lang);
 [docs.jinkan.org/docs/jinja2](http://docs.jinkan.org/docs/jinja2/)
 
 
-## 其他数据的获取
+### 其他公共数据
+
 - 最后我们要通过Api获取和提交其他数据,比如登录, 注册, 发表等, 具体有哪些Api请看Api文档
 
 
-### &nbsp;&nbsp;主题设置数据
+#### &nbsp;&nbsp;主题设置数据
 
-#### 这里要强调的是一个多媒体数据获取API:
+> 这里要强调的是一个多媒体数据获取API:
 
 ```
 /api/global/theme-data/display
@@ -258,7 +266,7 @@ alert(current_lang);
 
 - 比如图片设置页面中: 127.0.0.1/osr-admin/theme-setting/display/image
 
-#### 例子:
+> 例子:
 
 在管理的主题展示设置中上传3张图片, 比如名称改为home-carousel-1, home-carousel-1, home-rec1-1
 那么我可以使用api 获取这两张图片信息, 展示在html页面中
@@ -317,9 +325,9 @@ GET:
 
 ```
 
-## 多语言翻译
+### 多语言翻译
 
-### &nbsp;&nbsp;标记文本
+#### &nbsp;&nbsp;标记文本
 
 > 在html中标记要翻译的文本, 示范:
 
@@ -333,11 +341,11 @@ GET:
 
 ```
 
-### &nbsp;&nbsp;提取文本
+#### &nbsp;&nbsp;提取文本
 
 > 提取文本使用osroom下的翻译提取脚本具体请看transations_tool提取
 
-#### 工具文档
+> 工具文档
 ```shell
 
 # 获取提取工具帮助文档(osroom根目录下)
@@ -345,7 +353,7 @@ python tools/transations/transations_tool.py -h
 
 ```
 
-#### 步骤:每个步骤操作请看transations_tool.py -h 文档
+> 步骤:每个步骤操作请看transations_tool.py -h 文档
 
 - 1.初始化语言目录(注意: 第一次提取前使用)
 
@@ -355,6 +363,6 @@ python tools/transations/transations_tool.py -h
 
 - 4.发布翻译
 
-#### 如果无需翻译, 就无需使用此工具
+> 如果无需翻译, 就无需使用此工具
 
-## End 后续再补充
+### End 后续再补充

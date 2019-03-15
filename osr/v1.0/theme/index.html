@@ -140,28 +140,29 @@
         <li class="main active"><a href="#osr-style">主题结构(可参考osr-style)</a></li>
             <li><a href="#_1">&nbsp;&nbsp;目录结构</a></li>
             <li><a href="#_2">&nbsp;&nbsp;结构解释</a></li>
-            <li><a href="#_3">&nbsp;&nbsp;路由解释</a></li>
+            <li><a href="#_3">&nbsp;&nbsp;路由</a></li>
             <li><a href="#confyaml">&nbsp;&nbsp;conf.yaml 使用说明(格式)</a></li>
             <li><a href="#init_settingjson">&nbsp;&nbsp;init_setting.json 初始化配置文件</a></li>
-        <li class="main "><a href="#_5">全局变量</a></li>
+        <li class="main "><a href="#_4">全局变量</a></li>
             <li><a href="#g">&nbsp;&nbsp;全局变量 g</a></li>
             <li><a href="#current_user">&nbsp;&nbsp;全局遍历current_user</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;　注意</a></li>
         <li class="main "><a href="#jinjia2">模板引擎Jinjia2使用</a></li>
             <li><a href="#1-g">&nbsp;&nbsp;示范1: 获取全局变量g</a></li>
             <li><a href="#2-cureent_user">&nbsp;&nbsp;示范2: 获取cureent_user</a></li>
             <li><a href="#jinjia2_1">&nbsp;&nbsp;更多的Jinjia2的语法</a></li>
-        <li class="main "><a href="#_6">其他数据的获取</a></li>
+        <li class="main "><a href="#_6">其他公共数据</a></li>
             <li><a href="#_7">&nbsp;&nbsp;主题设置数据</a></li>
-        <li class="main "><a href="#_9">多语言翻译</a></li>
-            <li><a href="#_10">&nbsp;&nbsp;标记文本</a></li>
-            <li><a href="#_11">&nbsp;&nbsp;提取文本</a></li>
+        <li class="main "><a href="#_8">多语言翻译</a></li>
+            <li><a href="#_9">&nbsp;&nbsp;标记文本</a></li>
+            <li><a href="#_10">&nbsp;&nbsp;提取文本</a></li>
         <li class="main "><a href="#end">End 后续再补充</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="osr-style">主题结构(可参考osr-style)</h2>
-<h3 id="_1">&nbsp;&nbsp;目录结构</h3>
+<h3 id="osr-style">主题结构(可参考osr-style)</h3>
+<h4 id="_1">&nbsp;&nbsp;目录结构</h4>
 <pre><code>
 - theme-name # 为你的主题名称, 可自定义
 | - pages    # 存放html页面的目录, 名称必须是pages.
@@ -188,10 +189,10 @@
 
 </code></pre>
 
-<h3 id="_2">&nbsp;&nbsp;结构解释</h3>
+<h4 id="_2">&nbsp;&nbsp;结构解释</h4>
 <ul>
 <li>
-<p>theme-name</p>
+<p>theme-name主题主目录, 名称可自定义</p>
 </li>
 <li>
 <p>theme-name目录下的pages和static两个目录名称不可自定义</p>
@@ -203,27 +204,28 @@
 <p>static下主页用于存放css, js ,img等静态文件</p>
 </li>
 </ul>
-<h3 id="_3">&nbsp;&nbsp;路由解释</h3>
-<p>pages目录下的所有html文件的 "路由" 都和目录结构层次一样.</p>
-<p>路由上无需带上".html"后缀. 比如可以访问/contcat/weixin</p>
-<p>如果路由只写到一个目录层(未写到具体文件名), 则会响应此目录下的index.html文件.如果该目录下无index.html文件, 则响应404</p>
+<h4 id="_3">&nbsp;&nbsp;路由</h4>
+<p>pages目录下的所有html文件的 "路由" 都和目录结构层次一样, 路由从pages下的第一级目录开始.</p>
+<p>路由上无需带上".html"后缀. 比如需要访问theme-name/pages/contcat/weixin.html, 路由则是/contcat/weixin.</p>
+<p>如果路由只写到目录层(未写到具体文件名), 则会响应此目录下的index.html文件.如果该目录下无index.html文件, 则响应404</p>
 <p>比如：访问路由为/about-us和/about-us/index都会响应同一个about-us/index.html文件</p>
-<h3 id="confyaml">&nbsp;&nbsp;conf.yaml 使用说明(格式)</h3>
-<pre><code class="python">
+<h4 id="confyaml">&nbsp;&nbsp;conf.yaml 使用说明(格式)</h4>
+<pre><code class="yaml">
 # 主题名必须和主题主目录一致
 theme_name: Your theme's name
 author: Allen Woo
 theme_uri: yoursite.com
 introduce: 这里是主题的简单介绍
-# cover_path是主题的封面图片
 cover_path: static/sys_imgs/cover.png
 version: v0.1
 license: BSD-2
 
 </code></pre>
 
-<h3 id="init_settingjson">&nbsp;&nbsp;init_setting.json 初始化配置文件</h3>
-<h4 id="_4">此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]</h4>
+<h4 id="init_settingjson">&nbsp;&nbsp;init_setting.json 初始化配置文件</h4>
+<blockquote>
+<p>此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]</p>
+</blockquote>
 <pre><code>
 [{
         &quot;name&quot;: &quot;about_us&quot;,
@@ -243,22 +245,18 @@ license: BSD-2
 
 </code></pre>
 
-<h2 id="_5">全局变量</h2>
-<h3 id="g">&nbsp;&nbsp;全局变量 g</h3>
+<h3 id="_4">全局变量</h3>
+<h4 id="g">&nbsp;&nbsp;全局变量 g</h4>
 <ul>
-<li>
-<p>在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见模板引擎Jinjia2)</p>
-</li>
-<li>
-<p>注意: 如果你未使用主题, 只使用OSROOM的Rest Api功能的那就得通过调用Api来获取全局数据了.
-    API: /api/global , 获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.</p>
-</li>
+<li>在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见<a href="" title="#jinjia2">模板引擎Jinjia2</a>)</li>
 </ul>
-<h3 id="current_user">&nbsp;&nbsp;全局遍历current_user</h3>
+<h4 id="current_user">&nbsp;&nbsp;全局遍历current_user</h4>
 <ul>
-<li>在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见模板引擎Jinjia2</li>
+<li>在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见<a href="" title="#jinjia2">模板引擎Jinjia2</a></li>
 </ul>
-<h4 id="current_user_1">current_user 提供的方法有</h4>
+<blockquote>
+<p>current_user 提供的方法有</p>
+</blockquote>
 <pre><code class="python">
 # 判断当前用户是否已验证登录
 current_user.is_authenticated
@@ -298,7 +296,9 @@ current_user.get_role_name()
 
 </code></pre>
 
-<h4 id="current_user_2">current_user提供的用户信息有(获取以下信息前请判断用户是否登录)</h4>
+<blockquote>
+<p>current_user提供的用户信息有(获取以下信息前请判断用户是否登录)</p>
+</blockquote>
 <pre><code class="python">current_user.id
 current_user.str_id
 current_user.username
@@ -318,11 +318,21 @@ current_user.user_info
 
 </code></pre>
 
-<h2 id="jinjia2">模板引擎Jinjia2使用</h2>
+<h4 id="_5">&nbsp;&nbsp;　注意</h4>
+<ul>
+<li>以上全局变量只适合在OSROOM主题上使用, 未经过OSROOM系统的html等, 可以调用API: /api/global来获取全局数据了.</li>
+</ul>
+<pre><code>
+API: /api/global
+获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.
+
+</code></pre>
+
+<h3 id="jinjia2">模板引擎Jinjia2使用</h3>
 <ul>
 <li>使用模板引擎可以将数据渲染在html中</li>
 </ul>
-<h3 id="1-g">&nbsp;&nbsp;示范1: 获取全局变量g</h3>
+<h4 id="1-g">&nbsp;&nbsp;示范1: 获取全局变量g</h4>
 <pre><code class="html">
 &lt;!--获取site配置的LOGO路由--&gt;
 &lt;img class=&quot;osr-logo&quot; src=&quot;{{g.site_global.site_config.LOGO_IMG_URL}}&quot; alt=&quot;Logo&quot;&gt;
@@ -344,7 +354,7 @@ alert(current_lang);
 
 </code></pre>
 
-<h3 id="2-cureent_user">&nbsp;&nbsp;示范2: 获取cureent_user</h3>
+<h4 id="2-cureent_user">&nbsp;&nbsp;示范2: 获取cureent_user</h4>
 <pre><code class="html">
 &lt;!--判断是否已登录--&gt;
 
@@ -376,17 +386,19 @@ alert(current_lang);
 
 </code></pre>
 
-<h3 id="jinjia2_1">&nbsp;&nbsp;更多的Jinjia2的语法</h3>
+<h4 id="jinjia2_1">&nbsp;&nbsp;更多的Jinjia2的语法</h4>
 <ul>
 <li>了解了OSROOM提供的相关信息后就可以开发自己的主题了, 当然你要先去学习下Jinjia2使用.</li>
 </ul>
 <p><a href="http://docs.jinkan.org/docs/jinja2/">docs.jinkan.org/docs/jinja2</a></p>
-<h2 id="_6">其他数据的获取</h2>
+<h3 id="_6">其他公共数据</h3>
 <ul>
 <li>最后我们要通过Api获取和提交其他数据,比如登录, 注册, 发表等, 具体有哪些Api请看Api文档</li>
 </ul>
-<h3 id="_7">&nbsp;&nbsp;主题设置数据</h3>
-<h4 id="api">这里要强调的是一个多媒体数据获取API:</h4>
+<h4 id="_7">&nbsp;&nbsp;主题设置数据</h4>
+<blockquote>
+<p>这里要强调的是一个多媒体数据获取API:</p>
+</blockquote>
 <pre><code>/api/global/theme-data/display
 </code></pre>
 
@@ -398,7 +410,9 @@ alert(current_lang);
 <p>比如图片设置页面中: 127.0.0.1/osr-admin/theme-setting/display/image</p>
 </li>
 </ul>
-<h4 id="_8">例子:</h4>
+<blockquote>
+<p>例子:</p>
+</blockquote>
 <p>在管理的主题展示设置中上传3张图片, 比如名称改为home-carousel-1, home-carousel-1, home-rec1-1
 那么我可以使用api 获取这两张图片信息, 展示在html页面中</p>
 <pre><code class="js">var conditions = [
@@ -451,8 +465,8 @@ GET:
 
 </code></pre>
 
-<h2 id="_9">多语言翻译</h2>
-<h3 id="_10">&nbsp;&nbsp;标记文本</h3>
+<h3 id="_8">多语言翻译</h3>
+<h4 id="_9">&nbsp;&nbsp;标记文本</h4>
 <blockquote>
 <p>在html中标记要翻译的文本, 示范:</p>
 </blockquote>
@@ -466,18 +480,20 @@ GET:
 
 </code></pre>
 
-<h3 id="_11">&nbsp;&nbsp;提取文本</h3>
+<h4 id="_10">&nbsp;&nbsp;提取文本</h4>
 <blockquote>
 <p>提取文本使用osroom下的翻译提取脚本具体请看transations_tool提取</p>
+<p>工具文档</p>
 </blockquote>
-<h4 id="_12">工具文档</h4>
 <pre><code class="shell">
 # 获取提取工具帮助文档(osroom根目录下)
 python tools/transations/transations_tool.py -h
 
 </code></pre>
 
-<h4 id="transations_toolpy-h">步骤:每个步骤操作请看transations_tool.py -h 文档</h4>
+<blockquote>
+<p>步骤:每个步骤操作请看transations_tool.py -h 文档</p>
+</blockquote>
 <ul>
 <li>
 <p>1.初始化语言目录(注意: 第一次提取前使用)</p>
@@ -492,8 +508,10 @@ python tools/transations/transations_tool.py -h
 <p>4.发布翻译</p>
 </li>
 </ul>
-<h4 id="_13">如果无需翻译, 就无需使用此工具</h4>
-<h2 id="end">End 后续再补充</h2></div>
+<blockquote>
+<p>如果无需翻译, 就无需使用此工具</p>
+</blockquote>
+<h3 id="end">End 后续再补充</h3></div>
         </div>
 
         <footer class="col-md-12">
@@ -586,5 +604,5 @@ python tools/transations/transations_tool.py -h
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-03-14 07:41:32
+Build Date UTC : 2019-03-15 04:06:15
 -->
