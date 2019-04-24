@@ -263,9 +263,10 @@ python3 -m venv /home/work/venv-osroom
 <p><br/><br/></p>
 <h4 id="_7">&nbsp;&nbsp;初始化配置</h4>
 <p><br/><br/></p>
-<p>因为osroom源代码只把数据库配置文件db_config.py 的sample文件上传到git，所以请先复制修改名称</p>
+<p>因为osroom源代码只把系统配置文件config.py和数据库配置文件db_config.py的sample文件上传到git，所以请先复制修改名称</p>
 <p><br/></p>
 <pre><code> # 进入到apps/configs
+ cp config_sample.py config.py
  cp db_config_sample.py db_config.py
 
 </code></pre>
@@ -273,9 +274,11 @@ python3 -m venv /home/work/venv-osroom
 <p><br/><br/></p>
 <ul>
 <li>编辑db_config.py, 在配置中对应位置填写好数据库用户名和密码</li>
+<li>注意: redis数据库如果没有密码，则下面配置文件中redis的password为""就可以
+<br/></li>
 </ul>
-<p><br/></p>
-<pre><code class="python"> DB_CONFIG = {
+<pre><code class="python">
+ DB_CONFIG = {
     &quot;redis&quot;: {
         &quot;password&quot;: &quot;&lt;Your password&gt;&quot;,
         &quot;host&quot;: [
