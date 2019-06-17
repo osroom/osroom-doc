@@ -114,13 +114,12 @@ pip install -r requirements.txt
 
 <br/><br/>
 
-因为osroom源代码只把系统配置文件config.py和数据库配置文件db_config.py的sample文件上传到git，所以请先复制修改名称
+因为osroom源代码只把数据库配置文件db_config.py的sample文件上传到git，所以请先复制修改名称
 
 <br/>
 
 ```
  # 进入到apps/configs
- cp config_sample.py config.py
  cp db_config_sample.py db_config.py
 
 ```

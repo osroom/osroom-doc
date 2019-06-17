@@ -1,7 +1,7 @@
-#### &nbsp;&nbsp;版本
-目前最新版本: 1.0 Beta
+#### 版本v.10
 
-<br/><br/>
+[其他版本](https://osroom.github.io/osroom-doc/)
+
 #### &nbsp;&nbsp;Demo
 [https://demo.osroom.com](https://demo.osroom.com)
 <br/><br/>

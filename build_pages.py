@@ -3,7 +3,6 @@ import codecs
 import platform
 from os import system
 import shutil
-
 import sys
 import yaml
 
