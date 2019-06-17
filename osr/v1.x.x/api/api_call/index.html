@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="osroom文档 开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端">
+        <meta name="keywords" content="osroom文档 开源, 企业网站, 博客网站, 微信小程序, Web服务端">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="baidu-site-verification" content="Pu2rIOditQ" />
+        
+        <meta name="author" content="Allen Woo">
+        <link rel="canonical" href="https://osroom.com/api/api_call/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Api call - OSROOM DOC</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body >
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/osroom-doc/">OSROOM DOC</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
+                        </li>
+                        <li>
+                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="">文档</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/install/">安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/deploy/">部署</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/mongodb/">Mongodb安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/redis/">Redis安装</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api文档 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/api/api_call/">Api请求验证</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/api/api_doc/">Api说明文档</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件|主题 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/plugin/">插件开发</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/theme/">主题开发</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统开发 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/development/structure/">代码目录结构</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/api/api_call.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
+
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#api">Api请求验证</a></li>
+        <li class="main "><a href="#csrftoken">CsrfToken验证</a></li>
+            <li><a href="#csrftoken_1">&nbsp;&nbsp;获取与使用CsrfToken</a></li>
+        <li class="main "><a href="#jwttoken">JWT验证(Token)</a></li>
+            <li><a href="#_1">&nbsp;&nbsp;使用说明</a></li>
+            <li><a href="#accesstoken">&nbsp;&nbsp;获取AccessToken</a></li>
+            <li><a href="#api_1">&nbsp;&nbsp;请求API获取&amp;修改数据</a></li>
+            <li><a href="#bearertoken">&nbsp;&nbsp;登录获取BearerToken</a></li>
+            <li><a href="#_2">&nbsp;&nbsp;注销登录</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="api">Api请求验证</h3>
+<blockquote>
+<p>Api请求验证分2种情况
+ <br/></p>
+</blockquote>
+<ul>
+<li>情况1: 前端html等文件是经过OSROOM系统渲染, 响应回来的页面.
+    因为html经过了OSROOM服务器Jinjia2模板引擎渲染, 带上了随机生成的csrf_token
+    所以在html能获取到csrf_token, 具体使用如下教程
+<br/>
+<br/></li>
+<li>情况2.客户端为APP或小程序, 或者说html等静态文件不经过OSROOM, 独立隔离.
+    这时候就要使用JWT方式验证, 具体如下教程
+<br/>
+<br/></li>
+</ul>
+<h3 id="csrftoken">CsrfToken验证</h3>
+<h4 id="csrftoken_1">&nbsp;&nbsp;获取与使用CsrfToken</h4>
+<blockquote>
+<p>每个经过OSROOM后端的html页面都会带上一个CsrfToken, 具体使用方式如下
+<br/></p>
+</blockquote>
+<ul>
+<li>使用Jinjia2语法获取
+<br/></li>
+</ul>
+<pre><code class="js">{{csrf_token()}}
+</code></pre>
+
+<p><br/>
+<br/></p>
+<ul>
+<li>每一个Api的请求都需要带上CsrfToken, 作为验证令牌.
+   所以可以在html<strong>&lt;head&gt;</strong>与<strong>&lt;head/&gt;</strong>间写入如下代码</li>
+</ul>
+<pre><code class="js">&lt;script type=&quot;text/javascript&quot;&gt;
+    //设置csrf token, 否则无法请求api数据(保证请求数据的网页是自己服务器的网页)
+    var csrftoken = &quot;{{ csrf_token() }}&quot; //获取token
+    $.ajaxSetup({
+        beforeSend: function(xhr) {
+            // 头部带上参数X-CSRFToken, 值为上面通过JinJia2获取到的csrftoken
+            xhr.setRequestHeader(&quot;X-CSRFToken&quot;, csrftoken);
+        }
+    });
+&lt;/script&gt;
+
+</code></pre>
+
+<p><br/></p>
+<ul>
+<li>浏览器F12可以看到我们写入的代码中的CSRFToken, 如图</li>
+</ul>
+<p><br/>
+<img alt="CSRFToken" src="../../imgs/api/csrf-token.png" /></p>
+<p><br/>
+<br/>
+<br/></p>
+<h3 id="jwttoken">JWT验证(Token)</h3>
+<h4 id="_1">&nbsp;&nbsp;使用说明</h4>
+<ul>
+<li><strong>SecretToken</strong>与<strong>AccessToken</strong>用于在无<strong>CsrfToken</strong>时, 调用API请求的一个客户端令牌,
+ 以验证客户端是否为伪造的.
+ <br/>
+  <br/></li>
+<li>SecretToken是长期可用验证令牌(除非你停用或者删除了它), 需要保存在客户端使用, 主要用于获取<strong>AccessToken</strong>.
+ <br/>
+  <br/></li>
+<li>使用令牌时, 可以使用SecretToken做令牌或者OSR-ClientId与AccessToken组合做令牌(见使用方式).
+<br/>
+ <br/></li>
+<li>为了减少SecretToken的暴露风险, 发送Api请求时, 尽量使用<strong>OSR-ClientId</strong>和<strong>AccessToken</strong>组合作为客户端验证令牌.
+<br/>
+ <br/></li>
+<li>当没有获取过AccessToken或者AccessToken失效时, 请通过<strong>/api/token/access-token</strong>获取新的AccessToken
+    (具体请查看/api/token/access-token文档).
+<br/>
+ <br/></li>
+<li>获取AccessToken时, 只能使用SecretToken作为客户端令牌验证.(建议使用https)</li>
+</ul>
+<pre><code class="shell">  在http请求中设置请求头
+  OSR-RestToken:&quot;SecretToken xxxxx&quot;
+  或
+  OSR-RestToken:&quot;AccessToken xxxxx&quot; 和 OSR-ClientId:&quot;xxxxx&quot;
+</code></pre>
+
+<p><br/>
+<br/>
+ <br/></p>
+<h4 id="accesstoken">&nbsp;&nbsp;获取AccessToken</h4>
+<blockquote>
+<p>第一次获取<strong>AccessToke</strong>n, 首先去OSROOM管理端获取<strong>SecretToken</strong>, 如图</p>
+</blockquote>
+<p><img alt="SecretToken" src="../../imgs/api/secretToken.png" />
+<br/>
+<br/></p>
+<blockquote>
+<p>然后GET请求<strong>/api/token/access-token</strong>获取一个新的AccessToken</p>
+</blockquote>
+<ul>
+<li>请求时headers参数OSR-RestToken值为<strong>SecretToken</strong>为客户端令牌, 如图.
+<br/>
+<br/></li>
+<li>结果返回AccessToken和CliendId
+<img alt="Get Access" src="../../imgs/api/get-access-token.png" />
+<br/>
+<br/></li>
+<li>如果请求<strong>/api/token/access-token</strong>的时候, 有带上<strong>OSR-CliendId</strong>, 则系统不会生成新的CliendId
+  如下图, 结果返回的CliendId和请求时带上的一样
+<img alt="Get Access" src="../../imgs/api/get-access-token2.png" />
+<br/>
+<br/>
+<br/></li>
+</ul>
+<h4 id="api_1">&nbsp;&nbsp;请求API获取&amp;修改数据</h4>
+<blockquote>
+<p>对于不需要登录验证的请求验证如下:
+<br/></p>
+</blockquote>
+<ul>
+<li>headers参数OSR-RestToken值为<strong>AccessToken</strong>和参数OSR-CliendId值为<strong>CliendId</strong>
+<br/>
+   <img alt="无需登录验证请求" src="../../imgs/api/get-issued-post.png" />
+<br/>
+<br/>
+<br/></li>
+</ul>
+<h4 id="bearertoken">&nbsp;&nbsp;登录获取BearerToken</h4>
+<blockquote>
+<p>请求Api(/api/sign-in)获取<strong>BearerToken</strong>
+<br/></p>
+</blockquote>
+<ul>
+<li>
+<p>如下图,登录时也headers页需要<strong>AccessToken</strong>和<strong>CliendId</strong>作为客户端令牌
+<br/><br/>
+headers参数OSR-RestToken值为<strong>AccessToken</strong>和参数OSR-CliendId值为<strong>CliendId</strong>
+<br/><br/>
+<img alt="登录请求" src="../../imgs/api/sign-in.png" />
+<br/><br/>
+<strong>注意</strong>: 该请求还得带上Api请求参数username, password, use_jwt_auth
+<img alt="登录请求" src="../../imgs/api/sign-in2.png" />
+<br/><br/>
+<strong>客户端保存好获取到的auth_token(也就是下面要用到的BearerToken)</strong>
+<br/><br/><br/></p>
+<blockquote>
+<p>对于需要登录验证的API请求如下**
+<br/></p>
+</blockquote>
+</li>
+<li>
+<p>和上面差不多, 也就多了一个headers参数<strong>OSR-BearerToken</strong>, 值为登录成功时获取的auth_token
+<br/>
+<img alt="需要验证登录的请求验证" src="../../imgs/api/get-admin-user.png" />
+<br/>
+<br/>
+<br/></p>
+</li>
+</ul>
+<h4 id="_2">&nbsp;&nbsp;注销登录</h4>
+<blockquote>
+<p>注销登录如下, 注销后前面所请求的AccessToken 和 BearerToken将失效
+<br/></p>
+</blockquote>
+<p><img alt="注销登录" src="../../imgs/api/sign-out.png" /></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Allen Woo</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+    <script>
+    //Baidu analysis
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?97ac1418f2f617088a890435e61ed055";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</html>

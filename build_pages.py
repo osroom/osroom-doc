@@ -15,18 +15,18 @@ with open("./original_mkdocs.yml") as rf:
     config = rf.read()
 config = yaml.load(config)
 site_dir = config['site_dir']
-
 # 修改nav路径
 for v in config["nav"]:
-    for k1,v1 in v.items():
+    for k1, v1 in v.items():
         if isinstance(v1, str):
             continue
         for v2 in v1:
             for k3, v3 in v2.items():
-                v2[k3] = "/osroom-doc/{}/{}/".format(site_dir,v3.strip("/"))
+                v2[k3] = "/osroom-doc/{}/{}/".format(site_dir, v3.strip("/"))
 # 写入新的yml配置
-with codecs.open("./mkdocs.yml","w","utf-8") as wf:
-    yaml.dump(config,wf,default_flow_style=False, allow_unicode=True)
+config["docs_dir"] = "docs-{}".format(site_dir.split("/")[-1])
+with codecs.open("./mkdocs.yml", "w", "utf-8") as wf:
+    yaml.dump(config, wf, default_flow_style=False, allow_unicode=True)
 
 print("Support Chinese search")
 # 修改成能匹配的中文
@@ -41,4 +41,5 @@ mkdocs_lun_path = venv_path
 shutil.copy('./search_index.py', mkdocs_lun_path)
 
 # build
+print("build...")
 system("mkdocs build")

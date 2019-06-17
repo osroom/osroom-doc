@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="osroom文档 开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端">
+        <meta name="keywords" content="osroom文档 开源, 企业网站, 博客网站, 微信小程序, Web服务端">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="baidu-site-verification" content="Pu2rIOditQ" />
+        
+        <meta name="author" content="Allen Woo">
+        <link rel="canonical" href="https://osroom.com/app/mongodb/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Mongodb - OSROOM DOC</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body >
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/osroom-doc/">OSROOM DOC</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
+                        </li>
+                        <li>
+                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="">文档</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/install/">安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/deploy/">部署</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/mongodb/">Mongodb安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/redis/">Redis安装</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api文档 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_call/">Api请求验证</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_doc/">Api说明文档</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件|主题 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/plugin/">插件开发</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/theme/">主题开发</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统开发 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/development/structure/">代码目录结构</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/app/mongodb.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
+
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mongodb">安装mongodb</a></li>
+            <li><a href="#_1">&nbsp;&nbsp;添加安装源</a></li>
+            <li><a href="#apt-get">&nbsp;&nbsp;更新apt-get</a></li>
+            <li><a href="#_2">&nbsp;&nbsp;安装</a></li>
+        <li class="main "><a href="#_3">使用</a></li>
+            <li><a href="#_4">&nbsp;&nbsp;进入数据库</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;创建数据库</a></li>
+            <li><a href="#_6">&nbsp;&nbsp;创建用户</a></li>
+            <li><a href="#role">&nbsp;&nbsp;数据库个角色role说明</a></li>
+            <li><a href="#osroom">&nbsp;&nbsp;OSROOM需要的库</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="mongodb">安装mongodb</h3>
+<ul>
+<li>Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本</li>
+</ul>
+<h4 id="_1">&nbsp;&nbsp;添加安装源</h4>
+<ul>
+<li>
+<p>下面版本源请选择其中一个版本</p>
+</li>
+<li>
+<p>添加3.4版本源
+   添加public key：</p>
+</li>
+</ul>
+<pre><code class="shell">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
+</code></pre>
+
+<p>添加包源：</p>
+<pre><code class="shell">echo &quot;deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse&quot; | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list
+</code></pre>
+
+<p><br/></p>
+<ul>
+<li>添加3.6版本源</li>
+</ul>
+<p>添加public key：</p>
+<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+</code></pre>
+
+<p>添加包源：</p>
+<pre><code>echo &quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+</code></pre>
+
+<h4 id="apt-get">&nbsp;&nbsp;更新apt-get</h4>
+<ul>
+<li>更新</li>
+</ul>
+<pre><code>sudo apt-get update
+</code></pre>
+
+<p><br/><br/></p>
+<h4 id="_2">&nbsp;&nbsp;安装</h4>
+<ul>
+<li>安装</li>
+</ul>
+<pre><code>sudo apt-get install -y mongodb-org
+</code></pre>
+
+<p>详情：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</p>
+<p><br/><br/><br/></p>
+<h3 id="_3">使用</h3>
+<h4 id="_4">&nbsp;&nbsp;进入数据库</h4>
+<ul>
+<li>数据库启动后，默认配置下在命令行输入mongo就可以进入数据库管理</li>
+</ul>
+<pre><code class="shell">(venv3) work@ubuntu16:~/project/osroom$ mongo
+MongoDB shell version v3.4.10
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
+
+</code></pre>
+
+<p><br/><br/></p>
+<h4 id="_5">&nbsp;&nbsp;创建数据库</h4>
+<ul>
+<li>use test_db就能创建一个数据库test_db, 之后需要创建一个collection, 否则会被自动删除</li>
+</ul>
+<pre><code class="js">&gt; use test_db
+&gt; db.createCollection(&quot;test_coll&quot;)
+</code></pre>
+
+<p><br/><br/></p>
+<h4 id="_6">&nbsp;&nbsp;创建用户</h4>
+<ul>
+<li>先给mongodb自带的collection admin 创建一个用户</li>
+</ul>
+<pre><code class="js">&gt; use admin
+&gt; db.createUser(
+   {
+     user: &quot;dba&quot;,
+     pwd: &quot;123456&quot;,
+     roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; },
+              { role: &quot;dbAdminAnyDatabase&quot;, db: &quot;admin&quot; }]
+   }
+ )
+</code></pre>
+
+<p><br/><br/></p>
+<ul>
+<li>为自己创建的库新建用户</li>
+</ul>
+<pre><code class="js">&gt; use test
+&gt; db.createCollection(&quot;test_coll&quot;)
+&gt; db.createUser(
+    {
+        user:'work',
+        pwd:'123456',
+        roles:[{role:'readWrite', db:'test'}]
+    })
+</code></pre>
+
+<p><br/><br/></p>
+<ul>
+<li>更新一个库的用户方式如下</li>
+</ul>
+<pre><code>&gt; use test
+&gt; db.updateUser(
+    &quot;dba&quot;,
+    {
+     roles : [ { role: &quot;dbAdminAnyDatabase&quot;, db: &quot;admin&quot; },
+                { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; }]
+    }
+)
+</code></pre>
+
+<p><br/><br/></p>
+<h4 id="role">&nbsp;&nbsp;数据库个角色role说明</h4>
+<ul>
+<li>Built-In Roles(内置角色)</li>
+</ul>
+<pre><code>    1. 数据库用户角色：read、readWrite;
+    2. 数据库管理角色：dbAdmin、dbOwner、userAdmin；
+    3. 集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；
+    4. 备份恢复角色：backup、restore；
+    5. 所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase
+    6. 超级用户角色：root
+    // 这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase）
+    7. 内部角色：__system
+</code></pre>
+
+<p><br/><br/></p>
+<ul>
+<li>具体</li>
+</ul>
+<pre><code>    Read：允许用户读取指定数据库
+    readWrite：允许用户读写指定数据库
+    dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile
+    userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户
+    clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。
+    readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限
+    readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限
+    userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限
+    dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。
+    root：只在admin数据库中可用。超级账号，超级权限
+</code></pre>
+
+<p><br/><br/></p>
+<h4 id="osroom">&nbsp;&nbsp;OSROOM需要的库</h4>
+<ul>
+<li>使用osroom系统，请先创建三个数据库，库名自定义(建议使用库名称为osr_web, osr_user, osr_sys)</li>
+</ul>
+<p><br/><br/></p>
+<ul>
+<li>注意mongodb的每个库都需要创建一个用户/密码(可以全部一样的用户名和密码)</li>
+</ul>
+<p><br/><br/></p>
+<ul>
+<li>创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Allen Woo</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+    <script>
+    //Baidu analysis
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?97ac1418f2f617088a890435e61ed055";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</html>

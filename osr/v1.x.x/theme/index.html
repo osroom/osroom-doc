@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="osroom文档 开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端">
+        <meta name="keywords" content="osroom文档 开源, 企业网站, 博客网站, 微信小程序, Web服务端">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="baidu-site-verification" content="Pu2rIOditQ" />
+        <meta name="description" content="OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等">
+        <meta name="author" content="Allen Woo">
+        <link rel="canonical" href="https://osroom.com/theme/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>OSROOM DOC</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body  class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/osroom-doc/">OSROOM DOC</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
+                        </li>
+                        <li>
+                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="">文档</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/install/">安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/deploy/">部署</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/mongodb/">Mongodb安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/app/redis/">Redis安装</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api文档 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/api/api_call/">Api请求验证</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/api/api_doc/">Api说明文档</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件|主题 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/plugin/">插件开发</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/theme/">主题开发</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统开发 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v1.x.x/development/structure/">代码目录结构</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/theme/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
+
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#osr-style">主题结构(可参考osr-style)</a></li>
+            <li><a href="#_1">&nbsp;&nbsp;目录结构</a></li>
+            <li><a href="#_2">&nbsp;&nbsp;结构解释</a></li>
+            <li><a href="#_3">&nbsp;&nbsp;路由</a></li>
+            <li><a href="#confyaml">&nbsp;&nbsp;conf.yaml 使用说明(格式)</a></li>
+            <li><a href="#init_settingjson">&nbsp;&nbsp;init_setting.json 初始化配置文件</a></li>
+        <li class="main "><a href="#_4">全局变量</a></li>
+            <li><a href="#g">&nbsp;&nbsp;全局变量 g</a></li>
+            <li><a href="#current_user">&nbsp;&nbsp;全局遍历current_user</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;　注意</a></li>
+        <li class="main "><a href="#jinjia2">模板引擎Jinjia2使用</a></li>
+            <li><a href="#1-g">&nbsp;&nbsp;示范1: 获取全局变量g</a></li>
+            <li><a href="#2-cureent_user">&nbsp;&nbsp;示范2: 获取cureent_user</a></li>
+            <li><a href="#jinjia2_1">&nbsp;&nbsp;更多的Jinjia2的语法</a></li>
+        <li class="main "><a href="#_6">其他公共数据</a></li>
+            <li><a href="#_7">&nbsp;&nbsp;主题设置数据</a></li>
+        <li class="main "><a href="#_8">多语言翻译</a></li>
+            <li><a href="#_9">&nbsp;&nbsp;标记文本</a></li>
+            <li><a href="#_10">&nbsp;&nbsp;提取文本</a></li>
+        <li class="main "><a href="#end">End 后续再补充</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="osr-style">主题结构(可参考osr-style)</h3>
+<h4 id="_1">&nbsp;&nbsp;目录结构</h4>
+<pre><code>
+- theme-name # 为你的主题名称, 可自定义
+| - pages    # 存放html页面的目录, 名称必须是pages.
+  | - about-us
+    | - index.html
+    ...
+  | - contcat
+    | - index.html
+    | - weixin.html
+    ...
+
+  | - login.html
+  | - index.html
+  ...
+| - static  # 存放其他静态文件的目录, 名称必须是static.
+  | - css
+  | - js
+  ...
+
+| - conf.yaml　# 主题配置文件
+| - init_setting.json　# 主题初始化数据文件
+| - readme.md　# 主题介绍
+
+
+</code></pre>
+
+<h4 id="_2">&nbsp;&nbsp;结构解释</h4>
+<ul>
+<li>
+<p>theme-name主题主目录, 名称可自定义</p>
+</li>
+<li>
+<p>theme-name目录下的pages和static两个目录名称不可自定义</p>
+</li>
+<li>
+<p>pages下是自定义区, 可根据自己的需求设计路由</p>
+</li>
+<li>
+<p>static下主页用于存放css, js ,img等静态文件</p>
+</li>
+</ul>
+<h4 id="_3">&nbsp;&nbsp;路由</h4>
+<p>pages目录下的所有html文件的 "路由" 都和目录结构层次一样, 路由从pages下的第一级目录开始.</p>
+<p>路由上无需带上".html"后缀. 比如需要访问theme-name/pages/contcat/weixin.html, 路由则是/contcat/weixin.</p>
+<p>如果路由只写到目录层(未写到具体文件名), 则会响应此目录下的index.html文件.如果该目录下无index.html文件, 则响应404</p>
+<p>比如：访问路由为/about-us和/about-us/index都会响应同一个about-us/index.html文件</p>
+<h4 id="confyaml">&nbsp;&nbsp;conf.yaml 使用说明(格式)</h4>
+<pre><code class="yaml">
+# 主题名必须和主题主目录一致
+theme_name: Your theme's name
+author: Allen Woo
+theme_uri: yoursite.com
+introduce: 这里是主题的简单介绍
+cover_path: static/sys_imgs/cover.png
+version: v0.1
+license: BSD-2
+
+</code></pre>
+
+<h4 id="init_settingjson">&nbsp;&nbsp;init_setting.json 初始化配置文件</h4>
+<blockquote>
+<p>此配置文件可以用于初始化主题的显示设置参数, 可以为空 [ ]</p>
+</blockquote>
+<pre><code>
+[{
+        &quot;name&quot;: &quot;about_us&quot;,
+        &quot;category&quot;: &quot;文本信息&quot;,
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;text&quot;: &quot;这里展示关于我们信息&quot;,
+        &quot;title&quot;: &quot;关于我们&quot;
+    },
+    {
+        &quot;name&quot;: &quot;contact&quot;,
+        &quot;category&quot;: &quot;文本信息&quot;,
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;text&quot;: &quot;Email:xxx@xxx.com&quot;,
+        &quot;title&quot;: &quot;联系&quot;
+    }
+]
+
+</code></pre>
+
+<h3 id="_4">全局变量</h3>
+<h4 id="g">&nbsp;&nbsp;全局变量 g</h4>
+<ul>
+<li>在html中使用osroom提供的全局变量 g 可以获取站点的一些公开设置与数据(使用方法见<a href="" title="#jinjia2">模板引擎Jinjia2</a>)</li>
+</ul>
+<h4 id="current_user">&nbsp;&nbsp;全局遍历current_user</h4>
+<ul>
+<li>在html中使用osroom提供的全局变量cureent_user(提供当前用户的一些可公布信息与方法), 使用方法见<a href="" title="#jinjia2">模板引擎Jinjia2</a></li>
+</ul>
+<blockquote>
+<p>current_user 提供的方法有</p>
+</blockquote>
+<pre><code class="python">
+# 判断当前用户是否已验证登录
+current_user.is_authenticated
+
+# 判断当前用户是否是匿名用户(未登录用户)
+current_user.is_anonymous
+
+
+# 判断用户是否拥有某个权限
+current_user.can()
+已登录用户可用
+参数：
+　permissions:&lt;int&gt;, 权限值
+
+
+# 判断当前用户是否拥有某些page路由的权限
+current_user.page_permission_check()
+已登录用户可用
+参数：
+　urls:&lt;array&gt;,
+使用示范:
+    current_user.page_permission_check(['/account', '/account/email'])
+
+
+# 判断当前用户是否是网站工作人员
+current_user.is_staff
+已登录用户可用
+
+# 判断当前用户是否是激活用户
+current_user.is_active
+已登录用户可用
+
+
+# 获取当前用户的角色名称
+current_user.get_role_name()
+已登录用户可用
+
+</code></pre>
+
+<blockquote>
+<p>current_user提供的用户信息有(获取以下信息前请判断用户是否登录)</p>
+</blockquote>
+<pre><code class="python">current_user.id
+current_user.str_id
+current_user.username
+current_user.email
+current_user.mphone_num
+current_user.custom_domain
+current_user.gender
+current_user.avatar_url
+current_user.role_id
+current_user.active
+current_user.is_delete
+current_user.create_at
+current_user.update_at
+current_user.editor
+current_user.jwt_login_time
+current_user.user_info
+
+</code></pre>
+
+<h4 id="_5">&nbsp;&nbsp;　注意</h4>
+<ul>
+<li>以上全局变量只适合在OSROOM主题上使用, 未经过OSROOM系统的html等, 可以调用API: /api/global来获取全局数据了.</li>
+</ul>
+<pre><code>
+API: /api/global
+获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息.
+
+</code></pre>
+
+<h3 id="jinjia2">模板引擎Jinjia2使用</h3>
+<ul>
+<li>使用模板引擎可以将数据渲染在html中</li>
+</ul>
+<h4 id="1-g">&nbsp;&nbsp;示范1: 获取全局变量g</h4>
+<pre><code class="html">
+&lt;!--获取site配置的LOGO路由--&gt;
+&lt;img class=&quot;osr-logo&quot; src=&quot;{{g.site_global.site_config.LOGO_IMG_URL}}&quot; alt=&quot;Logo&quot;&gt;
+
+&lt;!--想知道g会包含哪些数据可以将它在html页面中全部显示出来,如下--&gt;
+{{ g }}
+
+&lt;!--想知道网站的全局数据site_global,如下--&gt;
+{{ g.site_global }}
+
+&lt;!--这样也可以,如下--&gt;
+&lt;script&gt;
+
+var current_lang = '{{g.site_global.language.current}}';
+alert(current_lang);
+
+&lt;/script&gt;
+
+
+</code></pre>
+
+<h4 id="2-cureent_user">&nbsp;&nbsp;示范2: 获取cureent_user</h4>
+<pre><code class="html">
+&lt;!--判断是否已登录--&gt;
+
+{% if current_user.is_authenticated %}
+    &lt;a&gt;
+        &lt;img class=&quot;osr-img-circle-b&quot; src=&quot;{{current_user.avatar_url}}&quot; alt=&quot;User Avatar&quot;/&gt;
+    &lt;/a&gt;
+
+{% else %}
+    &lt;a href=&quot;/sign-in&quot;&gt;
+        登录
+    &lt;/a&gt;
+
+{% endif %}
+
+
+&lt;!--又比如. 选择使用网站名还是Logo--&gt;
+&lt;a href=&quot;/&quot;&gt;
+{% if g.site_global.site_config.MB_LOGO_DISPLAY == &quot;logo&quot; %}
+
+    &lt;img src=&quot;{{g.site_global.site_config.LOGO_IMG_URL}}&quot; alt=&quot;Logo&quot;/&gt;
+
+{% else %}
+
+    &lt;strong&gt;{{g.site_global.site_config.APP_NAME}}&lt;/strong&gt;
+
+{% endif %}
+&lt;/a&gt;
+
+</code></pre>
+
+<h4 id="jinjia2_1">&nbsp;&nbsp;更多的Jinjia2的语法</h4>
+<ul>
+<li>了解了OSROOM提供的相关信息后就可以开发自己的主题了, 当然你要先去学习下Jinjia2使用.</li>
+</ul>
+<p><a href="http://docs.jinkan.org/docs/jinja2/">docs.jinkan.org/docs/jinja2</a></p>
+<h3 id="_6">其他公共数据</h3>
+<ul>
+<li>最后我们要通过Api获取和提交其他数据,比如登录, 注册, 发表等, 具体有哪些Api请看Api文档</li>
+</ul>
+<h4 id="_7">&nbsp;&nbsp;主题设置数据</h4>
+<blockquote>
+<p>这里要强调的是一个多媒体数据获取API:</p>
+</blockquote>
+<pre><code>/api/global/theme-data/display
+</code></pre>
+
+<ul>
+<li>
+<p>主题的很多设置可以在Admin管理的主题展示设置中设置</p>
+</li>
+<li>
+<p>比如图片设置页面中: 127.0.0.1/osr-admin/theme-setting/display/image</p>
+</li>
+</ul>
+<blockquote>
+<p>例子:</p>
+</blockquote>
+<p>在管理的主题展示设置中上传3张图片, 比如名称改为home-carousel-1, home-carousel-1, home-rec1-1
+那么我可以使用api 获取这两张图片信息, 展示在html页面中</p>
+<pre><code class="js">var conditions = [
+     {
+        type:&quot;image&quot;,
+        name_regex:&quot;home-carousel-[0-9]+&quot;,
+        result_key:&quot;home_carousel&quot;
+     },
+     {
+        type:&quot;image&quot;,
+        name_regex:&quot;home-rec1-[0-9]+&quot;,
+        result_key:&quot;rec_1&quot;
+     }
+];
+var d ={
+    conditions:JSON.stringify(conditions)
+
+}
+
+// js请求api
+var result = $.request(&quot;GET&quot;,&quot;/api/global/theme-data/display&quot;, d);
+result.then(function (r) {
+    var carousel = r.data.medias.home_carousel;
+    var rec_1 = r.data.medias.rec_1;
+});
+
+
+</code></pre>
+
+<ul>
+<li>/api/global/theme-data/display的具体使用方式可以见api文档, 以下文档不一定是最新的</li>
+</ul>
+<pre><code>/api/global/theme-data/display　调用说明
+GET:
+    1.获取主题展示用的多媒体数据
+    conditions:&lt;array:dict&gt;, Such as:[{'type':&lt;str&gt;, 'names':&lt;array&gt;, 'name_regex':''}]
+        说明:
+            type-可以是&quot;text&quot;, &quot;image&quot;, &quot;video&quot;, &quot;audio&quot;
+            names-数组,指定要获取数据的name
+            name_regex-字符串,获取匹配此正则的media,如果为空值，则不使用正则匹配(空置包括null, None,False, &quot;&quot;)
+            注意:name 与name_regex不能同时使用,当name_regex非空时，查询自动忽略names
+        使用示例：前提在管理端多媒体中存在的内容
+        如:首页轮播图片和获取”关于我们“页面的文字内容
+        [
+            {&quot;type&quot;:&quot;image&quot;, &quot;names&quot;:[&quot;home-carousel-1&quot;, &quot;home_carousel-2&quot;]},
+            {&quot;type&quot;:&quot;text&quot;, &quot;names&quot;:[&quot;about-me&quot;]},
+            {&quot;type&quot;:&quot;image&quot;, &quot;name_regex&quot;:&quot;test-[0-9]+&quot;}
+        ]
+
+
+</code></pre>
+
+<h3 id="_8">多语言翻译</h3>
+<h4 id="_9">&nbsp;&nbsp;标记文本</h4>
+<blockquote>
+<p>在html中标记要翻译的文本, 示范:</p>
+</blockquote>
+<ul>
+<li>使用{{_()}}标记</li>
+</ul>
+<pre><code class="html">
+&lt;div&gt;
+{{_('这里是需要翻译的文本')}}
+&lt;/div&gt;
+
+</code></pre>
+
+<h4 id="_10">&nbsp;&nbsp;提取文本</h4>
+<blockquote>
+<p>提取文本使用osroom下的翻译提取脚本具体请看transations_tool提取</p>
+<p>工具文档</p>
+</blockquote>
+<pre><code class="shell">
+# 获取提取工具帮助文档(osroom根目录下)
+python tools/transations/transations_tool.py -h
+
+</code></pre>
+
+<blockquote>
+<p>步骤:每个步骤操作请看transations_tool.py -h 文档</p>
+</blockquote>
+<ul>
+<li>
+<p>1.初始化语言目录(注意: 第一次提取前使用)</p>
+</li>
+<li>
+<p>2.update: 更新内容（提取最新的文本）</p>
+</li>
+<li>
+<p>3.翻译.po文本, 在语言目录(初始化后会自动建立)下, 比如osroom/apps/transations/theme/en_US/LC_MESSAGES/messages.po</p>
+</li>
+<li>
+<p>4.发布翻译</p>
+</li>
+</ul>
+<blockquote>
+<p>如果无需翻译, 就无需使用此工具</p>
+</blockquote>
+<h3 id="end">End 后续再补充</h3></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Allen Woo</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+    <script>
+    //Baidu analysis
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?97ac1418f2f617088a890435e61ed055";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-06-17 05:03:10
+-->

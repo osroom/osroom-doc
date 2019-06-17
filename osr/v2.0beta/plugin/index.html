@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="osroom文档 开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端">
+        <meta name="keywords" content="osroom文档 开源, 企业网站, 博客网站, 微信小程序, Web服务端">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="baidu-site-verification" content="Pu2rIOditQ" />
+        <meta name="description" content="OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等">
+        <meta name="author" content="Allen Woo">
+        <link rel="canonical" href="https://osroom.com/plugin/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>OSROOM DOC</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body  class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/osroom-doc/">OSROOM DOC</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
+                        </li>
+                        <li>
+                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="">文档</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/install/">安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/deploy/">部署</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/mongodb/">Mongodb安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/redis/">Redis安装</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api文档 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_call/">Api请求验证</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_doc/">Api说明文档</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件|主题 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/plugin/">插件开发</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/theme/">主题开发</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统开发 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/development/structure/">代码目录结构</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/plugin/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
+
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">插件开发</a></li>
+            <li><a href="#_2">&nbsp;&nbsp;原理</a></li>
+            <li><a href="#_3">&nbsp;&nbsp;目录结构</a></li>
+            <li><a href="#confyaml">&nbsp;&nbsp;conf.yaml</a></li>
+            <li><a href="#configpy">&nbsp;&nbsp;config.py</a></li>
+            <li><a href="#mianpy">&nbsp;&nbsp;mian.py</a></li>
+            <li><a href="#_4">&nbsp;&nbsp;实例参考</a></li>
+        <li class="main "><a href="#hook">hook</a></li>
+            <li><a href="#file_storage">&nbsp;&nbsp;file_storage文件存储</a></li>
+            <li><a href="#send_msg">&nbsp;&nbsp;短信发送send_msg</a></li>
+            <li><a href="#send_email">&nbsp;&nbsp;邮件send_email</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;内容安全检测</a></li>
+            <li><a href="#ip-geo">&nbsp;&nbsp;ip geo</a></li>
+            <li><a href="#_6">&nbsp;&nbsp;第三方登录</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="_1">插件开发</h3>
+<h4 id="_2">&nbsp;&nbsp;原理</h4>
+<blockquote>
+<p>hook</p>
+</blockquote>
+<ul>
+<li>osroom系统提供部分功能的hook, 供插件开发使用.</li>
+</ul>
+<pre><code>比如osroom文件上传功能的hookname为&quot;file_storage&quot;.
+当程序执行文件上传时,会检查是否存在hookname为&quot;file_storage&quot;, 并且已经激活的插件.
+如果存在, 且已激活, 则调用此插件完成文件上传, 插件需要按规定返回规定格式的结果.
+
+</code></pre>
+
+<h4 id="_3">&nbsp;&nbsp;目录结构</h4>
+<pre><code>
+- plugin_test # 为你的插件名称, 可自定义
+| - main.py # 调用主程序
+| - config.py # 插件配置
+| - conf.yaml # 插件安装配置，比如名称之类的
+| - README.md # 说明
+
+</code></pre>
+
+<h4 id="confyaml">&nbsp;&nbsp;conf.yaml</h4>
+<blockquote>
+<p>conf.yaml示范</p>
+</blockquote>
+<pre><code>
+# 插件名称必须和主目录名称一致
+alias_name: plugin_test
+author: Allen Woo
+author_uri: www.xxx.com/plugin
+plugin_uri: www.xxx.com/plugin
+introduce: 这里是简单介绍.
+version: v0.1
+license: BSD-3
+hook_name: file_storage
+startup_file_name: main.py
+execution_func_name: main
+
+
+</code></pre>
+
+<h4 id="configpy">&nbsp;&nbsp;config.py</h4>
+<blockquote>
+<p>config.py示范</p>
+</blockquote>
+<pre><code>
+# 插件名称
+PLUGIN_NAME = &quot;plugin_test&quot;
+
+# 插件配置格式
+CONFIG = {
+    &quot;TEST1&quot;:{
+        &quot;info&quot;:&quot;我是示范配置&quot;,
+        &quot;value_type&quot;:&quot;string&quot;,
+        &quot;value&quot;:&quot;test&quot;,
+        &quot;reactivate&quot;:True
+    },
+    &quot;TEST2&quot;:{
+        &quot;info&quot;:&quot;我是示范配置２&quot;,
+        &quot;value_type&quot;:&quot;password&quot;,
+        &quot;value&quot;:&quot;123456&quot;,
+        &quot;reactivate&quot;:True
+    },
+    &quot;TEST3&quot;:{
+        &quot;info&quot;:&quot;我是示范配置3&quot;,
+        &quot;value_type&quot;:&quot;int&quot;,
+        &quot;value&quot;:123,
+        &quot;reactivate&quot;:False
+    },
+｝
+
+</code></pre>
+
+<h4 id="mianpy">&nbsp;&nbsp;mian.py</h4>
+<blockquote>
+<p>main.py示范, 包括import_plugin_config, get_plugin_config的使用</p>
+</blockquote>
+<pre><code class="python">
+# -*-coding:utf-8-*-
+
+# 导入插件里的其他程序方法
+from apps.core.plug_in.config_process import import_plugin_config, get_plugin_config
+from apps.plugins.plugin_test.upfile_cloud import fun_test
+from apps.plugins.plugin_test.config import CONFIG, PLUGIN_NAME
+
+'''
+osroom提供了插件设置导入函数
+import_plugin_config(&lt;plugin name&gt;, &lt;config:dict&gt;)
+可以用于把插件的一些设置导入到osroom系统保存, 方便调用.
+比如密码之类数据.
+之后可以调用get_plugin_config(&lt;plugin name&gt;, &lt;str&gt;)获取导入的dict数据中
+'''
+
+# 导入插件的设置
+import_plugin_config(PLUGIN_NAME, CONFIG)
+
+# 调用插件插件的设置
+get_plugin_config(PLUGIN_NAME, &quot;TEST1&quot;)
+
+def main(**kwargs):
+
+    '''
+    主函数
+    :param kwargs:
+    :return:
+    '''
+
+    # 这里可以调用其他程序方法来完成工作...
+    ...
+
+    # 最后返回结果
+    return data
+
+</code></pre>
+
+<h4 id="_4">&nbsp;&nbsp;实例参考</h4>
+<p><a href="https://github.com/osroom-plugins">https://github.com/osroom-plugins</a>
+<a href="https://github.com/osroom-plugins/aliyun_oss_plugin">https://github.com/osroom-plugins/aliyun_oss_plugin</a></p>
+<h3 id="hook">hook</h3>
+<p>目前osroom提供以下hook</p>
+<h4 id="file_storage">&nbsp;&nbsp;file_storage文件存储</h4>
+<blockquote>
+<p>主要用于接入第三方图床/文集储存, 如aliyun oss, 七牛云存储. 解决集群部署图片等文件保存问题.</p>
+</blockquote>
+<pre><code>
+hookname: file_storage
+
+1.上传
+插件接受参数:
+    action：&quot;upload&quot;
+    localfile_path：&lt;str&gt; 服务器本地文件路径
+    filename： &lt;str&gt;,要保存的文件名
+    prefix：&lt;str&gt;,要保存的文件名前缀
+
+返回结果格式:
+{type:&quot;&lt;你的储存平台名&gt;&quot;, ...其他任意需要保存的信息}
+如{&quot;type&quot;:&quot;aliyun_oss&quot;, &quot;bucket_name&quot;:&quot;demo_osr&quot;}
+
+
+2. 复制文件
+插件接受参数:
+    action：&quot;copy_file&quot;
+    file_url_obj:&lt;dict&gt; 在使用插件上传时, 插件返回的结果dict
+    new_filename:&lt;str&gt;, 新文件名
+
+返回结果格式:
+复制的副本文件的{type:&quot;&lt;你的储存平台名&gt;&quot;, ...其他需要保存的信息}
+
+
+3.删除文件
+插件接收参数:
+    action：&quot;delete&quot;
+    file_url_obj:&lt;dict&gt;  在使用插件上传或复制时, 插件返回的结果dict
+
+返回的结果格式：
+   bool值, 删除成功：True， 删除失败False
+
+
+4.重命名
+插件接收参数:
+    action：&quot;rename&quot;
+    file_url_obj:&lt;dict&gt; 在使用插件上传或复制时, 插件返回的结果dict
+    new_filename:&lt;str&gt;, 新名称
+
+返回的结果格式：
+    bool值, 删除成功：True， 删除失败False
+
+5. 获取文件url
+插件接收参数:
+    action：&quot;get_file_url&quot;
+    file_url_obj:&lt;dict&gt; 在使用插件上传或复制时, 插件返回的结果dict
+
+返回的结果格式：
+    成功：return url
+    失败：return None
+</code></pre>
+
+<h4 id="send_msg">&nbsp;&nbsp;短信发送send_msg</h4>
+<blockquote>
+<p>发送短信</p>
+</blockquote>
+<pre><code>hookname: send_msg
+
+1.短信发送
+插件接受参数:
+    to_numbers：&lt;list&gt; 发送到哪些号码,这是一个list
+    content：&lt;str&gt;,发送的内容
+
+需要返回的结果格式：
+    bool值, 成功：True， 失败False
+
+</code></pre>
+
+<h4 id="send_email">&nbsp;&nbsp;邮件send_email</h4>
+<blockquote>
+<p>邮件发送</p>
+</blockquote>
+<pre><code>
+hookname：send_email
+
+1.邮件发送
+插件接受参数:
+    recipients:&lt;list&gt;收件人, 数组类型如:[&quot;xxxxx.xx@osroom.com&quot;]
+    send_independently:&lt;bool&gt; 如果为Ture,给每个收件人独立发送, 不一次性发送给多个，导致收件人邮件中可以看到此邮件发送给了多少人,
+    subject：&lt;str&gt; 邮件标题
+    html：&lt;str&gt; html格式邮件
+    text：&lt;str&gt; text格式邮件
+    attach : &lt;str&gt; 附件文件路径
+
+需要返回的结果格式：
+    bool值, 成功：True， 失败False
+
+</code></pre>
+
+<h4 id="_5">&nbsp;&nbsp;内容安全检测</h4>
+<blockquote>
+<p>用于检测内容安全, 比如鉴定文本, 图片等文件敏感信息.</p>
+</blockquote>
+<pre><code>
+1. 文本安全鉴定
+hookname: content_inspection_text
+插件接受参数:
+    content:&lt;str&gt;, 需要检查的文本
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+2. 图片安全鉴定
+hookname: content_inspection_image
+
+插件接受参数:
+    url:&lt;str&gt;, 可获取的图片url
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+2. 视频安全鉴定
+hookname: content_inspection_video
+
+插件接受参数:
+    url:&lt;str&gt;, 可获取的视频url
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+2. 音频安全鉴定
+hookname: content_inspection_audio
+
+插件接受参数:
+    url:&lt;str&gt;, 可获取的音频url
+
+需要返回的结果格式:
+    dict: {&quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;, &quot;score&quot;:&lt;int or float&gt;}
+    score范围是1到100分，违规越可疑，分值越高. 如果无法判断是否正常或违规,那就返回
+    {&quot;suggestion”:&quot;review&quot;,  &quot;lable&quot;:&quot;&lt;鉴定结果的类型&gt;&quot;， score&quot;:0}
+
+</code></pre>
+
+<h4 id="ip-geo">&nbsp;&nbsp;ip geo</h4>
+<blockquote>
+<p>根据IP获取geo(地理位置), osroom中用于鉴定用户登录地区, 识别用户登录是否异常等功能中</p>
+</blockquote>
+<pre><code>hookname: ip_geo
+
+插件接受参数:
+    ip: ip地址
+
+需要返回的结果格式：
+    dict
+    {
+        &quot;continent&quot;:{
+            &quot;code&quot;:&quot;&lt;code&gt;&quot;,
+            &quot;name&quot;:&quot;&lt;名称&gt;&quot;,
+            &quot;names&quot;:&quot;&lt;其他语言名称&gt;&quot;
+        },
+        &quot;country&quot;:{
+            &quot;iso_code&quot;:&quot;&lt;iso code&gt;&quot;,
+            &quot;name&quot;:&quot;&lt;名称&gt;&quot;,
+            &quot;names&quot;:&quot;&lt;其他语言名称&gt;&quot;
+        },
+        &quot;subdivisions&quot;:{
+            &quot;iso_code&quot;:&quot;&lt;iso code&gt;&quot;,
+            &quot;name&quot;:&quot;&lt;名称&gt;&quot;,
+            &quot;names&quot;:&quot;&lt;其他语言名称&gt;&quot;
+        },
+        &quot;coordinates&quot;:{
+            &quot;lat&quot;:&quot;&lt;location latitude&gt;&quot;,
+            &quot;lon&quot;:&quot;&lt;location longitude&gt;&quot;,
+            &quot;accuracy_radius&quot;:&quot;&lt;accuracy radius&gt;&quot;,
+            &quot;time_zone&quot;:&quot;&lt;time zone&gt;&quot;
+        },
+        &quot;post&quot;:{
+            &quot;code&quot;:&quot;&lt; code&gt;&quot;
+        }
+    }
+
+</code></pre>
+
+<h4 id="_6">&nbsp;&nbsp;第三方登录</h4>
+<blockquote>
+<p>通过第三方平台验证登录, 如wechat,qq</p>
+</blockquote>
+<pre><code>hookname: wechat_login
+hookname: qq_login
+hookname: github_login
+hookname: sina_weibo_login
+hookname: alipay_login
+hookname: facebook_login
+hookname: twitter_login
+
+插件接受参数:
+    request_argget_all：&lt;obj&gt;, 一个获取第三方平台登录验证后,回调osroom系统url时传过来的数据.
+
+登录回调地址：
+    http://youdomain/open-api/sign-in/third-party/&lt;platform&gt;/callback
+    比如:微信登录可以这样回调:/open-api/sign-in/third-party/wechat/callback
+
+第三方平台回调地址后, 系统会根据地址执行相关的登录插件
+    如:/open-api/sign-in/third-party/wechat/callback 则执行wechat登录插件
+
+request_argget_all使用:
+    在插件中可以使用osroom传入的request_argget_all对象获取登录回调地址参数
+     使用方式: request_argget.all(&quot;unionid&quot;), 获取用户唯一标识
+
+插件需要返回结果格式:
+{
+    &quot;unionid&quot;:&lt;用户唯一标示&gt;  # 必须返回
+    &quot;nickname&quot;: &lt;用户昵称&gt;,
+    &quot;gender&quot; :&lt;性别&gt;,        # 只能是 &quot;secret&quot;, &quot;m&quot;, &quot;f&quot;中的一个，分别代表保密, 男, 女
+    &quot;email&quot; :&lt;email&gt;,
+    &quot;avatar_url&quot;:&lt;头像地址&gt;,
+    &quot;province&quot; :&lt;地址区&gt;,
+    &quot;city&quot;: &lt;地址城市&gt;,
+    &quot;country&quot;:&lt;地址国家&gt;
+}
+
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Allen Woo</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+    <script>
+    //Baidu analysis
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?97ac1418f2f617088a890435e61ed055";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-06-17 05:02:09
+-->

@@ -3,29 +3,36 @@ import glob
 from collections import OrderedDict
 import os
 import re
-
+import yaml
 current_path = os.path.abspath(os.path.dirname(__file__))
 __author__ = 'Allen Woo'
-
-APPS_PATH = "/home/work/project/osroom/apps"
+APPS_PATH = os.path.abspath("{}/../osroom/apps".format(current_path))
 class MkDoc():
     def __init__(self):
+        with open("./original_mkdocs.yml") as rf:
+            config = rf.read()
+        config = yaml.load(config)
+        site_dir = config['site_dir']
+        self.version = site_dir.split("/")[-1]
+        print(APPS_PATH)
         pass
 
     def crate_doc(self):
         '''
         Create the API documentation
         '''
-        api_md_path = "{}/doc_md/api".format(current_path)
+        api_md_path = "{}/docs-{}/api".format(current_path, self.version)
         if not os.path.exists(api_md_path):
             os.makedirs(api_md_path)
 
         api_md_path = "{}/api_doc.md".format(api_md_path)
         wf = open(api_md_path, "w")
-        api_files =  glob.iglob(r'{}/modules/*/apis/*.py'.format(APPS_PATH))
+        api_files = glob.iglob(r'{}/modules/*/apis/*.py'.format(APPS_PATH))
         n = 1
         docs = []
         for file in api_files:
+            if "__init__.py" not in file:
+                print(file)
             of = open(file)
             lines = of.readlines()
             of.close()
@@ -44,7 +51,7 @@ class MkDoc():
                             doc["methods"] = eval(methods)
                             doc["permission"] = permission
                             doc["login"] = login
-                            #doc["func_name"] = func_name
+                            # doc["func_name"] = func_name
                             doc["doc"] = ""
 
                             str_doc = ""
@@ -109,7 +116,7 @@ class MkDoc():
                             doc["methods"] = methods
                             doc["permission"] = permission
                             doc["login_auth"] = login
-                            #doc["func_name"] = func_name
+                            # doc["func_name"] = func_name
                             doc["doc"] = temp_doc
                             doc["doc"] = doc["doc"].strip()
                             str_doc = ""
@@ -133,8 +140,7 @@ class MkDoc():
                         else:
                             temp_doc = "{}{}".format(temp_doc, re.sub(r"'''", "", line).strip(""))
 
-
-            if n%3 == 0 and docs:
+            if n % 3 == 0 and docs:
                 wf.write("## Api文档说明\n")
                 wf.writelines(docs)
                 docs = []
