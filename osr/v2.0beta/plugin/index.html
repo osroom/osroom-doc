@@ -361,11 +361,15 @@ hookname: file_storage
 <pre><code>
 hookname：send_email
 
+
 1.邮件发送
 插件接受参数:
-    recipients:&lt;list&gt;收件人, 数组类型如:[&quot;xxxxx.xx@osroom.com&quot;]
+    msg:&lt;dict&gt; , 字典类型, 里面包含如下数据:
+            {
+                &quot;subject&quot;: &lt;subject&gt;,
+                &quot;recipients&quot;: &lt;list:[email, email]&gt;
+            }
     send_independently:&lt;bool&gt; 如果为Ture,给每个收件人独立发送, 不一次性发送给多个，导致收件人邮件中可以看到此邮件发送给了多少人,
-    subject：&lt;str&gt; 邮件标题
     html：&lt;str&gt; html格式邮件
     text：&lt;str&gt; text格式邮件
     attach : &lt;str&gt; 附件文件路径
@@ -596,5 +600,5 @@ request_argget_all使用:
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-17 05:49:18
+Build Date UTC : 2019-07-18 09:18:19
 -->

@@ -221,11 +221,15 @@ hookname: send_msg
 
 hookname：send_email
 
+                                    
 1.邮件发送
 插件接受参数:
-    recipients:<list>收件人, 数组类型如:["xxxxx.xx@osroom.com"]
+    msg:<dict> , 字典类型, 里面包含如下数据:
+            {
+                "subject": <subject>,
+                "recipients": <list:[email, email]>
+            }
     send_independently:<bool> 如果为Ture,给每个收件人独立发送, 不一次性发送给多个，导致收件人邮件中可以看到此邮件发送给了多少人,
-    subject：<str> 邮件标题
     html：<str> html格式邮件
     text：<str> text格式邮件
     attach : <str> 附件文件路径
