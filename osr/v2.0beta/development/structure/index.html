@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="osroom文档 开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端">
+        <meta name="keywords" content="osroom文档 开源, 企业网站, 博客网站, 微信小程序, Web服务端">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="baidu-site-verification" content="Pu2rIOditQ" />
+        
+        <meta name="author" content="Allen Woo">
+        <link rel="canonical" href="https://osroom.com/development/structure/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Structure - OSROOM DOC</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body >
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/osroom-doc/">OSROOM DOC</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
+                        </li>
+                        <li>
+                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="">文档</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/install/">安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/deploy/">部署</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/mongodb/">Mongodb安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/redis/">Redis安装</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api文档 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_call/">Api请求验证</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_doc/">Api说明文档</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件|主题 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/plugin/">插件开发</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/theme/">主题开发</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统开发 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/development/structure/">代码目录结构</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/development/structure.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
+
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">结构图解</a></li>
+        <li class="main "><a href="#_2">代码结构</a></li>
+        <li class="main "><a href="#osroom">osroom/</a></li>
+        <li class="main "><a href="#osroomapps">osroom/apps/</a></li>
+            <li><a href="#osroomappsconfigs">&nbsp;&nbsp;osroom/apps/configs</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="_1">结构图解</h3>
+<p><img alt="OSROOM" src="../../imgs/dev/structure.png" /></p>
+<h3 id="_2">代码结构</h3>
+<h3 id="osroom">osroom/</h3>
+<pre><code>.
+├── apps # 应用程序主目录
+├── LICENSE　# 版权说明
+├── logs　# 日志目录
+├── osr-tool.py　# 离线工具脚本
+├── README.md
+├── requirements.txt　# python需求包文件
+├── start.py # 系统启动目录
+├── test
+└── tools　# 离线工具脚本
+
+</code></pre>
+
+<h3 id="osroomapps">osroom/apps/</h3>
+<pre><code>.
+├── admin_pages # 管理端静态文件(html,js,css...)
+├── app.py # 系统初始化程序
+├── configs # 系统配置文件目录
+├── core　# 核心程序目录
+├── init_core_module.py # 初始化核心模块脚本
+├── __init__.py
+├── modules　# 功能模块主目录,功能模块都在此，比如user,post,comment等
+├── plugins　# 插件模块主目录(安装的插件会在此目录)
+├── routing　# 路由控制模块目录
+├── static   # 其他系统必须静态文件目录
+├── sys_startup_info.py　# 系统启动时打印信息脚本
+├── themes　# 主题主目录(安装的主题会在此目录)
+├── transations　# 各语言翻译目录
+└── utils　# 通用程序
+
+
+</code></pre>
+
+<h4 id="osroomappsconfigs">&nbsp;&nbsp;osroom/apps/configs</h4>
+<pre><code>.
+├── config.py # 配置文件,此文件内容可以在系统管理的控制
+├── db_config.py # 数据库配置文件(未上传到代码库)
+├── db_config_sample.py　# 配置文件db_config.py的样例
+├── __init__.py
+├── mdb_collection.py
+├── __pycache__
+└── sys_config.py # 一些固定敏感的配置
+
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Allen Woo</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+    <script>
+    //Baidu analysis
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?97ac1418f2f617088a890435e61ed055";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</html>

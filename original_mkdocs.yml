@@ -19,7 +19,7 @@ nav:
     - 系统开发:
         - 代码目录结构: development/structure/
 
-site_dir: 'osr/v1.0'
+site_dir: 'osr/v2.0beta'
 extra:
     version: 1.0
 theme:

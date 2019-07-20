@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="osroom文档 开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端">
+        <meta name="keywords" content="osroom文档 开源, 企业网站, 博客网站, 微信小程序, Web服务端">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="baidu-site-verification" content="Pu2rIOditQ" />
+        
+        <meta name="author" content="Allen Woo">
+        <link rel="canonical" href="https://osroom.com/api/api_doc/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Api doc - OSROOM DOC</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body >
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/osroom-doc/">OSROOM DOC</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
+                        </li>
+                        <li>
+                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="">文档</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">安装部署 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/install/">安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/deploy/">部署</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/mongodb/">Mongodb安装</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/app/redis/">Redis安装</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api文档 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_call/">Api请求验证</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/api/api_doc/">Api说明文档</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件|主题 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/plugin/">插件开发</a>
+</li>
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/theme/">主题开发</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统开发 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/osroom-doc/osr/v2.0beta/development/structure/">代码目录结构</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li>
+                        <a href="https://github.com/osroom/osroom-doc/edit/master/docs/api/api_doc.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" style="overflow-y: scroll;max-height: 400px;" role="complementary">
+
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#api">Api文档说明</a></li>
+            <li><a href="#admin-audit-rule-key">Admin-audit-rule-key</a></li>
+            <li><a href="#admin-audit-rule">Admin-audit-rule</a></li>
+            <li><a href="#admin-content-category">Admin-content-category</a></li>
+            <li><a href="#content-category-info">Content-category-info</a></li>
+            <li><a href="#content-user-post-category">Content-user-post-category</a></li>
+            <li><a href="#content-category">Content-category</a></li>
+            <li><a href="#admin-content-theme-category">Admin-content-theme-category</a></li>
+            <li><a href="#admin-comment">Admin-comment</a></li>
+            <li><a href="#comment">Comment</a></li>
+            <li><a href="#comment_1">Comment</a></li>
+            <li><a href="#comment-like">Comment-like</a></li>
+            <li><a href="#inform-content">Inform-content</a></li>
+            <li><a href="#user-follow">User-follow</a></li>
+            <li><a href="#user-follow_1">User-follow</a></li>
+            <li><a href="#global">Global</a></li>
+            <li><a href="#global-media">Global-media</a></li>
+            <li><a href="#global-theme-data-display">Global-theme-data-display</a></li>
+            <li><a href="#admin-upload-media-file">Admin-upload-media-file</a></li>
+            <li><a href="#admin-message-on-site">Admin-message-on-site</a></li>
+            <li><a href="#admin-message-send">Admin-message-send</a></li>
+            <li><a href="#admin-message-sms">Admin-message-sms</a></li>
+            <li><a href="#user-message">User-message</a></li>
+            <li><a href="#admin-permission">Admin-permission</a></li>
+            <li><a href="#admin-url-permission">Admin-url-permission</a></li>
+            <li><a href="#admin-plugin">Admin-plugin</a></li>
+            <li><a href="#admin-plugin-setting">Admin-plugin-setting</a></li>
+            <li><a href="#admin-plugin-setting-install-requirement">Admin-plugin-setting-install-requirement</a></li>
+            <li><a href="#admin-post">Admin-post</a></li>
+            <li><a href="#post-tags">Post-tags</a></li>
+            <li><a href="#post">Post</a></li>
+            <li><a href="#post_1">Post</a></li>
+            <li><a href="#user-post">User-post</a></li>
+            <li><a href="#admin-report-basic">Admin-report-basic</a></li>
+            <li><a href="#admin-comment-access">Admin-comment-access</a></li>
+            <li><a href="#admin-post-access">Admin-post-access</a></li>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#admin-setting-sys-log">Admin-setting-sys-log</a></li>
+            <li><a href="#admin-setting-sys-host">Admin-setting-sys-host</a></li>
+            <li><a href="#admin-setting-sys-host-cmd-execute">Admin-setting-sys-host-cmd-execute</a></li>
+            <li><a href="#admin-setting-sys-host-connection-test">Admin-setting-sys-host-connection-test</a></li>
+            <li><a href="#session-language-set">Session-language-set</a></li>
+            <li><a href="#admin-setting-sys-config-version">Admin-setting-sys-config-version</a></li>
+            <li><a href="#admin-setting-sys-config">Admin-setting-sys-config</a></li>
+            <li><a href="#admin-theme-display-setting">Admin-theme-display-setting</a></li>
+            <li><a href="#admin-theme-page">Admin-theme-page</a></li>
+            <li><a href="#admin-static-file">Admin-static-file</a></li>
+            <li><a href="#admin-theme">Admin-theme</a></li>
+            <li><a href="#token-access-token">Token-access-token</a></li>
+            <li><a href="#admin-token-secret-token">Admin-token-secret-token</a></li>
+            <li><a href="#upload-file">Upload-file</a></li>
+            <li><a href="#admin-user">Admin-user</a></li>
+            <li><a href="#admin-user-del">Admin-user-del</a></li>
+            <li><a href="#account-upload-avatar">Account-upload-avatar</a></li>
+            <li><a href="#account-email">Account-email</a></li>
+            <li><a href="#account-data-availability">Account-data-availability</a></li>
+            <li><a href="#account-self">Account-self</a></li>
+            <li><a href="#sign-up">Sign-up</a></li>
+            <li><a href="#sign-in">Sign-in</a></li>
+            <li><a href="#sign-out">Sign-out</a></li>
+            <li><a href="#account-password-reset">Account-password-reset</a></li>
+            <li><a href="#account-password-retrieve">Account-password-retrieve</a></li>
+            <li><a href="#account-profile-public">Account-profile-public</a></li>
+            <li><a href="#account-basic">Account-basic</a></li>
+            <li><a href="#account-profile">Account-profile</a></li>
+            <li><a href="#admin-role">Admin-role</a></li>
+            <li><a href="#vercode-send">Vercode-send</a></li>
+            <li><a href="#vercode-image">Vercode-image</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="api">Api文档说明</h2>
+<h4 id="admin-audit-rule-key">Admin-audit-rule-key</h4>
+<p><strong>Api</strong>:/api/admin/audit/rule/key</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取审核规则的所有key与说明, 也就config设置中的audit
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-audit-rule">Admin-audit-rule</h4>
+<p><strong>Api</strong>:/api/admin/audit/rule</p>
+<p><strong>Methods</strong>:GET, POST, PUT, PATCH, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1. 获取所有验证规则
+        project:&lt;str&gt;, &quot;username&quot;, &quot;post_category&quot;,
+        keyword:&lt;str&gt;,不能使用的关键词,支持正则
+        page:&lt;int&gt;, 第几页, 默认1
+        pre:&lt;int&gt;, 每页返回pre条数据，默认10
+        :return:
+    POST:
+        添加验证规则
+        project:&lt;str&gt;, &quot;username&quot;, &quot;post_category&quot;
+        rule:&lt;str&gt;
+        :return:
+    DELETE:
+        删除规则
+        ids:&lt;array&gt;, rule ids
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-content-category">Admin-content-category</h4>
+<p><strong>Api</strong>:/api/admin/content/category</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    Admin管理端category管理
+    GET:
+        1.获取指定的type的所有分类
+        type:&lt;str&gt;, 你设置的那几个类别中的类别,在config.py文件中category, 或者网站管理设置
+        2.获取所有的type
+        get_type:&lt;int&gt;, get_type为1
+    POST:
+        添加文集
+        name:&lt;str&gt;
+        type:&lt;str&gt;, 只能是你设置的那几个类别,在config.py文件中category, 或者网站管理设置
+    PUT:
+        修改文集
+        id:&lt;str&gt;, post category id
+        name:&lt;str&gt;
+    DELETE:
+        删除文集名称
+        ids:&lt;array&gt;, post category ids
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="content-category-info">Content-category-info</h4>
+<p><strong>Api</strong>:/api/content/category/info</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    获取指定category id的category信息
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="content-user-post-category">Content-user-post-category</h4>
+<p><strong>Api</strong>:/api/content/user/post/category</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+    action: &lt; str &gt;, 'get_category'
+    type: &lt; str &gt;, 'post'
+    user_id:&lt;str&gt;
+</code></pre>
+
+<hr />
+<h4 id="content-category">Content-category</h4>
+<p><strong>Api</strong>:/api/content/category</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        action:&lt;str&gt;, 可以为get_category, get_category_type, 默认get_category
+        1.获取当前用户指定的type的所有category
+            action:&lt;str&gt;, 为get_category
+            type:&lt;str&gt;, 你设置的那几个类别中的类别,在config.py文件中category, 可在网站管理端设置的
+        2. 获取所有的type: config.py文件中category的所有CATEGORY TYPE
+            action:&lt;str&gt;, 为get_category_type
+        解释:
+            在分类中(category)又分为几种类型(type)
+            如: type为post有几个category
+    POST:
+        添加文集
+        name:&lt;str&gt;
+        type:&lt;str&gt;, 只能是你设置的那几个类别,在config.py文件中category, 或者网站管理设置
+    PUT:
+        修改文集
+        id:&lt;str&gt;, post category id
+        name:&lt;str&gt;
+    DELETE:
+        删除文集名称
+        ids:&lt;array&gt;, post category ids
+</code></pre>
+
+<hr />
+<h4 id="admin-content-theme-category">Admin-content-theme-category</h4>
+<p><strong>Api</strong>:/api/admin/content/theme-category</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        action:&lt;str&gt;, 可以为get_category, get_category_type, 默认get_category
+        1.获取当前用户指定的type的所有category
+            action:&lt;str&gt;, 为get_category
+            type:&lt;str&gt;, 你设置的那几个类别中的类别,在config.py文件中category, 可在网站管理端设置的
+        2. 获取所有的type: config.py文件中category的所有CATEGORY TYPE
+            action:&lt;str&gt;, 为get_category_type
+            解释:
+                在分类中(category)又分为几种类型(type)
+                如: type为post有几个category
+    POST:
+        添加文集
+        name:&lt;str&gt;
+        type:&lt;str&gt;, 只能是你设置的那几个类别,在config.py文件中category, 或者网站管理设置
+    PUT:
+        修改文集
+        id:&lt;str&gt;, post category id
+        name:&lt;str&gt;
+    DELETE:
+        删除文集名称
+        ids:&lt;array&gt;, post category ids
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-comment">Admin-comment</h4>
+<p><strong>Api</strong>:/api/admin/comment</p>
+<p><strong>Methods</strong>:GET, POST, PUT, PATCH, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取评论
+        status:&lt;str&gt;,&quot;is_issued&quot;（正常发布） or &quot;not_audit&quot;（等待审核） or &quot;unqualified&quot;（未通过审核） or &quot;user_remove&quot;(用户删除的)
+        keyword:&lt;str&gt;,搜索关键字
+        sort:&lt;array&gt;,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{&quot;issue_time&quot;:-1}]
+            按时间升序 [{&quot;issue_time&quot;: 1}]
+            先后按赞(like)数降序, 评论数降序,pv降序, 发布时间降序
+            [{&quot;like&quot;: -1},{&quot;issue_time&quot;: -1}]
+            默认时按时间降序, 也可以用其他字段排序
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页查询多少条, 默认是config.py配制文件中配制的数量
+        :return:
+    PATCH or PUT:
+        1.人工审核comment, 带上参数score
+        op:&lt;str&gt;, &quot;audit&quot;
+        ids:&lt;array&gt;, comment id
+        score:&lt;int&gt;, 0-10分
+        2.恢复comment, 只能恢复管理员移入待删除的comment, is_delete为2的comment
+        op:&lt;str&gt;,  &quot;restore&quot;
+        ids:&lt;array&gt;, comment id
+    DELETE:
+        删除comment
+        ids:&lt;array&gt;, comment id
+        pending_delete:&lt;int&gt;, 1: is_delete为2, 标记为永久删除, 0:从数据库删除数据
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="comment">Comment</h4>
+<p><strong>Api</strong>:/api/comment</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取文章的评论
+        target_id:&lt;str&gt;, 目标id,比如文章post id
+        target_type:&lt;str&gt;, 目标类型,比如文章就是&quot;post&quot;
+        status:&lt;str&gt;,&quot;is_issued&quot;（正常发布） or &quot;not_audit&quot;（等待审核） or &quot;unqualified&quot;（未通过审核） or &quot;user_remove&quot;(用户删除的)
+        sort:&lt;array&gt;,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{&quot;issue_time&quot;:-1}]
+            按时间升序 [{&quot;issue_time&quot;: 1}]
+            先后按赞(like)数降序, 评论数降序,pv降序, 发布时间降序
+            [{&quot;like&quot;: -1},{&quot;issue_time&quot;: -1}]
+            默认时按时间降序, 也可以用其他字段排序
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页查询多少条, 默认是config.py配制文件中配制的数量
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="comment_1">Comment</h4>
+<p><strong>Api</strong>:/api/comment</p>
+<p><strong>Methods</strong>:POST, PUT, PATCH, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST:
+        评论发布
+        target_id:&lt;str&gt;, 目标id,比如文章post id
+        target_type:&lt;str&gt;, 目标类型,比如文章就是&quot;post&quot;
+        reply_id:&lt;str&gt;, 被回复的comment id.
+        如果是回复评论中的评论,如:在评论a下面有一个评论a1，我需要回复a1, 这个时候需要提供的reply_id依然是a评论的，　而不是a1的
+        reply_user_id:&lt;str&gt;, 被回复的comment 的用户的user id，
+        如果是回复评论中的评论,如:在评论a下面有一个评论a1，我需要回复a1, 这个时候需要提供的reply_user_id是a１评论的
+        reply_username:&lt;str&gt;, 被回复的comment 的用户的username，
+        如果是回复评论中的评论,如:在评论a下面有一个评论a1，我需要回复a1, 这个时候需要提供的reply_username是a１评论的
+        content:&lt;str&gt;, 内容(比如:富文本的html内容),将会保存到数据库中
+        如果是游客评论,则需要以下两个参数(需要再后台配置中开启游客评论开关):
+        username:&lt;str&gt;, 游客昵称
+        email:&lt;str&gt;,游客邮箱
+        :return:
+    DELETE:
+        评论删除
+        ids:&lt;array&gt;, comment ids
+</code></pre>
+
+<hr />
+<h4 id="comment-like">Comment-like</h4>
+<p><strong>Api</strong>:/api/comment/like</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        给评论点赞
+        id:&lt;str&gt;
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="inform-content">Inform-content</h4>
+<p><strong>Api</strong>:/api/inform/content</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        内容违规举报
+        ctype:&lt;str&gt;, 内容的类型可选:post(文章), comment(评论), media(多媒体), user(用户)
+        cid:&lt;str&gt;, 内容的id
+        category:&lt;str&gt;, 举报内容违规类型, 可选: ad, junk_info, plagiarize, other
+        details：&lt;str&gt;, 违规详情(选填)
+</code></pre>
+
+<hr />
+<h4 id="user-follow">User-follow</h4>
+<p><strong>Api</strong>:/api/user/follow</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取用户关注的用户
+        user_id:&lt;str&gt;, 用户ID
+        action:&lt;str&gt;,　为followed_user
+        获取当前的登录用户的粉丝
+        action:&lt;str&gt;,　为fans
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="user-follow_1">User-follow</h4>
+<p><strong>Api</strong>:/api/user/follow</p>
+<p><strong>Methods</strong>:POST, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST:
+        当前登录用户关注另一个用户用户
+        ids:&lt;array&gt;,需关注用户的user id
+    DELETE:
+        当前登录用户取消关注一个用户
+        ids:&lt;array&gt;,不再关注的用户的user id
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="global">Global</h4>
+<p><strong>Api</strong>:/api/global</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取当前全局数据,包括站点的公开设置, 当前登录用户的基本可公开信息
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="global-media">Global-media</h4>
+<p><strong>Api</strong>:/api/global/media</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1.获取指定的多媒体数据
+        conditions:&lt;array:dict&gt;, Such as:[{'type':&lt;str&gt;, 'names':&lt;array&gt;, 'name_regex':''}]
+            说明:
+                type-可以是&quot;text&quot;, &quot;image&quot;, &quot;video&quot;, &quot;audio&quot;
+                names-数组,指定要获取数据的name
+                name_regex-字符串,获取匹配此正则的media,如果为空值，则不使用正则匹配(空置包括null, None,False, &quot;&quot;)
+                注意:name 与name_regex不能同时使用,当name_regex非空时，查询自动忽略names
+            使用示例：前提在管理端多媒体中存在的内容
+            如:首页轮播图片和获取”关于我们“页面的文字内容
+            [
+                {&quot;type&quot;:&quot;image&quot;, &quot;names&quot;:[&quot;home-carousel-1&quot;, &quot;home_carousel-2&quot;]},
+                {&quot;type&quot;:&quot;text&quot;, &quot;names&quot;:[&quot;about-me&quot;]},
+                {&quot;type&quot;:&quot;image&quot;, &quot;name_regex&quot;:&quot;test-[0-9]+&quot;}
+            ]
+        2.获取指定category的多媒体
+        category_name:&lt;array&gt; category name, 可同时指定多个category name, 使用数组
+        category_user_id:&lt;str&gt;, 为空则表示获取站点官方的多媒体
+        category_type:&lt;str&gt;, 可选&quot;text&quot;, &quot;image&quot;, &quot;video&quot;, &quot;audio&quot;
+        page:&lt;int&gt;, 第几页, 默认1
+        pre:&lt;int&gt;, 每页几条数据, 默认8
+        3.根据id 获取
+        media_id:&lt;str&gt;
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="global-theme-data-display">Global-theme-data-display</h4>
+<p><strong>Api</strong>:/api/global/theme-data/display</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1.获取主题展示用的多媒体数据
+        conditions:&lt;array:dict&gt;, Such as:[{'type':&lt;str&gt;, 'names':&lt;array&gt;, 'name_regex':''}]
+            说明:
+                type-可以是&quot;text&quot;, &quot;image&quot;, &quot;video&quot;, &quot;audio&quot;
+                names-数组,指定要获取数据的name
+                name_regex-字符串,获取匹配此正则的media,如果为空值，则不使用正则匹配(空置包括null, None,False, &quot;&quot;)
+                注意:name 与name_regex不能同时使用,当name_regex非空时，查询自动忽略names
+            使用示例：前提在管理端多媒体中存在的内容
+            如:首页轮播图片和获取”关于我们“页面的文字内容
+            [
+                {&quot;type&quot;:&quot;image&quot;, &quot;names&quot;:[&quot;home-carousel-1&quot;, &quot;home_carousel-2&quot;]},
+                {&quot;type&quot;:&quot;text&quot;, &quot;names&quot;:[&quot;about-me&quot;]},
+                {&quot;type&quot;:&quot;image&quot;, &quot;name_regex&quot;:&quot;test-[0-9]+&quot;}
+            ]
+        :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-upload-media-file">Admin-upload-media-file</h4>
+<p><strong>Api</strong>:/api/admin/upload/media-file</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET
+        1.获取多个多媒体信息
+        file_type:&lt;str&gt;, 文件类型,可选&quot;image&quot;, &quot;video&quot;, &quot;audio&quot;, &quot;other&quot;
+        category_id:&lt;str&gt;, 分类id, 获取默认分类使用&quot;default&quot;作为category_id, 不传入此参数则表示获取全部
+        keyword:&lt;str&gt;,搜索用
+        page:&lt;int&gt;, 第几页, 默认1
+        pre:&lt;int&gt;, 每页几条数据, 默认12
+        sort:&lt;array&gt;,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{&quot;time&quot;:-1}]
+            按时间升序 [{&quot;time&quot;, 1}]
+            默认时按时间降序, 也可以用其他字段排序
+        2.获取1个信息
+        id:&lt;str&gt;,id
+    POST
+        添加媒体
+        name:&lt;str&gt;, 名字
+        link:&lt;str&gt;, 链接, 用于展示的时候跳转链接
+        link_name:&lt;str&gt;,链接名字
+        link_open_new_tab:&lt;str&gt;,链接是否打开新标签
+        title:&lt;str&gt;, 展示的标题
+        name:&lt;str&gt;, 展示时需要显示的文字
+        text:&lt;str&gt;
+        text_html:&lt;str&gt;, text的html格式(富文本)
+        type:&lt;str&gt;, 文件类型,可选&quot;image&quot;, &quot;video&quot;, &quot;audio&quot;, &quot;text&quot;,&quot;other&quot;
+        category_id:&lt;str&gt;, 分类id
+        **如果需要上传文件,还需要一下参数:
+        batch:&lt;int&gt;, 0 or 1, default:0, 为1表示批量上传.
+        return_url_key: &lt;str&gt;, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:&lt;str&gt;, 自定义返回数据的状态的key, 默认'state'
+        return_success:&lt;str or int&gt;, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:&lt;str or int&gt;, 自定义返回数据错误的状态的值, 默认'error'
+         **注意: 如果后台获取有文件上传，则表示只上传文件
+        上传文件返回数据格式默认如下:
+        {'urls':[&lt;url&gt;, ...,&lt;url&gt;],
+         'state':&lt;'success' or 'error'&gt;,
+         'msg_type':&lt;'s' or e'&gt;,
+         'msg':''
+         }
+    PUT
+        编辑多媒体信息
+        id:&lt;str&gt;,要编辑的media id
+        category_id:&lt;str&gt;,要编辑的文件的分类id, 如果不修改分类可以不提交
+        name:&lt;str&gt;
+        link:&lt;str&gt;, 链接
+        link_name:&lt;str&gt;,链接名字
+        link_open_new_tab:&lt;str&gt;,链接是否打开新标签
+        title:&lt;str&gt;
+        text:&lt;str&gt;
+        text_html:&lt;str&gt;, text的html格式(富文本)
+        **如果只更新文件(如图片),还需要一下参数:
+        batch:&lt;int&gt;, 0 or 1, default:0, 为1表示批量上传.
+        return_url_key: &lt;str&gt;, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:&lt;str&gt;, 自定义返回数据的状态的key, 默认'state'
+        return_success:&lt;str or int&gt;, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:&lt;str or int&gt;, 自定义返回数据错误的状态的值, 默认'error'
+        **注意: 如果后台获取有文件上传，则表示只上传文件
+        上传文件返回数据格式默认如下:
+        {'urls':[&lt;url&gt;, ...,&lt;url&gt;],
+         'state':&lt;'success' or 'error'&gt;,
+         'msg_type':&lt;'s' or e'&gt;,
+         'msg':''
+         }
+    DELETE
+        删除多媒体文件
+        ids:&lt;array&gt;,要删除的文件的id
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-message-on-site">Admin-message-on-site</h4>
+<p><strong>Api</strong>:/api/admin/message/on-site</p>
+<p><strong>Methods</strong>:GET, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取用户消息
+        is_sys_msg:&lt;int&gt;,获取系统消息? 1表示是, 0表示否
+        pre:&lt;int&gt;,每页获取几条数据,默认10
+        page:&lt;int&gt;,第几页,默认1
+        type:&lt;array&gt;,消息类型, 比如[&quot;notice&quot;, &quot;comment&quot;, &quot;audit&quot;]
+    DELETE:
+        删除消息(此接口只能删除由系统发出的消息user_id==0的)
+        ids:&lt;array&gt;,消息id
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-message-send">Admin-message-send</h4>
+<p><strong>Api</strong>:/api/admin/message/send</p>
+<p><strong>Methods</strong>:POST</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST
+        发送消息
+        title:&lt;title&gt;,标题
+        content:&lt;str&gt;,正文
+        content_html:&lt;str&gt;,正文html
+        send_type:&lt;array&gt;,发送类型on_site, email, sms . 如:[&quot;email&quot;], 也可以同时发送多个个[&quot;email&quot;, &quot;on_site&quot;]
+        username:&lt;array&gt;, 接收信息的用户名, 如[&quot;test&quot;, &quot;test2&quot;]
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-message-sms">Admin-message-sms</h4>
+<p><strong>Api</strong>:/api/admin/message/sms</p>
+<p><strong>Methods</strong>:GET, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取系统发送出去的邮件或短信记录
+        status:&lt;str&gt;, 状态, normal, abnormal, error
+        pre:&lt;int&gt;,每页获取几条数据,默认10
+        page:&lt;int&gt;,第几页,默认1
+    DELETE:
+        删除消息(此接口只能删除由系统发出的消息user_id==0的)
+        ids:&lt;array&gt;,消息id
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="user-message">User-message</h4>
+<p><strong>Api</strong>:/api/user/message</p>
+<p><strong>Methods</strong>:GET, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取用户的消息
+        type:&lt;array&gt;,消息类型, 比如[&quot;notice&quot;, &quot;private_letter&quot;]
+        label:&lt;array&gt;, 消息label, 默认全部label, 比如['comment', 'audit_failure', 'sys_notice']
+        pre:&lt;int&gt;,每页获取几条数据,默认10
+        page:&lt;int&gt;,第几页,默认1
+        status_update:&lt;str&gt;,获取后的消息状态更新. 可以为: &quot;have_read&quot;
+    PUT:
+        更新消息状态
+        ids:&lt;array&gt;,消息id
+        status_update:&lt;str&gt;,获取后的消息状态更新. 可以为: &quot;have_read&quot;
+    DELETE:
+        删除消息
+        ids:&lt;array&gt;,消息id
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-permission">Admin-permission</h4>
+<p><strong>Api</strong>:/api/admin/permission</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1.获取系统的权限数据详情
+        pre:&lt;int&gt;,每页获取几条数据,默认10
+        page:&lt;int&gt;,第几页,默认1
+        keyword:&lt;str&gt;,搜索关键字
+        is_details:&lt;int&gt;, 必须是1
+        2.只获取系统的全部权限的value, name, explain, 以及已使用的权重位置
+        不填任何参数
+    POST:
+        添加一个权限
+        name:&lt;str&gt;, 名称
+    　　 　　 position:&lt;int&gt;, 二进制中的位置
+    　　 　　 explain:&lt;str&gt;,说明
+        is_default:&lt;int&gt;, 0表示不作为默认权限, 1表示作为默认权限之一
+    PUT:
+        更新权限
+        id:&lt;str&gt;,id
+        name:&lt;str&gt;, 名称
+    　　 　　 position:&lt;int&gt;, 二进制中的位置
+    　　 　　 explain:&lt;str&gt;,说明
+        is_default:&lt;int&gt;, 0表示不作为默认权限, 1表示作为默认权限之一
+    DELETE:
+        删除手动添加的页面路由
+        ids:&lt;array&gt;
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-url-permission">Admin-url-permission</h4>
+<p><strong>Api</strong>:/api/admin/url/permission</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取系统的web url
+        type:&lt;array&gt;,类型, 可选api, static, page
+        pre:&lt;int&gt;,每页获取几条数据,默认10
+        page:&lt;int&gt;,第几页,默认1
+        keyword:&lt;str&gt;,搜索关键字
+    POST:
+        添加页面路由
+        url:&lt;str&gt;, 只用于添加页面路由
+    PUT:
+        更新权限
+        id:&lt;str&gt;,id
+        method:&lt;str&gt;
+        custom_permission:&lt;array&gt;, 如[1, 512, 128]
+        login_auth:&lt;int&gt;, 0 或　１, 是否需要登录验证(如果原代码路由中未指定需要登录请求, 则按照此配置)
+    DELETE:
+        删除手动添加的页面路由
+        ids:&lt;array&gt;
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-plugin">Admin-plugin</h4>
+<p><strong>Api</strong>:/api/admin/plugin</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    插件管理
+    GET:
+        获取所有插件
+        page:&lt;int&gt;,第几页, 默认1
+        pre:&lt;int&gt;,每页个数, 默认10
+        keyword:&lt;str&gt;, 搜索用
+    POST:
+        插件安装
+        upfile:&lt;file&gt;,上传的插件压缩包
+    PUT:
+        操作插件
+        action:&lt;str&gt;, start:激活插件 stop:停用插件
+        name:&lt;str&gt;, 插件名称
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-plugin-setting">Admin-plugin-setting</h4>
+<p><strong>Api</strong>:/api/admin/plugin/setting</p>
+<p><strong>Methods</strong>:GET, POST, PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    插件设置
+    GET:
+        获取插件设置
+        plugin_name:&lt;str&gt;, 插件名
+    POST:
+        刷新当前插件配置(当插件配置代码被修改后,如果未重新激活，系统保存的配置是不会更新的，所有可以使用此方法刷新)
+        plugin_name:&lt;str&gt;, 插件名
+    PUT:
+        修改设置
+        plugin_name:&lt;str&gt;, 插件名
+        key:&lt;str&gt;,KEY
+        value:&lt;可多种类型的数据&gt;, 值
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-plugin-setting-install-requirement">Admin-plugin-setting-install-requirement</h4>
+<p><strong>Api</strong>:/api/admin/plugin/setting/install-requirement</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    插件需求包安装
+    PUT:
+        插件需求包安装
+        plugin_name:&lt;str&gt;, 插件名
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-post">Admin-post</h4>
+<p><strong>Api</strong>:/api/admin/post</p>
+<p><strong>Methods</strong>:GET, POST, PUT, PATCH, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1. 根据条件获取文章
+        sort:&lt;array&gt;,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{&quot;issue_time&quot;:-1},{&quot;update_time&quot;,-1}]
+            按时间升序 [{&quot;issue_time&quot;, 1},{&quot;update_time&quot;,1}]
+            先后按赞(like)数降序, 评论数降序,pv降序, 发布时间降序
+             [{&quot;like&quot;, -1}, {&quot;comment_num&quot;, -1}, {&quot;pv&quot;, -1},{&quot;issue_time&quot;, -1}];
+            默认时按时间降序, 也可以用其他字段排序
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页查询多少条
+        status:&lt;int&gt; , &quot;is_issued&quot;（正常发布） or &quot;draft&quot;（草稿） or &quot;not_audit&quot;（等待审核） or &quot;unqualified&quot;（未通过审核） or &quot;recycle&quot;(用户的回收站) or &quot;user_remove&quot;
+            （user_remove是指用户永久删除或被管理删除的）
+        keyword:&lt;str&gt;, Search keywords, 搜索的时候使用
+        fields:&lt;array&gt;, 需要返回的文章字段,如[&quot;title&quot;]
+        unwanted_fields:&lt;array&gt;, 不能和fields参数同时使用,不需要返回的文章字段,如[&quot;content&quot;]
+        :return:
+        2.获取一篇文章
+        post_id:&lt;str&gt;,post id
+        status:&lt;str&gt;,状态, 可以是&quot;is_issued&quot; or &quot;draft&quot; or &quot;not_audit&quot; or &quot;unqualified&quot; or &quot;recycle&quot;
+    PATCH or PUT:
+        1.人工审核post
+        op:&lt;str&gt;, 为&quot;audit&quot;
+        ids:&lt;str&gt;, posts id
+        score:&lt;int&gt;, 0-10分
+        2.恢复post, 只能恢复管理员移入待删除的文章is_delete为3的post
+        op:&lt;str&gt;, 为&quot;restore&quot;
+        ids:&lt;array&gt;, posts id
+    DELETE:
+        删除post
+        ids:&lt;array&gt;, posts id
+        pending_delete:&lt;int&gt;, 1: 标记is_delete为3, 对于post属于的用户永久删除, 0:从数据库删除数据
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="post-tags">Post-tags</h4>
+<p><strong>Api</strong>:/api/post/tags</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取文章tag
+        last_days:&lt;int&gt;, 获取最近几天时间的文章的tag
+        sort:&lt;array&gt;,文章排序规则,优先获取排在前面的文章的标签, 1表示升序, -1表示降序.如:
+            先后按赞(like)数降序, 评论数降序,pv降序, 发布时间降序
+            [{&quot;like&quot;: -1}, {&quot;comment_num&quot;: -1}, {&quot;pv&quot;: -1}]
+            默认时按tag_cnt, like, comment_num 多个降序
+            可选字段有like, pv, comment_num, tag_cnt
+        user_id:&lt;str&gt;, 获取单个用户的文章tag, 默认是全部用户的文章tag
+        limit:&lt;int&gt;, 获取多少个tag
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="post">Post</h4>
+<p><strong>Api</strong>:/api/post</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1.获取一篇文章
+        post_id:&lt;str&gt;,post id
+        2.根据条件获取文章
+        sort:&lt;array&gt;,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{&quot;issue_time&quot;:-1},{&quot;update_time&quot;:-1}]
+            按时间升序 [{&quot;issue_time&quot;: 1},{&quot;update_time&quot;: 1}]
+            先后按赞(like)数降序, 评论数降序,pv降序, 发布时间降序
+            [{&quot;like&quot;: -1}, {&quot;comment_num&quot;: -1}, {&quot;pv&quot;: -1},{&quot;issue_time&quot;: -1}]
+            默认时按时间降序, 也可以用其他字段排序
+        status:&lt;int&gt; , &quot;is_issued&quot;（正常发布） or &quot;draft&quot;（草稿） or &quot;not_audit&quot;（等待审核） or &quot;unqualified&quot;（未通过审核） or &quot;recycle&quot;(用户的回收站) or &quot;user_remove&quot;
+            （user_remove是指用户永久删除或被管理删除的）
+        matching_rec:&lt;str&gt;,可选，提供一段内容, 匹配一些文章推荐
+        time_range:&lt;int&gt;,可选,单位为天,比如最近7天的文章
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页查询多少条
+        keyword:&lt;str&gt;, Search keywords, 搜索使用
+        fields:&lt;array&gt;, 需要返回的文章字段,如[&quot;title&quot;]
+        unwanted_fields:&lt;array&gt;, 不能和fields参数同时使用,不需要返回的文章字段,如[&quot;user_id&quot;]
+        user_id:&lt;str&gt;, 如需获取指定用户的post时需要此参数
+        category_id:&lt;str&gt;, 获取指定文集的post时需要此参数
+        tag:&lt;str&gt;, 获取存在此tag的posts时需要此参数
+</code></pre>
+
+<hr />
+<h4 id="post_1">Post</h4>
+<p><strong>Api</strong>:/api/post</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        喜欢文章
+        action:&lt;str&gt;, 可以是like(点赞文章)
+        id:&lt;str&gt;, post id
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="user-post">User-post</h4>
+<p><strong>Api</strong>:/api/user/post</p>
+<p><strong>Methods</strong>:POST, PUT, PATCH, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST:
+        内容发布
+        title:&lt;str&gt;, 标题
+        content:&lt;str&gt;, 内容(比如:富文本的html内容),将会保存到数据库中
+        conetent_text:&lt;str&gt;, 纯文本内容
+        editor:&lt;str&gt;, 使用的编辑器类型, &quot;markdown&quot; or &quot;rich_text&quot;
+        tags:&lt;array&gt;, 标签
+        category:&lt;str&gt;, post category id. post分类
+        cover_url:&lt;str&gt;,文章封面图url,默认为空
+        issue_way:&lt;str&gt;, 可选'issue' or 'save'.　发布或者保存为草稿
+    PUT or PATCH:
+        1.内容修改
+        id:&lt;str&gt;, 编辑已有的文章需要传入id, 新建文章不需要
+        title:&lt;str&gt;, 标题
+        content:&lt;str&gt;, 内容(比如:富文本的html内容),将会保存到数据库中
+        conetent_text:&lt;str&gt;, 纯文本内容
+        editor:&lt;str&gt;, 使用的编辑器类型, &quot;markdown&quot; or &quot;rich_text&quot;
+        tags:&lt;array&gt;, 标签
+        category:&lt;str&gt;, post category id. post分类
+        issue_way:&lt;str&gt;, 可选'issue' or 'save'.　发布或者保存为草稿
+        2.恢复回收站的post
+        op:&lt;str&gt;, restore
+        ids:&lt;array&gt;, posts id
+    DELETE:
+        删除post
+        ids:&lt;array&gt;, posts id
+        recycle:&lt;int&gt;,1 or 0,　1：则移入回收站, 0: 则直接标记为永久删除, 管理员才可见
+</code></pre>
+
+<hr />
+<h4 id="admin-report-basic">Admin-report-basic</h4>
+<p><strong>Api</strong>:/api/admin/report/basic</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取网站的最基本报表数据
+        project:&lt;array&gt;,默认全部,可以是post, comment, user, message, plugin, media, inform
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-comment-access">Admin-comment-access</h4>
+<p><strong>Api</strong>:/api/admin/comment/access</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取comment数据统计
+        days:&lt;int&gt;
+</code></pre>
+
+<hr />
+<h4 id="admin-post-access">Admin-post-access</h4>
+<p><strong>Api</strong>:/api/admin/post/access</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取post数据统计
+        days:&lt;int&gt;
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="search">Search</h4>
+<p><strong>Api</strong>:/api/search</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        搜索(暂不支持全文搜索), 只能搜索文章, 用户
+        keyword:&lt;str&gt;, Search keywords
+        target:&lt;str&gt;, 可选&quot;post&quot; 或 &quot;user&quot;. 不使用此参数则搜索所有可选目标
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页多少条
+</code></pre>
+
+<hr />
+<h4 id="admin-setting-sys-log">Admin-setting-sys-log</h4>
+<p><strong>Api</strong>:/api/admin/setting/sys/log</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取文件日志
+        name:&lt;str&gt;,日志名称
+        ip:&lt;str&gt;,要获取哪个主机的日志
+        page:&lt;int&gt;
+        :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-setting-sys-host">Admin-setting-sys-host</h4>
+<p><strong>Api</strong>:/api/admin/setting/sys/host</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取主机的信息
+        ip:&lt;str&gt;,要获取哪个主机的日志
+        :return:
+    PUT:
+        设置主机连接信息与重启命令
+        username:&lt;str&gt;,主机用户名
+        password:&lt;str&gt;,主机密码
+        host_ip:&lt;str&gt;,要获取哪个主机的日志
+        host_port:&lt;int&gt;,主机端口
+        cmd:&lt;str&gt;, 命令, 注释使用#
+</code></pre>
+
+<hr />
+<h4 id="admin-setting-sys-host-cmd-execute">Admin-setting-sys-host-cmd-execute</h4>
+<p><strong>Api</strong>:/api/admin/setting/sys/host/cmd-execute</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        命令执行
+        host_ip:&lt;str&gt;
+        cmd:&lt;str&gt;, 要执行的Linux 命令,如果没有则自动执行主机保存的常用命令
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-setting-sys-host-connection-test">Admin-setting-sys-host-connection-test</h4>
+<p><strong>Api</strong>:/api/admin/setting/sys/host/connection-test</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        服务器连接测试
+        host_ip:&lt;str&gt;
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="session-language-set">Session-language-set</h4>
+<p><strong>Api</strong>:/api/session/language-set</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT :
+        修改当前语言
+        language:&lt;str&gt;, 如en_US, zh_CN
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-setting-sys-config-version">Admin-setting-sys-config-version</h4>
+<p><strong>Api</strong>:/api/admin/setting/sys/config/version</p>
+<p><strong>Methods</strong>:GET, PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取所有的系统配置版本, 和网站服务器主机
+    PUT:
+        切换单个节点网站的配置版本
+        switch_version:&lt;str&gt;, 需要切换的版本号
+        diable_update:&lt;int&gt; , 0 or 1
+        host_ip:&lt;str&gt;, 主机ip
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-setting-sys-config">Admin-setting-sys-config</h4>
+<p><strong>Api</strong>:/api/admin/setting/sys/config</p>
+<p><strong>Methods</strong>:GET, PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        根据project获取当前最新配置(特殊配置将不会返回,如不允许再页面编辑的,即那些不带有&quot;__restart__&quot;key的)
+        project:&lt;array&gt;, 能同时获取多个project的数据.不使用此参数则表示获取全部配置
+        keyword:&lt;str&gt;, 搜索匹配关键字的结构
+        only_project_field:&lt;int&gt;, 只需要project字段. 0 or 1.默认为0
+    PUT:
+        key:&lt;str&gt;, 要设置的配制参数的key
+        project:&lt;str&gt;, 项目,比如这个key是comment下的，则project为comment
+        value:&lt;str or int or bool or list or dict or tuple&gt;, key对应的值
+        info:&lt;str&gt;, 说明
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-theme-display-setting">Admin-theme-display-setting</h4>
+<p><strong>Api</strong>:/api/admin/theme/display-setting</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET
+        1.获取多个display信息
+        file_type:&lt;str&gt;, 文件类型,可选&quot;image&quot;, &quot;video&quot;, &quot;audio&quot;, &quot;other&quot;
+        category_id:&lt;str&gt;, 分类id, 获取默认分类使用&quot;default&quot;作为category_id, 不传入此参数则表示获取全部
+        keyword:&lt;str&gt;,搜索用
+        page:&lt;int&gt;, 第几页, 默认1
+        pre:&lt;int&gt;, 每页几条数据, 默认12
+        sort:&lt;array&gt;,排序, 1表示升序, -1表示降序.如:
+            按时间降序 [{&quot;time&quot;:-1}]
+            按时间升序 [{&quot;time&quot;, 1}]
+            默认时按时间降序, 也可以用其他字段排序
+        2.获取1个信息
+        id:&lt;str&gt;,id
+    POST
+        添加媒体
+        name:&lt;str&gt;, 名字
+        link:&lt;str&gt;, 链接, 用于展示的时候跳转链接
+        link_name:&lt;str&gt;,链接名字
+        link_open_new_tab:&lt;str&gt;,链接是否打开新标签
+        title:&lt;str&gt;, 展示的标题
+        name:&lt;str&gt;, 展示时需要显示的文字
+        text:&lt;str&gt;
+        text_html:&lt;str&gt;, text的html格式(富文本)
+        type:&lt;str&gt;, 文件类型,可选&quot;image&quot;, &quot;video&quot;, &quot;audio&quot;, &quot;text&quot;,&quot;other&quot;
+        category_id:&lt;str&gt;, 分类id
+        **如果需要上传文件,还需要一下参数:
+        batch:&lt;int&gt;, 0 or 1, default:0, 为1表示批量上传.
+        return_url_key: &lt;str&gt;, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:&lt;str&gt;, 自定义返回数据的状态的key, 默认'state'
+        return_success:&lt;str or int&gt;, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:&lt;str or int&gt;, 自定义返回数据错误的状态的值, 默认'error'
+         **注意: 如果后台获取有文件上传，则表示只上传文件
+        上传文件返回数据格式默认如下:
+        {'urls':[&lt;url&gt;, ...,&lt;url&gt;],
+         'state':&lt;'success' or 'error'&gt;,
+         'msg_type':&lt;'s' or e'&gt;,
+         'msg':''
+         }
+    PUT
+        编辑display信息
+        id:&lt;str&gt;,要编辑的display_setting id
+        category_id:&lt;str&gt;,要编辑的文件的分类id, 如果不修改分类可以不提交
+        name:&lt;str&gt;
+        link:&lt;str&gt;, 链接
+        link_name:&lt;str&gt;,链接名字
+        link_open_new_tab:&lt;str&gt;,链接是否打开新标签
+        title:&lt;str&gt;
+        text:&lt;str&gt;
+        text_html:&lt;str&gt;, text的html格式(富文本)
+        **如果只更新文件(如图片),还需要一下参数:
+        batch:&lt;int&gt;, 0 or 1, default:0, 为1表示批量上传.
+        return_url_key: &lt;str&gt;, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:&lt;str&gt;, 自定义返回数据的状态的key, 默认'state'
+        return_success:&lt;str or int&gt;, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:&lt;str or int&gt;, 自定义返回数据错误的状态的值, 默认'error'
+        **注意: 如果后台获取有文件上传，则表示只上传文件
+        上传文件返回数据格式默认如下:
+        {'urls':[&lt;url&gt;, ...,&lt;url&gt;],
+         'state':&lt;'success' or 'error'&gt;,
+         'msg_type':&lt;'s' or e'&gt;,
+         'msg':''
+         }
+    DELETE
+        删除display文件
+        ids:&lt;array&gt;,要删除的文件的id
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-theme-page">Admin-theme-page</h4>
+<p><strong>Api</strong>:/api/admin/theme/page</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST:
+        添加页面
+        routing:&lt;str&gt;,路由
+        content:&lt;str&gt;, 内容
+    DELETE:
+        删除自己添加的页面
+        file_path:&lt;str&gt;,页面html文件所在目录
+        filename:&lt;str&gt;,页面html文件名
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-static-file">Admin-static-file</h4>
+<p><strong>Api</strong>:/api/admin/static/file</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1.获取静态文件内容
+        file_path:&lt;str&gt;,静态文件所在目录
+        filename:&lt;str&gt;,文件名
+        2.获取静态文件名列表
+        page:&lt;int&gt;, 第几页, 默认1
+        pre:&lt;int&gt;, 第几页, 默认15
+        keyword:&lt;str&gt;,关键词搜索用
+        type:&lt;str&gt;, &quot;all&quot; or &quot;default&quot; or &quot;custom&quot;
+    PUT:
+        编辑静态文件内容
+        file_path:&lt;str&gt;,静态文件所在目录
+        filename:&lt;str&gt;,文件名
+        content:&lt;str&gt;, 内容
+</code></pre>
+
+<hr />
+<h4 id="admin-theme">Admin-theme</h4>
+<p><strong>Api</strong>:/api/admin/theme</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    主题管理
+    GET:
+        获取当前所有主题
+    POST:
+        主题安装
+        upfile:&lt;file&gt;, 上传的主题文件
+    PUT:
+        切换主题
+        theme_name:&lt;str&gt;, 主题名称
+        恢复已删除的默认设置
+        restore_deled:&lt;0 or 1&gt;
+        theme_name:&lt;str&gt;, 主题名称
+    DELETE:
+        删除主题
+        theme_name:&lt;str&gt;, 主题名称
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="token-access-token">Token-access-token</h4>
+<p><strong>Api</strong>:/api/token/access-token</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        客户端获取/刷新AccessToken (必须使用SecretToken验证通过)
+        如果请求头中带有ClientId 则使用客户端提供的ClientId, 否则创建新的ClientId
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-token-secret-token">Admin-token-secret-token</h4>
+<p><strong>Api</strong>:/api/admin/token/secret-token</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    客户端访问使用的secret token管理
+    GET:
+        获取所有secret token
+    POST:
+        创建一个secret token
+    PUT:
+        激活或禁用一个id
+        token_id:&lt;id&gt;,token id
+        action:&lt;str&gt;,如果为&quot;activate&quot;则激活token, 为&quot;disable&quot;禁用token
+    DELETE:
+        删除一个token
+        token_id:&lt;id&gt;,token id
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="upload-file">Upload-file</h4>
+<p><strong>Api</strong>:/api/upload/file</p>
+<p><strong>Methods</strong>:POST</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST
+        文件上传
+        api返回json数据,格式默认如下:
+        {'urls':[&lt;url&gt;, ...,&lt;url&gt;],
+         'state':&lt;'success' or 'error'&gt;,
+         'msg_type':&lt;'s' or e'&gt;,
+         'msg':''
+         }
+        return_url_key: &lt;str&gt;, 自定义返回数据的urls的key, 默认'urls'
+        return_state_key:&lt;str&gt;, 自定义返回数据的状态的key, 默认'state'
+        return_success:&lt;str or int&gt;, 自定义返回数据成功的状态的值, 默认'success'
+        return_error:&lt;str or int&gt;, 自定义返回数据错误的状态的值, 默认'error'
+        prefix:&lt;str&gt;, 默认为“generic/”, 则会将文件放入到generic目录下
+        save_temporary_url：&lt;0 or 1&gt;,默认为1, 如果
+        :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="admin-user">Admin-user</h4>
+<p><strong>Api</strong>:/api/admin/user</p>
+<p><strong>Methods</strong>:GET, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1. 获取指定ID的用户基本信息
+        id:&lt;str&gt; , user id
+        2.分页获取所有用户
+        status:&lt;str&gt;,用户状态，&quot;normal&quot;　or &quot;inactive&quot; or &quot;cancelled&quot;
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页查询多少条
+        keyword:&lt;str&gt;, Search keywords, 搜索的时候使用
+    PUT:
+        1.编辑用户
+        id:&lt;str&gt;, user id
+        role_id:&lt;str&gt;, role id
+        active:&lt;int&gt;, 0 or 1
+        2.激活或冻结用户
+        op:&lt;str&gt;, 为&quot;activation&quot;
+        active:&lt;int&gt;, 0 or 1, 0为冻结, 1为激活
+        ids:&lt;array&gt;
+        3.恢复用户,将状态改为未删除
+        op:&lt;str&gt;, 为&quot;restore&quot;
+        ids:&lt;array&gt;
+    DELETE:
+        删除用户,非数据库删除
+        ids:&lt;array&gt;
+</code></pre>
+
+<hr />
+<h4 id="admin-user-del">Admin-user-del</h4>
+<p><strong>Api</strong>:/api/admin/user/del</p>
+<p><strong>Methods</strong>:DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    DELETE:
+        永久删除用户,数据库中删除
+        ids:&lt;array&gt;
+        permanent:&lt;int&gt; 0 or 1, 0:非数据库删除,只是把状态改成&quot;删除状态&quot;,为1:表示永久删除,
+</code></pre>
+
+<hr />
+<h4 id="account-upload-avatar">Account-upload-avatar</h4>
+<p><strong>Api</strong>:/api/account/upload/avatar</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT
+        头像上传
+        注意:虽然服务的提供图片裁剪功能，由于耗费服务器资源,非必要情况下请不要使用，请再客户端裁剪好再上传.
+        为了防止恶意使用裁剪功能，可以在管理端中设置(upload)中关闭上传文件裁剪功能
+        *提供2种上传方式*
+        1.以常规文件格式上传
+        upfile:&lt;img file&gt;，头像文件
+        preview_w:&lt;int&gt;, 图片预览宽度
+        tailoring:&lt;dict&gt;, (裁剪功能开启后才能使用),裁剪尺寸，格式:{x:12, y:12, height:100, width:100, rotate:0}
+            x和ｙ为裁剪位置，x距离左边距离, y距离上边距离, width截图框的宽，　height截图框的高
+        2.以base64编码上传
+        imgfile_base:&lt;str&gt;,以base64编码上传文件
+    :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="account-email">Account-email</h4>
+<p><strong>Api</strong>:/api/account/email</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT
+        账户邮件修改
+        email:&lt;email&gt;, 要绑定的新邮箱
+        new_email_code:&lt;str&gt;, 新邮箱收取到的验证码,用于保证绑定的邮箱时用户自己的
+        current_email_code:&lt;str&gt;, 当前邮箱收取的验证码,用于保证邮箱修改是用户自己发起
+        password:&lt;str&gt;, 账户的登录密码
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="account-data-availability">Account-data-availability</h4>
+<p><strong>Api</strong>:/api/account/data/availability</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        查看用户名，email,个性域是否可以使用
+        field:&lt;str&gt;, username or email or custom_domain
+        vaule:&lt;str&gt;
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="account-self">Account-self</h4>
+<p><strong>Api</strong>:/api/account/self</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        提供一个user id, 获取是否时当前登录用户
+        user_id:&lt;str&gt;
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="sign-up">Sign-up</h4>
+<p><strong>Api</strong>:/api/sign-up</p>
+<p><strong>Methods</strong>:POST</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST:
+        1.普通用户使用邮箱注册a
+        emial:&lt;emial&gt;, 邮箱
+        username: &lt;str&gt;, 用户名
+        password: &lt;str&gt;,密码
+        password2: &lt;str&gt;,再次确认密码
+        code:&lt;str&gt;, 邮箱收取到的code
+        2.普通用户使用手机注册a
+        mobile_phone_number:&lt;int&gt;手机号码
+        username: &lt;str&gt;, 用户名
+        password: &lt;str&gt;,密码
+        password2: &lt;str&gt;,再次确认密码
+        code:&lt;str&gt;, 手机收取到的code
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="sign-in">Sign-in</h4>
+<p><strong>Api</strong>:/api/sign-in</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        1.普通登录
+        username: &lt;str&gt;, 用户名或邮箱或手机号码
+        password: &lt;str&gt;,密码
+        remember_me:&lt;bool&gt;,是否保存密码
+        next:&lt;str&gt;, 登录后要返回的to url, 如果为空,则返回设置中的LOGIN_TO
+        use_jwt_auth:&lt;int&gt;, 是否使用jwt验证. 0 或 1,默认为0不使用
+        当多次输入错误密码时，api会返回open_img_verif_code:true,
+        表示需要图片验证码验证,客户端应该请求验证码/api/vercode/image,
+         然后后再次提交登录时带下如下参数
+        再次提交登录时需要以下两个参数
+        code:&lt;str&gt;, 图片验证码中的字符
+        code_url_obj:&lt;json&gt;,图片验证码url 对象
+        :return:
+        2.第三方登录
+        待开发插件入口
+</code></pre>
+
+<hr />
+<h4 id="sign-out">Sign-out</h4>
+<p><strong>Api</strong>:/api/sign-out</p>
+<p><strong>Methods</strong>:GET, PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET or PUT:
+        用户登出api
+        use_jwt_auth:&lt;int&gt;, 是否使用jwt验证. 0 或 1,默认为0不使用.
+                     如果是jwt验证登录信息的客户端use_jwt_auth应为1
+        :param adm:
+        :return:
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="account-password-reset">Account-password-reset</h4>
+<p><strong>Api</strong>:/api/account/password/reset</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        账户密码重设
+        now_password:&lt;str&gt;,目前使用的密码
+        password:&lt;str&gt;, 新密码
+        password2:&lt;str&gt;, 再次确认新密码
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="account-password-retrieve">Account-password-retrieve</h4>
+<p><strong>Api</strong>:/api/account/password/retrieve</p>
+<p><strong>Methods</strong>:PUT, POST</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    PUT:
+        忘记密码,重设
+        获取验证码,只需要传回参数email,return回一个{code:{'_id':'', str:'',time:'' }}
+        设置新密码,需要全部参数
+        email_code:&lt;str&gt;, 邮件中收到的验证码
+        email:&lt;str&gt;, 邮箱
+        password:&lt;str&gt;, 新密码
+        password2:&lt;str&gt;, 再次确认密码
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="account-profile-public">Account-profile-public</h4>
+<p><strong>Api</strong>:/api/account/profile/public</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取用户公开信息
+        user_id:&lt;str&gt;
+        is_basic:&lt;int&gt;, 0或1,默认1. 为１时只获取最基本的用户信息
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="account-basic">Account-basic</h4>
+<p><strong>Api</strong>:/api/account/basic</p>
+<p><strong>Methods</strong>:PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    用户基础设置
+    PUT:
+        编辑用户基础设置
+        username:&lt;str&gt;, 新的用户名
+        custom_domain:&lt;str&gt;, 个性域名
+        editor:&lt;str&gt;, 'rich_text' or 'markdown' 如果你有多个文本编辑器的话，可以加入这个选项
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="account-profile">Account-profile</h4>
+<p><strong>Api</strong>:/api/account/profile</p>
+<p><strong>Methods</strong>:GET, PUT</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    用户资料
+    GET:
+        获取当前登录用户的信息
+        is_basic:&lt;int&gt;, 0或1,默认1. 为１时只获取最基本的用户信息
+    PUT
+        更新用户资料
+        gender:&lt;str&gt;, m or f or secret
+        birthday:&lt;int or str&gt;, The format must be &quot;YYYYMMDD&quot; ,such as: 20170101
+        address:&lt;dict&gt;, The format must be: {countries:'string', provinces:'string',
+                                             city:'string', district:'string', detailed:'string'}
+        info:&lt;str&gt;
+    :return:
+</code></pre>
+
+<hr />
+<h4 id="admin-role">Admin-role</h4>
+<p><strong>Api</strong>:/api/admin/role</p>
+<p><strong>Methods</strong>:GET, POST, PUT, DELETE</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:Yes</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        1. 获取指定ID的角色
+        id:&lt;str&gt; ,role id
+        2.分页获取全部角色
+        page:&lt;int&gt;,第几页，默认第1页
+        pre:&lt;int&gt;, 每页查询多少条
+    POST:
+        添加一个角色
+        name:&lt;str&gt;
+        instructions:&lt;str&gt;
+        default:&lt;int or bool&gt;, 0 or 1
+        permissions:&lt;array&gt;, 数组，可以给角色指定多个权重, 如[1, 2, 4, 128]
+    PUT:
+        修改一个角色
+        id:&lt;str&gt;, role id
+        name:&lt;str&gt;
+        instructions:&lt;str&gt;
+        default:&lt;int&gt;, 0 or 1
+        permissions:&lt;array&gt;, 数组，可以给角色指定多个权重, 如[1, 2, 4, 128]
+    DELETE:
+        删除角色
+        ids:&lt;arry&gt;, role ids
+</code></pre>
+
+<p>***## Api文档说明</p>
+<h4 id="vercode-send">Vercode-send</h4>
+<p><strong>Api</strong>:/api/vercode/send</p>
+<p><strong>Methods</strong>:POST</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    POST:
+        手机或邮箱验证码发送
+        account_type:&lt;str&gt;, &quot;email&quot; or &quot;mobile_phone&quot;
+        account:&lt;email or number&gt;, 接收验证码的账户
+        exist_account:&lt;int&gt;, 是否只能发送给用该邮箱/号码在本平台已注册的用户? 1为是, 0为否. 默认0
+        如果1分钟内,同一IP,同一用户(未登录的同属一匿名用户)
+        调用api超过MAX_NUM_SEND_SAMEIP_PERMIN_NO_IMGCODE(1分钟内无图片验证码最大调用次数)配置的次数,
+        超过后API会生会返回open_img_verif_code:true,
+        表示需要图片验证码验证,客户端应该请求验证码/api/vercode/image,
+        再次提交登录时需要以下两个参数
+        code:&lt;str&gt;, 图片验证码中的字符
+        code_url_obj:&lt;json&gt;, 图片验证码url 对象
+        注意:如果你并不想使用图片验证码来防止频繁调用,请在管理的设置MAX_NUM_SEND_SAMEIP_PERMIN_NO_IMGCODE的值大于
+        MAX_NUM_SEND_SAMEIP_PERMIN
+        :return:
+</code></pre>
+
+<hr />
+<h4 id="vercode-image">Vercode-image</h4>
+<p><strong>Api</strong>:/api/vercode/image</p>
+<p><strong>Methods</strong>:GET</p>
+<p><strong>Permission</strong>:unlimited</p>
+<p><strong>Login auth</strong>:</p>
+<p><strong>Request and parameters:</strong></p>
+<pre><code>&quot;&quot;&quot;
+    GET:
+        获取图片验证码
+        :return: 验证码path object
+</code></pre>
+
+<hr /></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Allen Woo</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+    <script>
+    //Baidu analysis
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?97ac1418f2f617088a890435e61ed055";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</html>
