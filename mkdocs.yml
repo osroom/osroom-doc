@@ -1,22 +1,22 @@
 copyright: Allen Woo
-docs_dir: docs-v2.0beta
+docs_dir: docs-v1.0
 extra:
   version: 1.0
 nav:
 - 文档: index.md
 - 安装部署:
-  - 安装: /osroom-doc/osr/v2.0beta/app/install/
-  - 部署: /osroom-doc/osr/v2.0beta/app/deploy/
-  - Mongodb安装: /osroom-doc/osr/v2.0beta/app/mongodb/
-  - Redis安装: /osroom-doc/osr/v2.0beta/app/redis/
+  - 安装: /osroom-doc/osr/v1.0/app/install/
+  - 部署: /osroom-doc/osr/v1.0/app/deploy/
+  - Mongodb安装: /osroom-doc/osr/v1.0/app/mongodb/
+  - Redis安装: /osroom-doc/osr/v1.0/app/redis/
 - Api文档:
-  - Api请求验证: /osroom-doc/osr/v2.0beta/api/api_call/
-  - Api说明文档: /osroom-doc/osr/v2.0beta/api/api_doc/
+  - Api请求验证: /osroom-doc/osr/v1.0/api/api_call/
+  - Api说明文档: /osroom-doc/osr/v1.0/api/api_doc/
 - 插件|主题:
-  - 插件开发: /osroom-doc/osr/v2.0beta/plugin/
-  - 主题开发: /osroom-doc/osr/v2.0beta/theme/
+  - 插件开发: /osroom-doc/osr/v1.0/plugin/
+  - 主题开发: /osroom-doc/osr/v1.0/theme/
 - 系统开发:
-  - 代码目录结构: /osroom-doc/osr/v2.0beta/development/structure/
+  - 代码目录结构: /osroom-doc/osr/v1.0/development/structure/
 plugins:
 - search:
     lang: en
@@ -24,7 +24,7 @@ plugins:
 repo_url: https://github.com/osroom/osroom-doc
 site_author: Allen Woo
 site_description: OSROOM开源Web系统|CMF文档, OSROOM可用于搭建企业官网, 个人网站, 微信小程序后端等
-site_dir: osr/v2.0beta
+site_dir: osr/v1.0
 site_name: OSROOM DOC
 site_url: https://osroom.com
 theme:
