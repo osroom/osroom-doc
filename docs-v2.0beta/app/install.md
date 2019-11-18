@@ -189,6 +189,8 @@ pip install -r requirements.txt
 <br/><br/>
 - 进入根目录运行start.py add_user
   &nbsp;&nbsp; 按如下操作和提示创建第一个用户
+  &nbsp;&nbsp; 创建完成提示"End"后Ctrl+C把创建程序关闭
+ 
 ```
 (venv_osroom) work@osroom:~/project/osroom$ python start.py add_user
  * [User] add
@@ -213,6 +215,7 @@ End
 
 ```
 <br/><br/><br/>
+
 ### 访问测试
 使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
 <br/><br/>

@@ -156,35 +156,24 @@
 
 <h3 id="mongodb">安装mongodb</h3>
 <ul>
-<li>Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本</li>
+<li>Ubuntu16.04 apt-get安装Mongodb 4.0 版本</li>
 </ul>
 <h4 id="_1">&nbsp;&nbsp;添加安装源</h4>
 <ul>
-<li>
-<p>下面版本源请选择其中一个版本</p>
-</li>
-<li>
-<p>添加3.4版本源
-   添加public key：</p>
-</li>
+<li>Step 1:</li>
 </ul>
-<pre><code class="shell">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
+<pre><code class="shell">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 </code></pre>
 
-<p>添加包源：</p>
-<pre><code class="shell">echo &quot;deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse&quot; | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list
-</code></pre>
-
-<p><br/></p>
 <ul>
-<li>添加3.6版本源</li>
+<li>Step 2:</li>
 </ul>
-<p>添加public key：</p>
-<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+<p>Ubuntu 18.04 LTS:</p>
+<pre><code class="shell">echo &quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb.list
 </code></pre>
 
-<p>添加包源：</p>
-<pre><code>echo &quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+<p>Ubuntu 16.04 LTS:</p>
+<pre><code class="shell">echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb.list
 </code></pre>
 
 <h4 id="apt-get">&nbsp;&nbsp;更新apt-get</h4>
@@ -312,7 +301,48 @@ MongoDB server version: 3.4.10
 <p><br/><br/></p>
 <ul>
 <li>创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)</li>
-</ul></div>
+</ul>
+<blockquote>
+<p>创建Mdb数据库collections命令合集</p>
+</blockquote>
+<pre><code>use admin
+db.createUser(
+   {
+     user: &quot;dba&quot;,
+     pwd: &quot;123456&quot;,
+     roles: [ { role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; },
+              { role: &quot;dbAdminAnyDatabase&quot;, db: &quot;admin&quot; }]
+   }
+ )
+
+use osr_sys
+db.createCollection(&quot;test&quot;)
+db.createUser(
+{
+    user:'work',
+    pwd:'123456',
+    roles:[{role:'readWrite', db:'osr_sys'}]
+})
+
+use osr_user
+db.createCollection(&quot;test&quot;)
+db.createUser(
+{
+    user:'work',
+    pwd:'123456',
+    roles:[{role:'readWrite', db:'osr_user'}]
+})
+
+
+use osr_web
+db.createCollection(&quot;test&quot;)
+db.createUser(
+{
+    user:'work',
+    pwd:'123456',
+    roles:[{role:'readWrite', db:'osr_web'}]
+})
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

@@ -1,30 +1,26 @@
 ### 安装mongodb
-- Ubuntu16.04 apt-get安装Mongodb 3.4 或3.6版本
+- Ubuntu16.04 apt-get安装Mongodb 4.0 版本
 
 #### &nbsp;&nbsp;添加安装源
 
-- 下面版本源请选择其中一个版本
+- Step 1:
 
-- 添加3.4版本源
-   添加public key：
 ```shell
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 ```
-   添加包源：
+
+- Step 2:
+
+Ubuntu 18.04 LTS:
+
 ```shell
-echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee        /etc/apt/sources.list.d/mongodb-org-3.4.list
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 ```
-<br/>
 
-- 添加3.6版本源
+Ubuntu 16.04 LTS:
 
-   添加public key：
-```
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-```
-   添加包源：
-```
-echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+```shell
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 ```
 
 #### &nbsp;&nbsp;更新apt-get
@@ -153,3 +149,46 @@ MongoDB server version: 3.4.10
 <br/><br/>
 
 - 创建后修改mongo配置文件mongodb.conf 开启安全验证(用户验证)
+
+
+> 创建Mdb数据库collections命令合集
+
+```
+use admin
+db.createUser(
+   {
+     user: "dba",
+     pwd: "123456",
+     roles: [ { role: "userAdminAnyDatabase", db: "admin" },
+              { role: "dbAdminAnyDatabase", db: "admin" }]
+   }
+ )
+
+use osr_sys
+db.createCollection("test")
+db.createUser(
+{
+    user:'work',
+    pwd:'123456',
+    roles:[{role:'readWrite', db:'osr_sys'}]
+})
+
+use osr_user
+db.createCollection("test")
+db.createUser(
+{
+    user:'work',
+    pwd:'123456',
+    roles:[{role:'readWrite', db:'osr_user'}]
+})
+
+
+use osr_web
+db.createCollection("test")
+db.createUser(
+{
+    user:'work',
+    pwd:'123456',
+    roles:[{role:'readWrite', db:'osr_web'}]
+})
+```

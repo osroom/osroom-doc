@@ -1,12 +1,13 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import codecs
 import platform
 from os import system
 import shutil
 import sys
 import yaml
-
-__author__ = "Allen Woo"
 
 # build前
 print("Modify the navigation links")

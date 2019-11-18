@@ -899,7 +899,7 @@
         1.人工审核post
         op:<str>, 为"audit"
         ids:<str>, posts id
-        score:<int>, 0-10分
+        score:<int>, 0-100分
         2.恢复post, 只能恢复管理员移入待删除的文章is_delete为3的post
         op:<str>, 为"restore"
         ids:<array>, posts id
