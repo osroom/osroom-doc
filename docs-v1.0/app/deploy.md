@@ -20,7 +20,7 @@ pip install uwsgi
 # uwsgi 启动时所使用的地址与端口
 socket = 127.0.0.1:6001
 # 指向网站目录
-chdir=/home/work/project/osroom
+chdir=/home/work/project/osroom-demo
 # python 启动程序文件
 wsgi-file = start.py
 
@@ -38,10 +38,12 @@ harakiri = 30
 # 每一个工作进程都生成以后才加载应用程序
 lazy = true
 disable-logging = true
-# 状态检测地址
+#状态检测地址
 stats = 127.0.0.1:9191
 # pid
-pidfile = /tmp/osroom_uwsgi.pid
+pidfile = /tmp/osroom_demo_uwsgi.pid
+# 支持异步请求数
+gevent = 5      
 
 ```
 其他配置项可以参考uwsgi文档
@@ -130,11 +132,6 @@ server {
              include      uwsgi_params;
              # upstream 的那个名称
              uwsgi_pass osroom-web;
-             # python虚拟环境目录路径 
-             uwsgi_param UWSGI:_PYHOME /home/work/project/venv_osroom;
-             # 项目目录路径 
-             uwsgi_param UWSGI_CHDIR /home/work/project/osroom-demo;;
-             uwsgi_param UWSGI_SCRIPT start:app;
           }
 }
 
@@ -175,11 +172,6 @@ server {
              include      uwsgi_params;
              # upstream 的那个名称
              uwsgi_pass osroom-web;
-             # python虚拟环境目录路径 
-             uwsgi_param UWSGI:_PYHOME /home/work/project/venv_osroom;
-             # 项目目录路径 
-             uwsgi_param UWSGI_CHDIR /home/work/project/osroom-demo;;
-             uwsgi_param UWSGI_SCRIPT start:app;
           }
 }
 
