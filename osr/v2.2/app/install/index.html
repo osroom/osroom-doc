@@ -47,16 +47,8 @@
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">版本<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="/osroom-doc/osr/v2.0beta/">v2.0beta</a>
-                        </li>
-                        <li>
-                            <a href="/osroom-doc/osr/v1.x.x/">v1.x.x</a>
-                        </li>
-                    </ul>
+                <li >
+                    <a href="/osroom-doc/" class="dropdown-toggle" data-toggle="dropdown">版本选择<b class="caret"></b></a>
                 </li>
             </ul>
                 <!-- Main navigation -->
@@ -146,12 +138,17 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#_1">环境要求</a></li>
             <li><a href="#_2">&nbsp;&nbsp;更新内容</a></li>
-            <li><a href="#_3">&nbsp;&nbsp;安装需求包异常情况</a></li>
-        <li class="main "><a href="#_4">配置数据库</a></li>
-            <li><a href="#_5">&nbsp;&nbsp;安装</a></li>
-            <li><a href="#_6">&nbsp;&nbsp;初始化配置</a></li>
-        <li class="main "><a href="#_7">初始化第一个用户</a></li>
-        <li class="main "><a href="#_8">访问测试</a></li>
+            <li><a href="#_3">&nbsp;&nbsp;操作系统</a></li>
+            <li><a href="#pyhotn">&nbsp;&nbsp;Pyhotn要求</a></li>
+        <li class="main "><a href="#pyhton">Pyhton依赖包安装</a></li>
+            <li><a href="#python">&nbsp;&nbsp;创建Python虚拟环境(建议)</a></li>
+            <li><a href="#_4">&nbsp;&nbsp;安装依赖包</a></li>
+            <li><a href="#_5">&nbsp;&nbsp;安装需求包异常情况</a></li>
+        <li class="main "><a href="#_6">配置数据库</a></li>
+            <li><a href="#_7">&nbsp;&nbsp;安装</a></li>
+            <li><a href="#_8">&nbsp;&nbsp;初始化配置</a></li>
+        <li class="main "><a href="#_9">初始化第一个用户</a></li>
+        <li class="main "><a href="#_10">访问测试</a></li>
             <li><a href="#osroom">&nbsp;&nbsp;启动OSROOM</a></li>
     </ul>
 </div></div>
@@ -170,51 +167,63 @@
 <p><em>其他</em></p>
 </li>
 </ul>
-<p>````
-01-13： 打标 v2.2, 修复多个Bug。注意事项: 版本更新问题</p>
-<p>2019-12</p>
-<p>12-09： 打标 v2.1   </p>
-<p>12-06： 功能添加: 添加主题预览功能</p>
-<p>12-02： 功能更新: 1.主题可单独设置导航栏菜单。 2. 未启用主题也可以进行配置。3.添加了自动生成sitemap.xml, 内容为文章类别</p>
-<p>2019-11</p>
-<p>11-21： 打标v2.0  </p>
-<p>11-20： 增加文章地图页面与文章静态页面供搜索引擎爬取</p>
-<pre><code>
-#### &amp;nbsp;&amp;nbsp;操作系统
+<pre><code class="base">01-13： 打标 v2.2, 修复多个Bug。注意事项: 版本更新问题
 
-- OSROOM支持Linux中部署, Windows未测试过
-&lt;br/&gt;
-- 建议使用Ubuntu &gt;= 14.04版本;
-&lt;br/&gt;
-- 测试过操作系统有Ubuntu 14.04, 16.04, 18.04; Centos 6.5;
-&lt;br/&gt;
-- 其他Linux系统还未测试
-&lt;br/&gt;&lt;br/&gt;
-#### &amp;nbsp;&amp;nbsp;Pyhotn要求
-- Python 3.4以上版本, 比如Python 3.4, Python 3.5, Python 3.6
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-### Pyhton依赖包安装
-#### &amp;nbsp;&amp;nbsp;创建Python虚拟环境(建议)
-- 例如在在/home/work创建名为venv-osroom的虚拟环境
+2019-12
+
+12-09： 打标 v2.1   
+
+12-06： 功能添加: 添加主题预览功能
+
+12-02： 功能更新: 1.主题可单独设置导航栏菜单。 2. 未启用主题也可以进行配置。3.添加了自动生成sitemap.xml, 内容为文章类别
+
+2019-11
+
+11-21： 打标v2.0  
+
+11-20： 增加文章地图页面与文章静态页面供搜索引擎爬取
 
 </code></pre>
 
-<p>python -m venv /home/work/venv-osroom
+<h4 id="_3">&nbsp;&nbsp;操作系统</h4>
+<ul>
+<li>OSROOM支持Linux中部署, Windows未测试过
+<br/></li>
+<li>建议使用Ubuntu &gt;= 14.04版本;
+<br/></li>
+<li>测试过操作系统有Ubuntu 14.04, 16.04, 18.04; Centos 6.5;
+<br/></li>
+<li>其他Linux系统还未测试
+<br/><br/></li>
+</ul>
+<h4 id="pyhotn">&nbsp;&nbsp;Pyhotn要求</h4>
+<ul>
+<li>Python 3.4以上版本, 比如Python 3.4, Python 3.5, Python 3.6
+<br/><br/><br/></li>
+</ul>
+<h3 id="pyhton">Pyhton依赖包安装</h3>
+<h4 id="python">&nbsp;&nbsp;创建Python虚拟环境(建议)</h4>
+<ul>
+<li>例如在在/home/work创建名为venv-osroom的虚拟环境</li>
+</ul>
+<pre><code>python -m venv /home/work/venv-osroom
 或
-python3 -m venv /home/work/venv-osroom</p>
-<pre><code>&lt;br/&gt;&lt;br/&gt;
-
-- 没有安装好python-venv请先安装, Ubuntu安装命令如下(注意py版本号):
+python3 -m venv /home/work/venv-osroom
 </code></pre>
 
-<p>sudo apt-get install python3.6-venv</p>
-<pre><code>&lt;br/&gt;&lt;br/&gt;
-#### &amp;nbsp;&amp;nbsp;安装依赖包
+<p><br/><br/></p>
+<ul>
+<li>没有安装好python-venv请先安装, Ubuntu安装命令如下(注意py版本号):</li>
+</ul>
+<pre><code>sudo apt-get install python3.6-venv
+</code></pre>
 
-- 进入虚拟环境
-
-```shell
-    source /home/work/venv-osroom/bin/activate
+<p><br/><br/></p>
+<h4 id="_4">&nbsp;&nbsp;安装依赖包</h4>
+<ul>
+<li>进入虚拟环境</li>
+</ul>
+<pre><code class="shell">    source /home/work/venv-osroom/bin/activate
     # 或
     . /home/work/venv-osroom/bin/activate
 </code></pre>
@@ -232,7 +241,7 @@ python3 -m venv /home/work/venv-osroom</p>
 </code></pre>
 
 <p><br/><br/></p>
-<h4 id="_3">&nbsp;&nbsp;安装需求包异常情况</h4>
+<h4 id="_5">&nbsp;&nbsp;安装需求包异常情况</h4>
 <ul>
 <li>情况1:类似以下错误信息</li>
 </ul>
@@ -276,13 +285,13 @@ python3 -m venv /home/work/venv-osroom</p>
 </code></pre>
 
 <p><br/><br/><br/></p>
-<h3 id="_4">配置数据库</h3>
-<h4 id="_5">&nbsp;&nbsp;安装</h4>
+<h3 id="_6">配置数据库</h3>
+<h4 id="_7">&nbsp;&nbsp;安装</h4>
 <ul>
 <li>请看<a href="/osroom-doc/osr/v2.2/app/mongodb/">Mongodb安装文档</a>与<a href="/osroom-doc/osr/v2.2/app/redis/">Redis安装文档</a></li>
 </ul>
 <p><br/><br/></p>
-<h4 id="_6">&nbsp;&nbsp;初始化配置</h4>
+<h4 id="_8">&nbsp;&nbsp;初始化配置</h4>
 <p><br/><br/></p>
 <p>因为osroom源代码只把数据库配置文件db_config.py的sample文件上传到git，所以请先复制修改名称</p>
 <p><br/></p>
@@ -350,7 +359,7 @@ python3 -m venv /home/work/venv-osroom</p>
 </code></pre>
 
 <p><br/><br/><br/></p>
-<h3 id="_7">初始化第一个用户</h3>
+<h3 id="_9">初始化第一个用户</h3>
 <ul>
 <li>进入项目的Python虚拟环境
 <br/><br/></li>
@@ -382,7 +391,7 @@ End
 </code></pre>
 
 <p><br/><br/><br/></p>
-<h3 id="_8">访问测试</h3>
+<h3 id="_10">访问测试</h3>
 <p>使用自带的服务测试是否能够成功运行osroom（测试用, 实际部署产品不会使用该方式启动运行）
 <br/><br/></p>
 <h4 id="osroom">&nbsp;&nbsp;启动OSROOM</h4>
