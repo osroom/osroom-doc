@@ -9,6 +9,7 @@ nav:
         - 部署: app/deploy/
         - Mongodb安装: app/mongodb/
         - Redis安装: app/redis/
+        - 开发测试: app/development/
     - Api文档:
         - Api请求验证: api/api_call/
         - Api说明文档: api/api_doc/
@@ -19,7 +20,7 @@ nav:
     - 系统开发:
         - 代码目录结构: development/structure/
 
-site_dir: 'osr/v2.0beta'
+version: 'v2.0beta'
 extra:
     version: 1.0
 theme:
